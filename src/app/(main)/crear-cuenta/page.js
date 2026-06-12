@@ -3,7 +3,7 @@ import { AuthForm } from '@/components/ReUsableComponents/create-user-form';
 
 export const metadata = {
   title: 'Crear cuenta',
-  description: 'Crea tu cuenta en Dental Lanz con nombre, teléfono y email opcional.'
+  description: 'Crea tu cuenta en Tailor Made Beauty & SPA con nombre, teléfono y email opcional.'
 };
 
 export default function CrearCuentaPage() {

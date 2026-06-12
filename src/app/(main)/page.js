@@ -9,19 +9,20 @@ import { testimonials } from '@/lib/content';
 import BusinessContact from '@/components/ReUsableComponents/BusinessContact';
 import { useServices } from '@/hooks/useServices';
 import Reviews from '@/components/ReUsableComponents/Reviews';
+import Promotions from '@/components/ReUsableComponents/Promotions';
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Paciente sonriendo en clínica dental'
+    src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1170&auto=format&fit=crop',
+    alt: 'Tratamiento facial relajante en spa'
   },
   {
-    src: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Instrumentos dentales de alta tecnología'
+    src: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1287&auto=format&fit=crop',
+    alt: 'Masaje con piedras calientes'
   },
   {
-    src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop',
-    alt: 'Odontólogo revisando radiografías'
+    src: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=1170&auto=format&fit=crop',
+    alt: 'Detalles de aceites esenciales en spa'
   }
 ];
 
@@ -30,17 +31,17 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.1),_transparent_36%),linear-gradient(135deg,_#f8fafc_0%,_#e2e8f0_48%,_#f1f5f9_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(224,142,168,0.1),_transparent_36%),linear-gradient(135deg,_#fff7eb_0%,_#fce8e8_48%,_#fbf2f2_100%)]" />
         <div className="container grid min-h-[680px] items-center gap-12 py-14 md:grid-cols-[1fr_0.9fr] md:py-20">
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 5.0 en Google
+              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 4.4 en Google
             </div>
             <h1 className="text-balance text-5xl font-black tracking-tight md:text-7xl">
-              Tu sonrisa en manos expertas
+              Tu belleza y relajación en manos expertas
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Atención odontológica integral y especializada en CDMX. Nos enfocamos en tu comodidad, brindando tratamientos de alta calidad con un trato humano y profesional.
+              Spa integral y atención especializada en CDMX. Nos enfocamos en tu bienestar, brindando tratamientos de alta calidad para renovar tu cuerpo y mente en un ambiente de paz.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg"><Link href="/agendar">Agendar Cita</Link></Button>
@@ -94,6 +95,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <Promotions />
 
       <Reviews/>
 

@@ -50,7 +50,7 @@ export default function BusinessContact({horario}) {
         
         <div className="pt-6">
             <a 
-            href="https://maps.google.com/?q=Dental+Lanz+Calz+Acoxpa+566-int+2" 
+            href="https://maps.google.com/?q=Tailor+Made+Beauty+SPA"
             target="_blank" 
             rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-2 px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-neutral-800 hover:bg-secondary-800 transition-colors shadow-md"
@@ -72,7 +72,7 @@ export default function BusinessContact({horario}) {
             allowFullScreen={true} 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            title="Mapa de Dental Lanz en Coyoacán"
+            title="Mapa de Tailor Made Beauty & SPA en Coyoacán"
         ></iframe>
         </div>
     </div>

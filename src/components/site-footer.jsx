@@ -5,9 +5,9 @@ export function SiteFooter() {
     <footer className="border-t bg-[#1d293d] text-primary-foreground">
       <div className="container grid gap-8 py-10 md:grid-cols-[1.5fr_1fr_1fr]">
         <div>
-          <p className="text-xl font-black">Dental Lanz</p>
+          <p className="text-xl font-black">Tailor Made Beauty & SPA</p>
           <p className="mt-3 max-w-md text-sm text-primary-foreground/75">
-            Tu salud bucal es nuestra prioridad. Brindamos atención odontológica de la más alta calidad con el mejor trato humano en la Ciudad de México.
+            Tu belleza y relajación son nuestra prioridad. Brindamos atención de la más alta calidad con el mejor trato humano en la Ciudad de México.
           </p>
         </div>
         <div>
