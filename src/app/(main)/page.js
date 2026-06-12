@@ -30,17 +30,17 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.1),_transparent_36%),linear-gradient(135deg,_#f8fafc_0%,_#e2e8f0_48%,_#f1f5f9_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(0,102,153,0.1),_transparent_36%),linear-gradient(135deg,_#f8fafc_0%,_#e2e8f0_48%,_#f1f5f9_100%)]" />
         <div className="container grid min-h-[680px] items-center gap-12 py-14 md:grid-cols-[1fr_0.9fr] md:py-20">
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 5.0 en Google
+              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 4.4 en Google
             </div>
             <h1 className="text-balance text-5xl font-black tracking-tight md:text-7xl">
-              Tu sonrisa en manos expertas
+              Excelencia y tecnología en el cuidado de tu sonrisa
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Atención odontológica integral y especializada en CDMX. Nos enfocamos en tu comodidad, brindando tratamientos de alta calidad con un trato humano y profesional.
+              Atención odontológica integral y de vanguardia en la CDMX. Somos especialistas en ortodoncia invisible y tratamientos personalizados sin dolor.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg"><Link href="/agendar">Agendar Cita</Link></Button>
@@ -48,15 +48,15 @@ export default function HomePage() {
             </div>
               <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Trato Profesional</span>
+                  <ShieldCheck className="w-5 h-5 text-teal-600" />
+                  <span className="text-sm font-medium text-slate-600">Ortodoncia Invisible</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Alta Calidad</span>
+                  <ShieldCheck className="w-5 h-5 text-teal-600" />
+                  <span className="text-sm font-medium text-slate-600">Atención Personalizada</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
+                  <ShieldCheck className="w-5 h-5 text-teal-600" />
                   <span className="text-sm font-medium text-slate-600">Sin Dolor</span>
                 </div>
               </div>

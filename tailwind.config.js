@@ -49,7 +49,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui'],
-        serif: ['var(--font-playfair)', 'ui-serif', 'Georgia']
+        serif: ['var(--font-outfit)', 'ui-sans-serif', 'system-ui']
       },
       boxShadow: {
         glow: '0 24px 80px rgba(28, 100, 242, 0.18)'

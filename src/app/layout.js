@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Outfit } from 'next/font/google';
 
 import { BusinessProvider } from '@/context/BusinessProvider';
 import { ServicesProvider } from '@/context/ServicesProvider';
@@ -8,30 +8,30 @@ import { AppointmentsProvider } from '@/context/AppointmentsProvider';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', display: 'swap' });
 
 export const metadata = {
   metadataBase: new URL('https://dentallanz.netlify.app'),
   title: {
-    default: 'Dental Lanz | Odontología Integral en CDMX',
-    template: '%s | Dental Lanz'
+    default: 'Dental Plaza | Clínica de Especialidades en CDMX',
+    template: '%s | Dental Plaza'
   },
   description:
-    'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales. Agenda tu cita hoy. Calificación 5.0 en Google.',
+    'Clínica dental en Ex-Hacienda Coapa, CDMX. Especialistas en ortodoncia, ortodoncia invisible y tratamientos dentales integrales. Agenda tu cita hoy. Calificación 4.4 en Google.',
   keywords: [
-    'Dental Lanz',
+    'Dental Plaza',
     'clínica dental CDMX',
-    'dentista Prado Coapa',
+    'dentista Ex-Hacienda Coapa',
+    'ortodoncia invisible',
     'ortodoncia CDMX',
-    'blanqueamiento dental',
     'odontología integral'
   ],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Dental Lanz | Odontología Integral en CDMX',
-    description: 'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales.',
+    title: 'Dental Plaza | Clínica de Especialidades en CDMX',
+    description: 'Clínica dental en Ex-Hacienda Coapa, CDMX. Especialistas en ortodoncia, ortodoncia invisible y tratamientos dentales integrales.',
     url: 'https://dentallanz.netlify.app',
-    siteName: 'Dental Lanz',
+    siteName: 'Dental Plaza',
     locale: 'es_MX',
     type: 'website'
   }
@@ -41,21 +41,21 @@ export default function RootLayout({ children }) {
   const businessJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Dentist',
-    name: 'Dental Lanz',
+    name: 'Dental Plaza',
     image: 'https://dentallanz.netlify.app/og-image.jpg',
-    telephone: '+52 55 5801 9251',
+    telephone: '+52 55 2971 1036',
     priceRange: '$$',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '7'
+      ratingValue: '4.4',
+      reviewCount: '14'
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Calz Acoxpa 566-int 2, Coapa, Prado Coapa',
-      addressLocality: 'Tlalpan',
+      streetAddress: 'Calzada del Hueso, Fuentes Plaza 160-Local 5b, Ex-Hacienda Coapa',
+      addressLocality: 'Coyoacán',
       addressRegion: 'Ciudad de México',
-      postalCode: '14357',
+      postalCode: '04980',
       addressCountry: 'MX'
     },
     openingHoursSpecification: [
@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
         opens: '10:00',
-        closes: '19:00'
+        closes: '20:00'
       },
       {
         '@type': 'OpeningHoursSpecification',
@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="es-MX" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="es-MX" className={`${inter.variable} ${outfit.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }} />
         <BusinessProvider>

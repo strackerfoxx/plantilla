@@ -2,21 +2,21 @@ import { Star, Quote } from "lucide-react";
 
 const reviews = [
   {
-    name: "Tere Tlahuiz",
-    date: "Hace un año",
-    text: "Tomé mi tratamiento de ortodoncia hace algunos años, además de otros procedimientos, con el Doctor Lanz y quedé encantada con los resultados!!! Me agradó desde el instante en que brinda toda la información detallada...",
+    name: "Patricia Castanares",
+    date: "Hace 10 meses",
+    text: "Recibimos un excelente servicio. La Dra Arce me explicó detalladamente y de manera clara el tratamiento de mi hijo. Su trabajo fue impecable, certero y conciso. Además que es muy amable y paciente!",
     rating: 5,
   },
   {
-    name: "Elizabeth Vázquez",
-    date: "Hace un año",
-    text: "Desde el primer momento, el Dr. Lanz me brindó una atención excepcional. Su amabilidad y profesionalismo me hicieron sentir cómoda durante todo el tratamiento. Explicó cada paso del procedimiento de forma clara...",
+    name: "Daniela Fernanda Torres Huerta",
+    date: "Hace 9 meses",
+    text: "Excelente dentista, siempre atenta y con muy buena disposición. La atención es de calidad, me da seguimiento y resuelve todas mis dudas. Muy recomendable.",
     rating: 5,
   },
   {
-    name: "Daniela Tlahuiz",
-    date: "Hace un año",
-    text: "El Dr explica de manera profesional cada tratamiento; de igual manera te ofrece lo más indicado para cada caso individualizando que desde mi punto de vista eso es algo primordial. En general te hace la consulta amena.",
+    name: "Sandra Itzel Huerta Rivas",
+    date: "Hace 9 meses",
+    text: "La atención es excelente, siempre ocupados por el bienestar de sus pacientes, en particular mi dentista, muy humana, profesional y pendiente de mi proceso de ortodoncia, Gracias por mi sonrisa",
     rating: 5,
   },
 ];
@@ -40,14 +40,14 @@ export default function Reviews() {
           </div>
           <div className="flex flex-col items-start md:items-end bg-white p-4 rounded-xl shadow-sm border border-slate-100">
             <div className="flex items-center gap-2">
-              <span className="text-4xl font-bold text-secondary-900">5.0</span>
+              <span className="text-4xl font-bold text-secondary-900">4.4</span>
               <div className="flex text-yellow-400">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-current" />
+                  <Star key={i} className={`w-6 h-6 ${i < 4 ? 'fill-current' : i === 4 ? 'fill-current opacity-40' : ''}`} />
                 ))}
               </div>
             </div>
-            <p className="text-sm font-medium text-slate-500 mt-1">Basado en 7 opiniones de Google</p>
+            <p className="text-sm font-medium text-slate-500 mt-1">Basado en 14 opiniones de Google</p>
           </div>
         </div>
 
@@ -81,7 +81,7 @@ export default function Reviews() {
         
         <div className="mt-12 text-center">
           <a 
-            href="https://maps.google.com/?q=Dental+Lanz+Calz+Acoxpa+566-int+2" 
+            href="https://maps.google.com/?q=Dental+Plaza+Calzada+del+Hueso+Fuentes+Plaza+160"
             className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 hover:underline"
           >
             Ver todas las opiniones en Google Maps →
