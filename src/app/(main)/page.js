@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Star, WandSparkles, MapPin, Phone, CalendarCheck } from 'lucide-react';
+import { Leaf, Sparkles, Heart, Star, WandSparkles, MapPin, Phone, CalendarCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { SectionHeading } from '@/components/section-heading';
@@ -12,16 +12,16 @@ import Reviews from '@/components/ReUsableComponents/Reviews';
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Paciente sonriendo en clínica dental'
+    src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1200&auto=format&fit=crop',
+    alt: 'Mujer recibiendo masaje relajante en spa'
   },
   {
-    src: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Instrumentos dentales de alta tecnología'
+    src: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1074&auto=format&fit=crop',
+    alt: 'Toallas y velas de spa'
   },
   {
-    src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop',
-    alt: 'Odontólogo revisando radiografías'
+    src: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=900&auto=format&fit=crop',
+    alt: 'Piedras calientes para masaje'
   }
 ];
 
@@ -30,34 +30,34 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.1),_transparent_36%),linear-gradient(135deg,_#f8fafc_0%,_#e2e8f0_48%,_#f1f5f9_100%)]" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(135,175,145,0.15),_transparent_40%),linear-gradient(135deg,_#faf8f5_0%,_#f3ece2_48%,_#fbfaf8_100%)]" />
         <div className="container grid min-h-[680px] items-center gap-12 py-14 md:grid-cols-[1fr_0.9fr] md:py-20">
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 5.0 en Google
+              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 4.6 en Google
             </div>
             <h1 className="text-balance text-5xl font-black tracking-tight md:text-7xl">
-              Tu sonrisa en manos expertas
+              Relajación y Bienestar en Manos Expertas
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Atención odontológica integral y especializada en CDMX. Nos enfocamos en tu comodidad, brindando tratamientos de alta calidad con un trato humano y profesional.
+              Desconecta del estrés en AMM-arte Spa. Ofrecemos masajes relajantes, faciales y sauna con un trato cálido y profesional en un ambiente diseñado para tu paz interior.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg"><Link href="/agendar">Agendar Cita</Link></Button>
-              <Button asChild size="lg" variant="outline"><Link href="/servicios">Ver Tratamientos</Link></Button>
+              <Button asChild size="lg" variant="outline"><Link href="/servicios">Ver Servicios</Link></Button>
             </div>
               <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Trato Profesional</span>
+                  <Heart className="w-5 h-5 text-accent-foreground" />
+                  <span className="text-sm font-medium text-slate-600">Trato Cálido</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
+                  <Sparkles className="w-5 h-5 text-accent-foreground" />
                   <span className="text-sm font-medium text-slate-600">Alta Calidad</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Sin Dolor</span>
+                  <Leaf className="w-5 h-5 text-accent-foreground" />
+                  <span className="text-sm font-medium text-slate-600">Relajación Total</span>
                 </div>
               </div>
           </div>

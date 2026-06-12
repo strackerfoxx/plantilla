@@ -307,7 +307,7 @@ export default function AgendarClient({ id }) {
             Agendar Cita
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Completa el formulario y asegura tu espacio con nosotros en Dental Lanz.
+            Completa el formulario y asegura tu espacio con nosotros en AMM-arte Spa.
           </p>
         </div>
 
@@ -493,26 +493,18 @@ export default function AgendarClient({ id }) {
                 ) : (
                   <>
                     <p>
-                      calz acoxpa 566-int 2, coapa, prado coapa,<br/>
-                      tlalpan, 14357 ciudad de méxico, cdmx.
+                      Fuentes Plaza, Calz. del Hueso 160-Local 3-C,<br/>
+                      Coapa, Ex-Hacienda Coapa, Coyoacán, 04850 Ciudad de México, CDMX.
                     </p>
-                    <p>5558019251</p>
-                    <p>contacto@dentallanz.com</p>
+                    <p>55 4542 6063</p>
+                    <p>contacto@ammartespa.com</p>
 
                     <div className="pt-4">
                        <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Horario de atención</p>
                        <div className="space-y-3">
                          <div className="flex justify-between">
-                           <span>Lunes - Viernes</span>
-                           <span className="font-bold">10:00 - 19:00</span>
-                         </div>
-                         <div className="flex justify-between">
-                           <span>Sábado</span>
-                           <span className="font-bold">10:00 - 15:00</span>
-                         </div>
-                         <div className="flex justify-between">
-                           <span>Domingo</span>
-                           <span className="font-bold text-primary">Cerrado</span>
+                           <span>Lunes - Domingo</span>
+                           <span className="font-bold">6:00 - 20:00</span>
                          </div>
                        </div>
                     </div>

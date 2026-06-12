@@ -23,10 +23,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur-xl">
       <div className="container flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio de Dental Lanz">
+        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio de AMM-arte Spa">
           <span>
-            <span className="block text-lg font-black tracking-tight">Dental Lanz</span>
-            <span className="hidden text-xs text-muted-foreground sm:block">Odontología en CDMX</span>
+            <span className="block text-lg font-black tracking-tight">AMM-arte Spa</span>
+            <span className="hidden text-xs text-muted-foreground sm:block">Spa & Relajación en CDMX</span>
           </span>
         </Link>
 

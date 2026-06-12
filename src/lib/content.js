@@ -1,61 +1,61 @@
 export const services = [
   {
-    name: 'Ortodoncia',
-    description: 'Tratamientos de ortodoncia para alinear y mejorar la estética de tus dientes con brackets tradicionales o invisibles.',
+    name: 'Masaje Relajante',
+    description: 'Disfruta de una experiencia de paz y tranquilidad con nuestro masaje de cuerpo completo.',
     duration: '60 min',
-    price: 'Cotización'
-  },
-  {
-    name: 'Blanqueamiento Dental',
-    description: 'Recupera el tono blanco y brillante de tus dientes con tratamientos seguros y efectivos.',
-    duration: '45 min',
-    price: 'Desde $1,200'
-  },
-  {
-    name: 'Limpieza Dental Profiláctica',
-    description: 'Eliminación de sarro, placa bacteriana y manchas superficiales para prevenir caries y enfermedades periodontales.',
-    duration: '40 min',
     price: 'Desde $600'
   },
   {
-    name: 'Endodoncia',
-    description: 'Tratamiento de conductos para salvar piezas dentales dañadas o infectadas, eliminando el dolor.',
-    duration: '90 min',
-    price: 'Cotización'
+    name: 'Masaje en Pareja',
+    description: 'Comparte un momento especial de relajación y bienestar junto a tu persona favorita. Incluye copa de vino.',
+    duration: '60 min',
+    price: 'Desde $1,100'
   },
   {
-    name: 'Implantes Dentales',
-    description: 'Reemplazo permanente de dientes perdidos con implantes de alta calidad que lucen y funcionan como dientes naturales.',
-    duration: '120 min',
-    price: 'Cotización'
-  },
-  {
-    name: 'Odontología Pediátrica',
-    description: 'Atención dental especializada para niños, enfocada en la prevención y tratamiento en un ambiente amigable.',
+    name: 'Facial Hidratante',
+    description: 'Limpieza y cuidado profundo para tu rostro, dejándolo fresco, luminoso y rejuvenecido.',
     duration: '45 min',
-    price: 'Desde $700'
+    price: 'Desde $450'
+  },
+  {
+    name: 'Sesión de Sauna',
+    description: 'Purifica tu cuerpo y relaja tus músculos en nuestro sauna antes o después de tu masaje.',
+    duration: '30 min',
+    price: 'Desde $200'
+  },
+  {
+    name: 'Masaje de Tejido Profundo',
+    description: 'Ideal para aliviar tensiones musculares y nudos, enfocado en las capas más profundas del tejido.',
+    duration: '60 min',
+    price: 'Desde $750'
+  },
+  {
+    name: 'Exfoliación Corporal',
+    description: 'Renueva tu piel eliminando células muertas para una textura suave y sedosa.',
+    duration: '40 min',
+    price: 'Desde $500'
   }
 ];
 
 export const testimonials = [
   {
-    name: 'Laura M.',
-    text: 'Excelente servicio, el blanqueamiento quedó perfecto y la atención del personal es de primera.',
+    name: 'Lalin Pinguin',
+    text: 'Las masajistas son muy amables, profesionales y atentas en todo momento. Excelente servicio.',
     rating: 5
   },
   {
-    name: 'Carlos R.',
-    text: 'Me quitaron el miedo al dentista. Muy profesionales y cuidadosos con el tratamiento de ortodoncia.',
+    name: 'Isabel Torres',
+    text: 'Experiencia 10/10. El trato super amable de parte del personal, muy puntuales y te brindan toda la atención posible.',
     rating: 5
   },
   {
-    name: 'Ana S.',
-    text: 'Llevé a mi hijo y lo trataron con muchísima paciencia. Totalmente recomendados para odontología pediátrica.',
+    name: 'Sara Del Villar',
+    text: 'El masaje nos encantó: fue relajante, delicado y justo lo que necesitábamos para desconectar.',
     rating: 5
   }
 ];
 
 export const appointments = [
-  { service: 'Limpieza Dental Profiláctica', date: 'Sábado 8 de junio', time: '12:30 p.m.', status: 'Confirmada' },
-  { service: 'Consulta de Ortodoncia', date: 'Miércoles 19 de junio', time: '5:00 p.m.', status: 'Pendiente de confirmar' }
+  { service: 'Masaje Relajante', date: 'Sábado 8 de junio', time: '12:30 p.m.', status: 'Confirmada' },
+  { service: 'Facial Hidratante', date: 'Miércoles 19 de junio', time: '5:00 p.m.', status: 'Pendiente de confirmar' }
 ];

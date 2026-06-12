@@ -29,7 +29,7 @@ export default function BusinessContact({horario}) {
             <div>
             <h4 className="text-lg font-semibold text-secondary-900">Teléfono</h4>
             <p className="mt-1 text-slate-600">
-                <a href="tel:+525558019251" className="hover:text-primary-600 transition-colors font-medium">{business?.phone}</a>
+                <a href="tel:+525545426063" className="hover:text-primary-600 transition-colors font-medium">{business?.phone || '55 4542 6063'}</a>
             </p>
             </div>
         </div>
@@ -41,16 +41,14 @@ export default function BusinessContact({horario}) {
             <div>
             <h4 className="text-lg font-semibold text-secondary-900">Horario</h4>
             <div className="mt-1 text-slate-600 space-y-1">
-                <p className="flex justify-between w-48"><span>Lun - Vie:</span> <span>10:00 - 19:00</span></p>
-                <p className="flex justify-between w-48"><span>Sábado:</span> <span>10:00 - 14:00</span></p>
-                <p className="flex justify-between w-48 text-slate-400"><span>Domingo:</span> <span>Cerrado</span></p>
+                <p className="flex justify-between w-48"><span>Lun - Dom:</span> <span>06:00 - 20:00</span></p>
             </div>
             </div>
         </div>
         
         <div className="pt-6">
             <a 
-            href="https://maps.google.com/?q=Dental+Lanz+Calz+Acoxpa+566-int+2" 
+            href="https://maps.google.com/?q=AMM-arte+Spa+Calz.+del+Hueso+160"
             target="_blank" 
             rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-2 px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-neutral-800 hover:bg-secondary-800 transition-colors shadow-md"
@@ -63,16 +61,15 @@ export default function BusinessContact({horario}) {
 
         {/* Map Placeholder */}
         <div className="w-full h-[500px] bg-slate-200 rounded-2xl overflow-hidden shadow-inner relative border border-slate-200">
-        {/* In a real app, you would use an iframe from Google Maps here */}
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.5503893663673!2d-99.1362705!3d19.2923583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce01ab7b57bb99%3A0x6a0c5c3b9b4a44b!2sCalz%20Acoxpa%20566%2C%20Coapa%2C%20Prado%20Coapa%2C%20Tlalpan%2C%2014357%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.331215440656!2d-99.13531128456886!3d19.300632586958444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce019688bc83f3%3A0xc34a1a5b822d08a0!2sAMM-arte%20Spa!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
             allowFullScreen={true} 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            title="Mapa de Dental Lanz en Coyoacán"
+            title="Mapa de AMM-arte Spa en Coyoacán"
         ></iframe>
         </div>
     </div>

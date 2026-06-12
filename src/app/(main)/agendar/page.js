@@ -4,7 +4,7 @@ import LoginPrompt from '@/components/ReUsableComponents/LoginPrompt';
 
 export const metadata = {
   title: 'Agendar cita',
-  description: 'Agenda tu próxima cita en Dental Lanz para brackets, endodoncia, consulta, limpieza o revision.'
+  description: 'Agenda tu próxima cita en AMM-arte Spa para brackets, endodoncia, consulta, limpieza o revision.'
 };
 
 export default async function AgendarPage({ searchParams }) {
