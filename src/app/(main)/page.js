@@ -1,92 +1,131 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Star, WandSparkles, MapPin, Phone, CalendarCheck } from 'lucide-react';
+import { ArrowRight, Scissors, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { SectionHeading } from '@/components/section-heading';
-import { testimonials } from '@/lib/content';
 import BusinessContact from '@/components/ReUsableComponents/BusinessContact';
 import { useServices } from '@/hooks/useServices';
 import Reviews from '@/components/ReUsableComponents/Reviews';
 
-const galleryImages = [
-  {
-    src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Paciente sonriendo en clínica dental'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Instrumentos dentales de alta tecnología'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop',
-    alt: 'Odontólogo revisando radiografías'
-  }
-];
-
 export default function HomePage() {
   const { services } = useServices();
+
+  // Mapping services from content.js to display in the hero section list
+  const heroServicesList = [
+    "HAIRCUTS",
+    "BEARD TRIMS",
+    "SHAVES",
+    "LINE UPS",
+    "STYLING"
+  ];
+
   return (
     <>
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.1),_transparent_36%),linear-gradient(135deg,_#f8fafc_0%,_#e2e8f0_48%,_#f1f5f9_100%)]" />
-        <div className="container grid min-h-[680px] items-center gap-12 py-14 md:grid-cols-[1fr_0.9fr] md:py-20">
-          <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 5.0 en Google
-            </div>
-            <h1 className="text-balance text-5xl font-black tracking-tight md:text-7xl">
-              Tu sonrisa en manos expertas
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Atención odontológica integral y especializada en CDMX. Nos enfocamos en tu comodidad, brindando tratamientos de alta calidad con un trato humano y profesional.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg"><Link href="/agendar">Agendar Cita</Link></Button>
-              <Button asChild size="lg" variant="outline"><Link href="/servicios">Ver Tratamientos</Link></Button>
-            </div>
-              <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Trato Profesional</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Alta Calidad</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Sin Dolor</span>
-                </div>
-              </div>
+      <section className="relative overflow-hidden bg-background min-h-[90vh] flex items-center justify-center pt-10">
+        {/* Massive Background Text */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center overflow-hidden pointer-events-none opacity-90 select-none">
+          <h1 className="text-[25vw] font-anton text-[#ece7df] leading-none whitespace-nowrap">
+            FADE
+          </h1>
+        </div>
+
+        {/* Central Character Image */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-10 w-[800px] h-[800px] max-w-[100vw] pointer-events-none">
+          {/* Using a placeholder image that fits the theme */}
+          <div className="relative w-full h-full">
+             <Image
+                src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop"
+                alt="Barber"
+                fill
+                className="object-cover object-top drop-shadow-2xl brightness-90 contrast-125 [mask-image:linear-gradient(to_bottom,black_60%,transparent_100%)]"
+                priority
+             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative col-span-2 h-80 overflow-hidden rounded-[2.5rem] shadow-glow md:h-96">
-              <Image src={galleryImages[0].src} alt={galleryImages[0].alt} fill priority sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+        </div>
+
+        {/* Floating Text: STAY SHARP */}
+        <div className="absolute top-1/3 left-10 md:left-32 z-20 transform -rotate-12">
+            <span className="font-caveat text-7xl md:text-9xl text-primary font-bold drop-shadow-lg">Stay</span>
+            <br />
+            <span className="font-caveat text-8xl md:text-[10rem] text-primary font-bold ml-10 drop-shadow-lg leading-7">Sharp</span>
+        </div>
+
+        {/* Top left corner info */}
+        <div className="absolute top-8 left-8 z-20 text-xs font-bold tracking-widest text-muted-foreground uppercase hidden md:block">
+            <p>ESTD</p>
+            <p>2020</p>
+        </div>
+
+        {/* Top right corner info */}
+        <div className="absolute top-8 right-8 z-20 text-xs text-right font-bold tracking-widest text-muted-foreground uppercase hidden md:block">
+            <p>CDMX</p>
+            <p>MEX</p>
+        </div>
+
+        {/* Left column details */}
+        <div className="absolute bottom-32 left-8 md:left-20 z-20 hidden lg:flex flex-col gap-8 max-w-[200px]">
+            <div>
+                <p className="font-bold text-sm tracking-widest uppercase">Real Cuts.</p>
+                <p className="font-bold text-sm tracking-widest uppercase">Real People.</p>
             </div>
-            {galleryImages.slice(1).map((image) => (
-              <div key={image.src} className="relative h-48 overflow-hidden rounded-[2rem] shadow-sm">
-                <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 22vw, 50vw" className="object-cover" />
-              </div>
-            ))}
-          </div>
+
+            <div className="border border-border p-4 rounded-full w-24 h-24 flex items-center justify-center text-center text-xs font-bold tracking-widest uppercase">
+                Walk-ins<br/>Welcome
+            </div>
+        </div>
+
+        {/* Right column details */}
+        <div className="absolute bottom-32 right-8 md:right-20 z-20 hidden md:flex flex-col gap-16 items-end">
+            <div className="text-right">
+                <p className="text-primary font-bold text-sm tracking-widest mb-4 uppercase">Services</p>
+                <ul className="flex flex-col gap-2 font-bold tracking-widest text-sm text-foreground/80">
+                    {heroServicesList.map((srv, idx) => (
+                        <li key={idx}>{srv}</li>
+                    ))}
+                </ul>
+            </div>
+
+            <Button asChild size="lg" className="rounded-none border border-primary bg-transparent hover:bg-primary text-foreground hover:text-primary-foreground font-bold tracking-widest h-14 px-8 uppercase group transition-all">
+                <Link href="/agendar" className="flex items-center gap-4">
+                    Book your cut <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+            </Button>
+
+            <div className="text-right mt-10">
+                <p className="text-primary font-bold text-sm tracking-widest mb-2 uppercase">Open Daily</p>
+                <p className="font-anton text-4xl mb-1">9AM - 9PM</p>
+                <p className="text-xs font-bold tracking-widest text-muted-foreground uppercase">Calz. del Hueso 503</p>
+            </div>
         </div>
       </section>
 
-      <section className="section-padding bg-white" id="servicios-destacados">
+      {/* Main Call to action for mobile */}
+      <section className="md:hidden py-10 px-6 flex flex-col gap-6 items-center border-t border-border bg-secondary/30">
+          <Button asChild size="lg" className="w-full rounded-none border border-primary bg-primary text-primary-foreground font-bold tracking-widest h-14 uppercase">
+                <Link href="/agendar">Book your cut</Link>
+          </Button>
+          <div className="text-center w-full">
+                <p className="text-primary font-bold text-sm tracking-widest mb-2 uppercase">Open Daily</p>
+                <p className="font-anton text-3xl mb-1">9AM - 9PM</p>
+                <p className="text-xs font-bold tracking-widest text-muted-foreground uppercase">Calz. del Hueso 503</p>
+            </div>
+      </section>
+
+      <section className="section-padding bg-background border-t border-border" id="servicios">
         <div className="container">
-          <SectionHeading eyebrow="Nuestros Servicios" title="Tratamientos de Primer Nivel" description="Ofrecemos lo más indicado para cada caso individualizando tu tratamiento para garantizar los mejores resultados." centered />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {services.slice(0, 3).map((service) => (
-              <Card key={service.name} className="border-none bg-background/80 shadow-sm transition-transform hover:-translate-y-1">
+          <SectionHeading eyebrow="Servicios" title="Nuestros Servicios" description="Cortes clásicos, modernos y arreglo de barba con la mejor técnica y productos premium." centered />
+          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {services.map((service) => (
+              <Card key={service.name} className="border border-border bg-secondary/50 transition-colors hover:border-primary/50">
                 <CardContent className="p-7">
-                  <WandSparkles className="mb-6 h-9 w-9 text-primary" aria-hidden="true" />
-                  <h3 className="text-xl font-black">{service.name}</h3>
-                  <p className="mt-3 min-h-24 text-sm leading-7 text-muted-foreground">{service.description}</p>
-                  <div className="mt-5 flex items-center justify-between text-sm font-bold text-primary">
-                    <span>{service.durationMin} mins</span>
-                    <span>${service.price.toFixed(2)}</span>
+                  <Scissors className="mb-6 h-8 w-8 text-primary" aria-hidden="true" />
+                  <h3 className="text-xl font-bold uppercase tracking-wide">{service.name}</h3>
+                  <p className="mt-3 min-h-20 text-sm leading-6 text-muted-foreground">{service.description}</p>
+                  <div className="mt-6 flex items-center justify-between border-t border-border pt-4 text-sm font-bold">
+                    <span className="flex items-center gap-2 text-muted-foreground"><Clock className="w-4 h-4"/> {service.duration}</span>
+                    <span className="text-primary text-lg">${service.price}</span>
                   </div>
                 </CardContent>
               </Card>
@@ -97,8 +136,10 @@ export default function HomePage() {
 
       <Reviews/>
 
-      <section className="p-5 bg-white" id="ubicacion">
-        <BusinessContact />
+      <section className="py-16 bg-background border-t border-border" id="ubicacion">
+        <div className="container">
+            <BusinessContact />
+        </div>
       </section>
     </>
   );

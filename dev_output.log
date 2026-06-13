@@ -1,30 +1,66 @@
 
-> salon-lazarini@0.1.0 dev
-> next dev
+> salon-lazarini@0.1.0 start
+> next start
 
    ▲ Next.js 15.5.18
    - Local:        http://localhost:3000
    - Network:      http://192.168.0.2:3000
-   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 1612ms
- ○ Compiling /servicios ...
- ✓ Compiled /servicios in 10.6s (879 modules)
- GET /servicios 200 in 12549ms
- ○ Compiling /agendar ...
- ✓ Compiled /agendar in 4s (2029 modules)
- ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
- GET /agendar 200 in 4875ms
- ○ Compiling / ...
- ✓ Compiled / in 1410ms (1490 modules)
- GET / 200 in 2133ms
- ✓ Compiled in 579ms (932 modules)
- ✓ Compiled in 308ms (932 modules)
- ⨯ ./node_modules/luxon/build/es6/luxon.mjs
-Error: ENOENT: no such file or directory, open '/app/node_modules/luxon/build/es6/luxon.mjs'
-
-Import trace for requested module:
-./node_modules/luxon/build/es6/luxon.mjs
-./src/app/agendar/AgendarClient.jsx
- ✓ Compiled in 379ms (918 modules)
+ ✓ Ready in 515ms
+Error [FirebaseError]: Firebase: Error (auth/invalid-api-key).
+    at q (.next/server/chunks/480.js:1:13547)
+    at r (.next/server/chunks/480.js:1:13595)
+    at e.instanceFactory (.next/server/chunks/480.js:1:64333)
+    at g.getOrInitializeService (.next/server/chunks/480.js:1:71046)
+    at g.initialize (.next/server/chunks/480.js:1:70428)
+    at <unknown> (.next/server/chunks/480.js:1:62377)
+    at aS (.next/server/chunks/480.js:1:62406)
+    at 32047 (.next/server/app/(main)/crear-cuenta/page.js:1:5341)
+    at c (.next/server/webpack-runtime.js:1:128)
+    at 93690 (.next/server/app/(main)/crear-cuenta/page.js:1:9641) {
+  code: 'auth/invalid-api-key',
+  customData: [Object]
+}
+ ⨯ unhandledRejection:  Error [FirebaseError]: Firebase: Error (auth/invalid-api-key).
+    at q (.next/server/chunks/480.js:1:13547)
+    at r (.next/server/chunks/480.js:1:13595)
+    at e.instanceFactory (.next/server/chunks/480.js:1:64333)
+    at g.getOrInitializeService (.next/server/chunks/480.js:1:71046)
+    at g.initialize (.next/server/chunks/480.js:1:70428)
+    at <unknown> (.next/server/chunks/480.js:1:62377)
+    at aS (.next/server/chunks/480.js:1:62406)
+    at 32047 (.next/server/app/(main)/crear-cuenta/page.js:1:5341)
+    at c (.next/server/webpack-runtime.js:1:128)
+    at 93690 (.next/server/app/(main)/crear-cuenta/page.js:1:9641) {
+  code: 'auth/invalid-api-key',
+  customData: [Object]
+}
+Error [FirebaseError]: Firebase: Error (auth/invalid-api-key).
+    at q (.next/server/chunks/480.js:1:13547)
+    at r (.next/server/chunks/480.js:1:13595)
+    at e.instanceFactory (.next/server/chunks/480.js:1:64333)
+    at g.getOrInitializeService (.next/server/chunks/480.js:1:71046)
+    at g.initialize (.next/server/chunks/480.js:1:70428)
+    at <unknown> (.next/server/chunks/480.js:1:62377)
+    at aS (.next/server/chunks/480.js:1:62406)
+    at 32047 (.next/server/app/(main)/iniciar-sesion/page.js:1:5659)
+    at c (.next/server/webpack-runtime.js:1:128)
+    at 94931 (.next/server/app/(main)/iniciar-sesion/page.js:2:8478) {
+  code: 'auth/invalid-api-key',
+  customData: [Object]
+}
+ ⨯ unhandledRejection:  Error [FirebaseError]: Firebase: Error (auth/invalid-api-key).
+    at q (.next/server/chunks/480.js:1:13547)
+    at r (.next/server/chunks/480.js:1:13595)
+    at e.instanceFactory (.next/server/chunks/480.js:1:64333)
+    at g.getOrInitializeService (.next/server/chunks/480.js:1:71046)
+    at g.initialize (.next/server/chunks/480.js:1:70428)
+    at <unknown> (.next/server/chunks/480.js:1:62377)
+    at aS (.next/server/chunks/480.js:1:62406)
+    at 32047 (.next/server/app/(main)/iniciar-sesion/page.js:1:5659)
+    at c (.next/server/webpack-runtime.js:1:128)
+    at 94931 (.next/server/app/(main)/iniciar-sesion/page.js:2:8478) {
+  code: 'auth/invalid-api-key',
+  customData: [Object]
+}

@@ -49,10 +49,11 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'ui-sans-serif', 'system-ui'],
-        serif: ['var(--font-playfair)', 'ui-serif', 'Georgia']
+        anton: ['var(--font-anton)', 'Impact', 'sans-serif'],
+        caveat: ['var(--font-caveat)', 'cursive']
       },
       boxShadow: {
-        glow: '0 24px 80px rgba(28, 100, 242, 0.18)'
+        glow: '0 24px 80px rgba(220, 38, 38, 0.18)'
       }
     }
   },

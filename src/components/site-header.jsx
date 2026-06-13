@@ -21,12 +21,12 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur-xl border-border">
       <div className="container flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio de Dental Lanz">
+        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio de Barbershop Martina">
           <span>
-            <span className="block text-lg font-black tracking-tight">Dental Lanz</span>
-            <span className="hidden text-xs text-muted-foreground sm:block">Odontología en CDMX</span>
+            <span className="block text-2xl font-anton tracking-widest uppercase">Barbershop Martina</span>
+            <span className="hidden text-xs text-muted-foreground sm:block uppercase tracking-widest">Premium Barbershop CDMX</span>
           </span>
         </Link>
 
@@ -68,7 +68,7 @@ export function SiteHeader() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-background border-b border-border shadow-lg p-4">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-background border-b border-border shadow-lg p-4 z-40">
           <nav className="flex flex-col gap-4">
             {token ? (
               navItems.map((item) => (
