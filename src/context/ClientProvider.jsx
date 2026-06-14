@@ -32,8 +32,8 @@ const ClientProvider = ({children}) => {
 
     function login(clientData, token) {
         setClient(clientData);
-        setToken(token);
-        localStorage.setItem("token", token);
+        setToken(`Bearer ${token}`);
+        localStorage.setItem("token", JSON.stringify(token));
         localStorage.setItem("client", JSON.stringify(clientData));
     }
     

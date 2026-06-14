@@ -44,7 +44,7 @@ export default function VerifyPhone({ phone, mode = "create" }) {
         const {data} = await axios.post(endpoint, payload);
 
         if (data.token) {
-          login(data.client || {}, JSON.stringify(data.token));
+          login(data.client || {}, data.token);
         }
 
         toast.success("Número verificado con éxito. Redirigiendo...");
