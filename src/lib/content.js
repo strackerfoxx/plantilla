@@ -1,61 +1,61 @@
 export const services = [
   {
-    name: 'Ortodoncia',
-    description: 'Tratamientos de ortodoncia para alinear y mejorar la estética de tus dientes con brackets tradicionales o invisibles.',
-    duration: '60 min',
+    name: 'Consulta General Veterinaria',
+    description: 'Revisión exhaustiva y diagnóstico preciso para mantener a tus mascotas sanas y felices.',
+    duration: '45 min',
     price: 'Cotización'
   },
   {
-    name: 'Blanqueamiento Dental',
-    description: 'Recupera el tono blanco y brillante de tus dientes con tratamientos seguros y efectivos.',
-    duration: '45 min',
-    price: 'Desde $1,200'
+    name: 'Vacunación y Desparasitación',
+    description: 'Protege a tu mascota contra las principales enfermedades con nuestros esquemas de vacunación y desparasitación.',
+    duration: '30 min',
+    price: 'Desde $400'
   },
   {
-    name: 'Limpieza Dental Profiláctica',
-    description: 'Eliminación de sarro, placa bacteriana y manchas superficiales para prevenir caries y enfermedades periodontales.',
-    duration: '40 min',
-    price: 'Desde $600'
+    name: 'Atención de Urgencias',
+    description: 'Servicio de urgencias disponible incluso de madrugada, garantizando la salud y bienestar de tu mascota cuando más lo necesita.',
+    duration: 'Variable',
+    price: 'Cotización'
   },
   {
-    name: 'Endodoncia',
-    description: 'Tratamiento de conductos para salvar piezas dentales dañadas o infectadas, eliminando el dolor.',
+    name: 'Cirugías Especializadas',
+    description: 'Procedimientos quirúrgicos con tecnología de punta y anestesia segura, monitoreando constantemente los signos vitales.',
     duration: '90 min',
     price: 'Cotización'
   },
   {
-    name: 'Implantes Dentales',
-    description: 'Reemplazo permanente de dientes perdidos con implantes de alta calidad que lucen y funcionan como dientes naturales.',
-    duration: '120 min',
+    name: 'Hospitalización y Cuidados Intensivos',
+    description: 'Área de hospitalización equipada para brindar cuidados continuos a pacientes críticos y post-operados.',
+    duration: 'Variable',
     price: 'Cotización'
   },
   {
-    name: 'Odontología Pediátrica',
-    description: 'Atención dental especializada para niños, enfocada en la prevención y tratamiento en un ambiente amigable.',
+    name: 'Laboratorio Clínico y Rayos X',
+    description: 'Análisis de sangre, orina y estudios de imagenología para diagnósticos rápidos y precisos.',
     duration: '45 min',
-    price: 'Desde $700'
+    price: 'Desde $600'
   }
 ];
 
 export const testimonials = [
   {
-    name: 'Laura M.',
-    text: 'Excelente servicio, el blanqueamiento quedó perfecto y la atención del personal es de primera.',
+    name: 'Arya Jacobs',
+    text: 'Llevamos años llevando a nuestras mascotas con el doctor Enrique, quien es, sin lugar a duda, el más extraordinario médico veterinario que hemos conocido. Su amor y entrega por los animales no puede describirse, la manera dulce y cariñosa con la que los trata y los cuida es más que suficiente para recomendarlo ampliamente.',
     rating: 5
   },
   {
-    name: 'Carlos R.',
-    text: 'Me quitaron el miedo al dentista. Muy profesionales y cuidadosos con el tratamiento de ortodoncia.',
+    name: 'leyla mariana',
+    text: 'Mi experiencia ha sido solo con vacunas desde que rescaté a mis dos gatitas. El trato y la atención siempre es buena. Al día de hoy mis gatitas están sanas :)',
     rating: 5
   },
   {
-    name: 'Ana S.',
-    text: 'Llevé a mi hijo y lo trataron con muchísima paciencia. Totalmente recomendados para odontología pediátrica.',
+    name: 'Rebecca Alvarado',
+    text: 'Excelente atención, salvaron a mi gato. En otra clínica más cercana a mi domicilio, me cobraron muchísimo y no me decían qué tenía. En cambio, aquí el doctor ni siquiera necesitó los estudios porque encontró el problema en 5 min. Operaron de urgencia a mi gato y ahora está perfectamente bien. Lo recomiendo ampliamente.',
     rating: 5
   }
 ];
 
 export const appointments = [
-  { service: 'Limpieza Dental Profiláctica', date: 'Sábado 8 de junio', time: '12:30 p.m.', status: 'Confirmada' },
-  { service: 'Consulta de Ortodoncia', date: 'Miércoles 19 de junio', time: '5:00 p.m.', status: 'Pendiente de confirmar' }
+  { service: 'Consulta General Veterinaria', date: 'Sábado 8 de junio', time: '12:30 p.m.', status: 'Confirmada' },
+  { service: 'Vacunación y Desparasitación', date: 'Miércoles 19 de junio', time: '5:00 p.m.', status: 'Pendiente de confirmar' }
 ];

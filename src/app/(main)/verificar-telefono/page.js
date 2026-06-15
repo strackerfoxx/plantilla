@@ -3,7 +3,7 @@ import VerifyPhone from '@/components/ReUsableComponents/VerifyPhone';
 
 export const metadata = {
   title: 'Verificación de teléfono',
-  description: 'Verifica tu número de teléfono para acceder a tus citas en Dental Lanz.'
+  description: 'Verifica tu número de teléfono para acceder a tus citas en Centro Veterinario PAWS.'
 };
 
 export default async function VerificarTelefonoPage({ searchParams }) {

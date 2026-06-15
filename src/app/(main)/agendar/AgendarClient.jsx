@@ -307,7 +307,7 @@ export default function AgendarClient({ id }) {
             Agendar Cita
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Completa el formulario y asegura tu espacio con nosotros en Dental Lanz.
+            Completa el formulario y asegura tu espacio con nosotros en Centro Veterinario PAWS.
           </p>
         </div>
 

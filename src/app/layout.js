@@ -11,27 +11,27 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 
 export const metadata = {
-  metadataBase: new URL('https://dentallanz.netlify.app'),
+  metadataBase: new URL('https://veterinariopaws.com'),
   title: {
-    default: 'Dental Lanz | Odontología Integral en CDMX',
-    template: '%s | Dental Lanz'
+    default: 'Centro Veterinario PAWS | Cuidado integral para tu mascota en CDMX',
+    template: '%s | Centro Veterinario PAWS'
   },
   description:
-    'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales. Agenda tu cita hoy. Calificación 5.0 en Google.',
+    'Clínica veterinaria en Coapa, CDMX. Urgencias, consultas, vacunas, y cirugías para perros y gatos. Agenda tu cita hoy. Calificación 4.7 en Google.',
   keywords: [
-    'Dental Lanz',
-    'clínica dental CDMX',
-    'dentista Prado Coapa',
-    'ortodoncia CDMX',
-    'blanqueamiento dental',
-    'odontología integral'
+    'Centro Veterinario PAWS',
+    'clínica veterinaria CDMX',
+    'veterinario Coapa',
+    'urgencias veterinarias',
+    'vacunas perros gatos',
+    'atención veterinaria integral'
   ],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Dental Lanz | Odontología Integral en CDMX',
-    description: 'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales.',
-    url: 'https://dentallanz.netlify.app',
-    siteName: 'Dental Lanz',
+    title: 'Centro Veterinario PAWS | Cuidado integral para tu mascota en CDMX',
+    description: 'Clínica veterinaria en Coapa, CDMX. Especialistas en salud y bienestar animal, urgencias y medicina preventiva.',
+    url: 'https://veterinariopaws.com',
+    siteName: 'Centro Veterinario PAWS',
     locale: 'es_MX',
     type: 'website'
   }
@@ -40,39 +40,33 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const businessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Dentist',
-    name: 'Dental Lanz',
-    image: 'https://dentallanz.netlify.app/og-image.jpg',
-    telephone: '+52 55 5801 9251',
+    '@type': 'VeterinaryCare',
+    name: 'Centro Veterinario PAWS',
+    image: 'https://veterinariopaws.com/og-image.jpg',
+    telephone: '+52 55 6550 3655',
     priceRange: '$$',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '7'
+      ratingValue: '4.7',
+      reviewCount: '621'
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Calz Acoxpa 566-int 2, Coapa, Prado Coapa',
-      addressLocality: 'Tlalpan',
+      streetAddress: 'Dentro de fuentes plaza, Calz. del Hueso 160-local 5 A, Coapa, Ex-Hacienda Coapa',
+      addressLocality: 'Coyoacán',
       addressRegion: 'Ciudad de México',
-      postalCode: '14357',
+      postalCode: '04980',
       addressCountry: 'MX'
     },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         opens: '10:00',
         closes: '19:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday'],
-        opens: '10:00',
-        closes: '14:00'
       }
     ],
-    url: 'https://dentallanz.netlify.app'
+    url: 'https://veterinariopaws.com'
   };
 
   return (
