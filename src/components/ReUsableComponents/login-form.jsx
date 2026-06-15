@@ -9,6 +9,7 @@ import axios from 'axios';
 
 import { auth } from "@/lib/firebase";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { getFirebaseErrorMessage } from '@/lib/firebase-errors';
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -58,12 +59,11 @@ export function LoginForm() {
       setTimeout(() => {
         router.push(`/verificar-telefono?phone=${encodeURIComponent(fullPhone)}`);
       }, 1000);
-    } catch (error) {
-      toast.error('Error al procesar la solicitud');
-    } finally {
       setPhone('');
+    } catch (error) {
+      setValidating(false);
+      toast.error(getFirebaseErrorMessage(error));
     }
-
   }
 
   async function sendOTP() {
@@ -79,6 +79,7 @@ export function LoginForm() {
 
     } catch (error) {
       console.error("Error sending OTP:", error);
+      throw error;
     }
   }
 

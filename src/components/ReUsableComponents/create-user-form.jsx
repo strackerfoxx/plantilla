@@ -14,6 +14,7 @@ import { useBusiness } from '@/hooks/useBusiness';
 import PhoneInput, { countryCodes, getFullPhone, isValidPhone } from '@/components/ReUsableComponents/PhoneInput';
 import { auth } from '@/lib/firebase';
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
+import { getFirebaseErrorMessage } from '@/lib/firebase-errors';
 
 export function AuthForm() {
   const [loading, setLoading] = useState(false);
@@ -68,9 +69,13 @@ export function AuthForm() {
       }, 2000);
 
     } catch (error) {
-      error.response.status === 409 ? toast.error("el usuario ya existe") : toast.error('Error al procesar la solicitud');
+      setLoading(false);
+      if (error?.response?.status === 409) {
+        toast.error("El usuario ya existe");
+      } else {
+        toast.error(getFirebaseErrorMessage(error));
+      }
     }
-
   }
 
   async function sendOTP() {
@@ -84,6 +89,7 @@ export function AuthForm() {
       setConfirmationResult(confirmationResult);
     } catch (error) {
       console.error("Error sending OTP:", error);
+      throw error;
     }
   }
 
