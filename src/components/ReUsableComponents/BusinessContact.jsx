@@ -63,7 +63,7 @@ export default function BusinessContact({horario}) {
         {/* Map Placeholder */}
         <div className="w-full h-[500px] bg-slate-200 rounded-2xl overflow-hidden shadow-inner relative border border-slate-200">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.5503893663673!2d-99.1362705!3d19.2923583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce01ab7b57bb99%3A0x6a0c5c3b9b4a44b!2sCalz%20Acoxpa%20566%2C%20Coapa%2C%20Prado%20Coapa%2C%20Tlalpan%2C%2014357%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses!2smx!4v1700000000000!5m2!1ses!2smx"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3764.5503893663673!2d-99.1235198!3d19.3009572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0204bf23508f%3A0xa926c4897f26fdb7!2sCentro%20Veterinario%20PAWS!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
             width="100%" 
             height="100%" 
             style={{ border: 0 }} 
