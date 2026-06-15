@@ -2,21 +2,21 @@ import { Star, Quote } from "lucide-react";
 
 const reviews = [
   {
-    name: "Tere Tlahuiz",
-    date: "Hace un año",
-    text: "Tomé mi tratamiento de ortodoncia hace algunos años, además de otros procedimientos, con el Doctor Lanz y quedé encantada con los resultados!!! Me agradó desde el instante en que brinda toda la información detallada...",
+    name: "Bella",
+    date: "Hace 3 meses",
+    text: "LA MEJOOOR clínica del mundo... Desde la primera sesión me sentí en buenas manos. El personal es muy profesional, atento y explica todo con claridad.",
     rating: 5,
   },
   {
-    name: "Elizabeth Vázquez",
-    date: "Hace un año",
-    text: "Desde el primer momento, el Dr. Lanz me brindó una atención excepcional. Su amabilidad y profesionalismo me hicieron sentir cómoda durante todo el tratamiento. Explicó cada paso del procedimiento de forma clara...",
+    name: "Christian Hernandez",
+    date: "Hace 3 meses",
+    text: "Super recomendado!! La atención y el trato único, buenos precios e increíble para cualquier tipo de lesión o tensión en cualquier zona <3",
     rating: 5,
   },
   {
-    name: "Daniela Tlahuiz",
+    name: "Vázquez Amaya Andrea",
     date: "Hace un año",
-    text: "El Dr explica de manera profesional cada tratamiento; de igual manera te ofrece lo más indicado para cada caso individualizando que desde mi punto de vista eso es algo primordial. En general te hace la consulta amena.",
+    text: "Son muy atentos en esta clínica y está muy completo los servicios que ofrecen. Estoy muy satisfecha con el servicio además de que sus precios son acorde con lo que ofrecen",
     rating: 5,
   },
 ];
@@ -40,14 +40,14 @@ export default function Reviews() {
           </div>
           <div className="flex flex-col items-start md:items-end bg-white p-4 rounded-xl shadow-sm border border-slate-100">
             <div className="flex items-center gap-2">
-              <span className="text-4xl font-bold text-secondary-900">5.0</span>
+              <span className="text-4xl font-bold text-secondary-900">4.9</span>
               <div className="flex text-yellow-400">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-current" />
                 ))}
               </div>
             </div>
-            <p className="text-sm font-medium text-slate-500 mt-1">Basado en 7 opiniones de Google</p>
+            <p className="text-sm font-medium text-slate-500 mt-1">Basado en 31 opiniones de Google</p>
           </div>
         </div>
 

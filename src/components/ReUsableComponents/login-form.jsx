@@ -109,7 +109,7 @@ export function LoginForm() {
               <Button disabled={validating} type="submit" size="lg" className="w-full">Iniciar sesión</Button>
             </form>
             <p className="mt-6 text-center text-sm text-muted-foreground">
-              ¿Primera vez en Dental Lanz?
+              ¿Primera vez en Gut Klinik Fisioterapia?
               <Link href={'/crear-cuenta'} className="font-bold text-primary hover:underline">
                 Crea tu cuenta
               </Link>

@@ -34,13 +34,13 @@ export default function HomePage() {
         <div className="container grid min-h-[680px] items-center gap-12 py-14 md:grid-cols-[1fr_0.9fr] md:py-20">
           <div>
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 5.0 en Google
+              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 4.9 en Google
             </div>
             <h1 className="text-balance text-5xl font-black tracking-tight md:text-7xl">
-              Tu sonrisa en manos expertas
+              Gut Klinik Fisioterapia
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Atención odontológica integral y especializada en CDMX. Nos enfocamos en tu comodidad, brindando tratamientos de alta calidad con un trato humano y profesional.
+              Clínica de fisioterapia enfocada en el tratamiento de lesiones, rehabilitación y entrenamiento funcional. Nos enfocamos en tu bienestar brindando atención de alta calidad con un trato profesional.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg"><Link href="/agendar">Agendar Cita</Link></Button>

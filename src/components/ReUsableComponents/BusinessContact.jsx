@@ -17,7 +17,7 @@ export default function BusinessContact({horario}) {
             <div>
             <h4 className="text-lg font-semibold text-secondary-900">Ubicación</h4>
             <p className="mt-1 text-slate-600 leading-relaxed">
-                {business?.address}
+                {business?.address || 'Calz. del Hueso 160, Coapa, Ex-Hacienda Coapa, Coyoacán, 04980 Ciudad de México, CDMX'}
             </p>
             </div>
         </div>
@@ -29,7 +29,7 @@ export default function BusinessContact({horario}) {
             <div>
             <h4 className="text-lg font-semibold text-secondary-900">Teléfono</h4>
             <p className="mt-1 text-slate-600">
-                <a href="tel:+525558019251" className="hover:text-primary-600 transition-colors font-medium">{business?.phone}</a>
+                <a href="tel:+525574510690" className="hover:text-primary-600 transition-colors font-medium">{business?.phone || '55 7451 0690'}</a>
             </p>
             </div>
         </div>
@@ -41,7 +41,7 @@ export default function BusinessContact({horario}) {
             <div>
             <h4 className="text-lg font-semibold text-secondary-900">Horario</h4>
             <div className="mt-1 text-slate-600 space-y-1">
-                <p className="flex justify-between w-48"><span>Lun - Vie:</span> <span>10:00 - 19:00</span></p>
+                <p className="flex justify-between w-48"><span>Lun - Vie:</span> <span>10:00 - 20:00</span></p>
                 <p className="flex justify-between w-48"><span>Sábado:</span> <span>10:00 - 14:00</span></p>
                 <p className="flex justify-between w-48 text-slate-400"><span>Domingo:</span> <span>Cerrado</span></p>
             </div>
@@ -72,7 +72,7 @@ export default function BusinessContact({horario}) {
             allowFullScreen={true} 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"
-            title="Mapa de Dental Lanz en Coyoacán"
+            title="Mapa de Gut Klinik Fisioterapia en Coyoacán"
         ></iframe>
         </div>
     </div>
