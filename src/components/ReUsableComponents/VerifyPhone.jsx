@@ -12,6 +12,7 @@ import { useClient } from '@/hooks/useClient';
 import { useBusiness } from '@/hooks/useBusiness';
 
 import { useState } from 'react';
+import { getFirebaseErrorMessage } from '@/lib/firebase-errors';
 
 
 export default function VerifyPhone({ phone, mode = "create" }) {
@@ -30,12 +31,12 @@ export default function VerifyPhone({ phone, mode = "create" }) {
         ? `${process.env.NEXT_PUBLIC_API_URL}/client/login`
         : `${process.env.NEXT_PUBLIC_API_URL}/client/confirm-client`;
 
+      setValidating(true);
+
       try {
         const result = await confirmationResult.confirm(code);
         const user = result.user;
         const idToken = await user.getIdToken();
-
-        setValidating(true);
 
         const payload = isLogin
           ? { idToken, businessId: business?.id }
@@ -52,8 +53,9 @@ export default function VerifyPhone({ phone, mode = "create" }) {
           router.push("/");
         }, 1000);
       } catch (error) {
+        setValidating(false);
         console.error(error);
-        toast.error("Código incorrecto o expirado.");
+        toast.error(getFirebaseErrorMessage(error));
       }
     }
   return (
@@ -71,7 +73,7 @@ export default function VerifyPhone({ phone, mode = "create" }) {
                 <Label htmlFor="code">Código de verificación</Label>
                 <InputOTPControlled id="code" name="code" required code={code} setCode={setCode} />
               </div>
-              <Button disabled={validating} asChild size="lg" className="w-full">Verificar y continuar</Button>
+              <Button disabled={validating} type="submit" size="lg" className="w-full">Verificar y continuar</Button>
             </form>
             <p className="mt-6 text-center text-sm text-muted-foreground">¿No recibiste el código? <button className="font-bold text-primary">Reenviar código</button></p>
           </CardContent>
