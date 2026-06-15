@@ -21,43 +21,53 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-xl">
       <div className="container flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio de Dental Lanz">
+        {/* Navigation - Left aligned as in reference image */}
+        <div className="hidden md:flex flex-1 items-center gap-7">
+          <Link href="/" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
+            Inicio
+          </Link>
+          <Link href="/servicios" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
+            Servicios
+          </Link>
+          <Link href="#ubicacion" className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
+            Contacto
+          </Link>
+        </div>
+
+        {/* Brand/Logo - Center aligned */}
+        <Link href="/" className="flex items-center justify-center flex-1 gap-2" aria-label="Ir al inicio de AMM-arte Spa">
           <span>
-            <span className="block text-lg font-black tracking-tight">Dental Lanz</span>
-            <span className="hidden text-xs text-muted-foreground sm:block">Odontología en CDMX</span>
+            <span className="block text-2xl font-black tracking-widest uppercase font-serif text-foreground">AMM-ARTE SPA</span>
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        {token ? (
-          <nav className="hidden items-center gap-7 md:flex" aria-label="Navegación principal">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
-                {item.label}
-              </Link>
-            ))}
-            <Button variant="ghost" onClick={logout} className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
-              Cerrar sesión
-            </Button>
-          </nav>
-        ) : (
-          <div className="hidden md:flex items-center gap-2">
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
-              <Link href="/servicios">Servicios</Link>
-            </Button>
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
-              <Link href="/agendar">Agendar</Link>
-            </Button>
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
-              <Link href="/iniciar-sesion">Ingresar</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/crear-cuenta">Crear cuenta</Link>
-            </Button>
-          </div>
-        )}
+        {/* Actions - Right aligned */}
+        <div className="hidden md:flex flex-1 items-center justify-end gap-2">
+          {token ? (
+            <>
+              <Button asChild variant="ghost" className="hidden sm:inline-flex">
+                <Link href="/mis-citas">Mis citas</Link>
+              </Button>
+              <Button asChild variant="ghost" className="hidden sm:inline-flex">
+                <Link href="/agendar">Agendar</Link>
+              </Button>
+              <Button variant="ghost" onClick={logout} className="hidden sm:inline-flex text-muted-foreground hover:text-primary">
+                Cerrar sesión
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button asChild variant="ghost" className="hidden sm:inline-flex">
+                <Link href="/iniciar-sesion">Ingresar</Link>
+              </Button>
+            </>
+          )}
+          <Button asChild className="rounded-full px-6 bg-primary text-primary-foreground hover:bg-primary/90">
+            <Link href="/agendar">Agendar Cita</Link>
+          </Button>
+        </div>
 
         {/* Mobile Menu Button */}
         <button

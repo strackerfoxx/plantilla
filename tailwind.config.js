@@ -52,7 +52,7 @@ module.exports = {
         serif: ['var(--font-playfair)', 'ui-serif', 'Georgia']
       },
       boxShadow: {
-        glow: '0 24px 80px rgba(28, 100, 242, 0.18)'
+        glow: '0 24px 80px rgba(189, 140, 114, 0.18)' /* adjusted glow shadow to light brown tint */
       }
     }
   },

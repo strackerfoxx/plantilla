@@ -11,27 +11,27 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 
 export const metadata = {
-  metadataBase: new URL('https://dentallanz.netlify.app'),
+  metadataBase: new URL('https://ammartespa.com'),
   title: {
-    default: 'Dental Lanz | Odontología Integral en CDMX',
-    template: '%s | Dental Lanz'
+    default: 'AMM-arte Spa | Spa y Relajación en CDMX',
+    template: '%s | AMM-arte Spa'
   },
   description:
-    'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales. Agenda tu cita hoy. Calificación 5.0 en Google.',
+    'Spa en Coapa, CDMX. Especialistas en masajes relajantes, faciales y sauna. Agenda tu cita hoy. Calificación 4.6 en Google.',
   keywords: [
-    'Dental Lanz',
-    'clínica dental CDMX',
-    'dentista Prado Coapa',
-    'ortodoncia CDMX',
-    'blanqueamiento dental',
-    'odontología integral'
+    'AMM-arte Spa',
+    'spa CDMX',
+    'masajes Coapa',
+    'facial CDMX',
+    'sauna',
+    'relajación'
   ],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Dental Lanz | Odontología Integral en CDMX',
-    description: 'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales.',
-    url: 'https://dentallanz.netlify.app',
-    siteName: 'Dental Lanz',
+    title: 'AMM-arte Spa | Spa y Relajación en CDMX',
+    description: 'Spa en Coapa, CDMX. Especialistas en masajes relajantes, faciales y sauna.',
+    url: 'https://ammartespa.com',
+    siteName: 'AMM-arte Spa',
     locale: 'es_MX',
     type: 'website'
   }
@@ -40,39 +40,33 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const businessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Dentist',
-    name: 'Dental Lanz',
-    image: 'https://dentallanz.netlify.app/og-image.jpg',
-    telephone: '+52 55 5801 9251',
+    '@type': 'HealthAndBeautyBusiness',
+    name: 'AMM-arte Spa',
+    image: 'https://ammartespa.com/og-image.jpg',
+    telephone: '+52 55 4542 6063',
     priceRange: '$$',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '7'
+      ratingValue: '4.6',
+      reviewCount: '59'
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Calz Acoxpa 566-int 2, Coapa, Prado Coapa',
-      addressLocality: 'Tlalpan',
+      streetAddress: 'Fuentes Plaza, Calz. del Hueso 160-Local 3-C, Coapa, Ex-Hacienda Coapa',
+      addressLocality: 'Coyoacán',
       addressRegion: 'Ciudad de México',
-      postalCode: '14357',
+      postalCode: '04850',
       addressCountry: 'MX'
     },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '10:00',
-        closes: '19:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday'],
-        opens: '10:00',
-        closes: '14:00'
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '09:00',
+        closes: '20:00'
       }
     ],
-    url: 'https://dentallanz.netlify.app'
+    url: 'https://ammartespa.com'
   };
 
   return (

@@ -1,61 +1,61 @@
 export const services = [
   {
-    name: 'Ortodoncia',
-    description: 'Tratamientos de ortodoncia para alinear y mejorar la estética de tus dientes con brackets tradicionales o invisibles.',
+    name: 'Masaje Relajante',
+    description: 'Disfruta de una experiencia de relajación total para liberar tensiones y revitalizar tu cuerpo.',
     duration: '60 min',
-    price: 'Cotización'
-  },
-  {
-    name: 'Blanqueamiento Dental',
-    description: 'Recupera el tono blanco y brillante de tus dientes con tratamientos seguros y efectivos.',
-    duration: '45 min',
-    price: 'Desde $1,200'
-  },
-  {
-    name: 'Limpieza Dental Profiláctica',
-    description: 'Eliminación de sarro, placa bacteriana y manchas superficiales para prevenir caries y enfermedades periodontales.',
-    duration: '40 min',
     price: 'Desde $600'
   },
   {
-    name: 'Endodoncia',
-    description: 'Tratamiento de conductos para salvar piezas dentales dañadas o infectadas, eliminando el dolor.',
-    duration: '90 min',
-    price: 'Cotización'
-  },
-  {
-    name: 'Implantes Dentales',
-    description: 'Reemplazo permanente de dientes perdidos con implantes de alta calidad que lucen y funcionan como dientes naturales.',
-    duration: '120 min',
-    price: 'Cotización'
-  },
-  {
-    name: 'Odontología Pediátrica',
-    description: 'Atención dental especializada para niños, enfocada en la prevención y tratamiento en un ambiente amigable.',
+    name: 'Facial Profundo',
+    description: 'Cuidado facial personalizado para hidratar, limpiar y renovar la piel de tu rostro.',
     duration: '45 min',
-    price: 'Desde $700'
+    price: 'Desde $500'
+  },
+  {
+    name: 'Sesión de Sauna',
+    description: 'Purifica tu cuerpo y relaja tus músculos con nuestra sesión de sauna en un ambiente tranquilo.',
+    duration: '30 min',
+    price: 'Desde $300'
+  },
+  {
+    name: 'Masaje en Pareja',
+    description: 'Comparte un momento especial y relajante con esa persona especial en nuestras cabinas dobles.',
+    duration: '90 min',
+    price: 'Desde $1,200'
+  },
+  {
+    name: 'Exfoliación Corporal',
+    description: 'Elimina células muertas y promueve la regeneración de la piel para lucir radiante y suave.',
+    duration: '45 min',
+    price: 'Desde $450'
+  },
+  {
+    name: 'Paquete Día de Spa',
+    description: 'La experiencia completa que incluye masaje, facial y sauna para un día de relajación inigualable.',
+    duration: '180 min',
+    price: 'Desde $1,800'
   }
 ];
 
 export const testimonials = [
   {
-    name: 'Laura M.',
-    text: 'Excelente servicio, el blanqueamiento quedó perfecto y la atención del personal es de primera.',
+    name: 'Lalin Pinguin',
+    text: 'El sauna es reducido, pero funciona correctamente y cumple con su propósito, que es brindar un momento de relajación... Las masajistas son muy amables, profesionales y atentas en todo momento.',
     rating: 5
   },
   {
-    name: 'Carlos R.',
-    text: 'Me quitaron el miedo al dentista. Muy profesionales y cuidadosos con el tratamiento de ortodoncia.',
+    name: 'Isabel Torres',
+    text: 'Experiencia 10/10. El trato super amable de parte del personal, muy puntuales y te brindan toda la atención posible; en todo momento te tratan con respeto.',
     rating: 5
   },
   {
-    name: 'Ana S.',
-    text: 'Llevé a mi hijo y lo trataron con muchísima paciencia. Totalmente recomendados para odontología pediátrica.',
+    name: 'Sara Del Villar',
+    text: 'Mi experiencia en este SPA, junto con mi esposo, fue verdaderamente maravillosa... El masaje nos encantó: fue relajante, delicado y justo lo que necesitábamos para desconectar.',
     rating: 5
   }
 ];
 
 export const appointments = [
-  { service: 'Limpieza Dental Profiláctica', date: 'Sábado 8 de junio', time: '12:30 p.m.', status: 'Confirmada' },
-  { service: 'Consulta de Ortodoncia', date: 'Miércoles 19 de junio', time: '5:00 p.m.', status: 'Pendiente de confirmar' }
+  { service: 'Masaje Relajante', date: 'Sábado 8 de junio', time: '12:30 p.m.', status: 'Confirmada' },
+  { service: 'Facial Profundo', date: 'Miércoles 19 de junio', time: '5:00 p.m.', status: 'Pendiente de confirmar' }
 ];

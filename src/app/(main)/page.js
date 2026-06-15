@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Star, WandSparkles, MapPin, Phone, CalendarCheck } from 'lucide-react';
+import { ShieldCheck, Star, WandSparkles, Sparkles, HeartHandshake, BadgeCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { SectionHeading } from '@/components/section-heading';
@@ -12,16 +12,16 @@ import Reviews from '@/components/ReUsableComponents/Reviews';
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Paciente sonriendo en clínica dental'
+    src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop',
+    alt: 'Mujer relajándose con tratamiento de spa'
   },
   {
-    src: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Instrumentos dentales de alta tecnología'
+    src: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1074&auto=format&fit=crop',
+    alt: 'Ambiente tranquilo de spa'
   },
   {
-    src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop',
-    alt: 'Odontólogo revisando radiografías'
+    src: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=900&auto=format&fit=crop',
+    alt: 'Masaje relajante en spa'
   }
 ];
 
@@ -30,40 +30,54 @@ export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.1),_transparent_36%),linear-gradient(135deg,_#f8fafc_0%,_#e2e8f0_48%,_#f1f5f9_100%)]" />
-        <div className="container grid min-h-[680px] items-center gap-12 py-14 md:grid-cols-[1fr_0.9fr] md:py-20">
+        {/* Soft Spa Gradient Background */}
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-secondary/40 via-background to-background" />
+        <div className="container grid min-h-[680px] items-center gap-12 py-14 md:grid-cols-[1.1fr_0.9fr] md:py-20">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 5.0 en Google
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm backdrop-blur-md">
+              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 4.6 en Google
             </div>
-            <h1 className="text-balance text-5xl font-black tracking-tight md:text-7xl">
-              Tu sonrisa en manos expertas
+
+            <p className="uppercase tracking-widest text-sm font-bold text-muted-foreground mb-4">PURE BEAUTY, REAL RESULTS</p>
+            <h1 className="text-balance text-5xl font-black tracking-tight font-serif text-foreground md:text-7xl leading-[1.1]">
+              Natural Beauty, <br/>
+              Expert Care
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Atención odontológica integral y especializada en CDMX. Nos enfocamos en tu comodidad, brindando tratamientos de alta calidad con un trato humano y profesional.
+              Relajación total y atención personalizada en CDMX. Un oasis de paz para cuidar tu cuerpo y mente, en un espacio incluyente y guiado por mujeres.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg"><Link href="/agendar">Agendar Cita</Link></Button>
-              <Button asChild size="lg" variant="outline"><Link href="/servicios">Ver Tratamientos</Link></Button>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Button asChild size="lg" className="rounded-full px-8 bg-primary hover:bg-primary/90 text-white font-semibold">
+                <Link href="/agendar">Agendar Cita</Link>
+              </Button>
             </div>
-              <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Trato Profesional</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Alta Calidad</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Sin Dolor</span>
-                </div>
+
+            <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 pt-6 border-t border-border/50">
+              <div className="flex items-center gap-2">
+                <BadgeCheck className="w-5 h-5 text-primary" />
+                <span className="text-sm font-medium text-foreground">Experiencia 10/10</span>
               </div>
+              <div className="flex items-center gap-2">
+                <HeartHandshake className="w-5 h-5 text-primary" />
+                <span className="text-sm font-medium text-foreground">LGBTQ+ Amigable</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-primary" />
+                <span className="text-sm font-medium text-foreground">Mujer Empresaria</span>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-2 gap-4">
+
+          <div className="grid grid-cols-2 gap-4 relative">
             <div className="relative col-span-2 h-80 overflow-hidden rounded-[2.5rem] shadow-glow md:h-96">
               <Image src={galleryImages[0].src} alt={galleryImages[0].alt} fill priority sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+              {/* Floating Offer Badge inspired by reference */}
+              <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-lg border border-white max-w-[200px]">
+                <p className="font-bold text-lg text-foreground">40% offer</p>
+                <p className="text-xs text-muted-foreground mt-1">Selected Beauty Services</p>
+                <p className="text-[10px] text-muted-foreground mt-2 border-t pt-2">Trusted with 4.6 rating from happy clients</p>
+              </div>
             </div>
             {galleryImages.slice(1).map((image) => (
               <div key={image.src} className="relative h-48 overflow-hidden rounded-[2rem] shadow-sm">
@@ -76,21 +90,73 @@ export default function HomePage() {
 
       <section className="section-padding bg-white" id="servicios-destacados">
         <div className="container">
-          <SectionHeading eyebrow="Nuestros Servicios" title="Tratamientos de Primer Nivel" description="Ofrecemos lo más indicado para cada caso individualizando tu tratamiento para garantizar los mejores resultados." centered />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {services.slice(0, 3).map((service) => (
-              <Card key={service.name} className="border-none bg-background/80 shadow-sm transition-transform hover:-translate-y-1">
-                <CardContent className="p-7">
-                  <WandSparkles className="mb-6 h-9 w-9 text-primary" aria-hidden="true" />
-                  <h3 className="text-xl font-black">{service.name}</h3>
-                  <p className="mt-3 min-h-24 text-sm leading-7 text-muted-foreground">{service.description}</p>
-                  <div className="mt-5 flex items-center justify-between text-sm font-bold text-primary">
-                    <span>{service.durationMin} mins</span>
-                    <span>${service.price.toFixed(2)}</span>
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-black font-serif tracking-tight text-foreground mb-4">Our Beauty Services</h2>
+              <p className="text-muted-foreground">From skincare to relaxation, explore a wide range of treatments tailored to your needs.</p>
+            </div>
+            <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-white">
+              <Link href="/servicios">Ver todos los servicios</Link>
+            </Button>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+            {services.slice(0, 4).map((service) => (
+              <Card key={service.name} className="border border-border/50 bg-secondary/10 shadow-sm hover:shadow-md transition-all rounded-3xl overflow-hidden group">
+                <CardContent className="p-0 flex items-center">
+                  <div className="flex-1 p-6 sm:p-8">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl font-bold font-serif text-foreground group-hover:text-primary transition-colors">{service.name}</h3>
+                      <span className="text-sm font-bold text-foreground bg-white px-3 py-1 rounded-full shadow-sm">{typeof service.price === 'number' ? `$${service.price.toFixed(2)}` : service.price}</span>
+                    </div>
+                    <p className="text-sm leading-relaxed text-muted-foreground mb-6 max-w-[280px] line-clamp-2">{service.description}</p>
+                    <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1.5 rounded-full text-xs font-bold">
+                      <span>{service.durationMin || service.duration}</span>
+                    </div>
+                  </div>
+                  {/* Visual placeholder to mimic reference image cards */}
+                  <div className="hidden sm:block w-32 h-full bg-secondary/30 relative shrink-0">
+                    <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=400&auto=format&fit=crop')` }}></div>
                   </div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Expert Care Feature Section */}
+      <section className="section-padding relative overflow-hidden bg-muted/50">
+        <div className="container flex flex-col items-center">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-4xl md:text-5xl font-black font-serif tracking-tight text-foreground leading-tight">
+              Expert care with premium<br/> personalized beauty
+            </h2>
+          </div>
+
+          <div className="relative w-full max-w-5xl aspect-video md:aspect-[21/9] rounded-[3rem] overflow-hidden">
+             <Image src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1200&auto=format&fit=crop" alt="Spa ingredients and setup" fill className="object-cover" />
+
+             {/* Floating Info Cards */}
+             <div className="absolute top-1/4 left-[5%] md:left-[10%] bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg max-w-[220px]">
+               <div className="flex items-start gap-3">
+                 <BadgeCheck className="text-primary w-5 h-5 shrink-0 mt-0.5" />
+                 <div>
+                   <p className="font-bold text-sm text-foreground">Experienced Professionals</p>
+                   <p className="text-xs text-muted-foreground mt-1">Experienced professionals deliver trusted premium care.</p>
+                 </div>
+               </div>
+             </div>
+
+             <div className="absolute bottom-1/4 right-[5%] md:right-[10%] bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg max-w-[220px]">
+               <div className="flex items-start gap-3">
+                 <Sparkles className="text-primary w-5 h-5 shrink-0 mt-0.5" />
+                 <div>
+                   <p className="font-bold text-sm text-foreground">Hygienic Environment</p>
+                   <p className="text-xs text-muted-foreground mt-1">Clean, hygienic environment ensuring safety and comfort.</p>
+                 </div>
+               </div>
+             </div>
           </div>
         </div>
       </section>

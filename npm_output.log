@@ -1,0 +1,18 @@
+
+> salon-lazarini@0.1.0 dev
+> next dev
+
+   ▲ Next.js 15.5.18
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.0.2:3000
+
+ ✓ Starting...
+ ✓ Ready in 1529ms
+ ○ Compiling / ...
+ ✓ Compiled / in 10.1s (940 modules)
+ GET / 200 in 11937ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 695ms (926 modules)
+ GET /undefined/service/get-services-client?businessId=undefined 404 in 1262ms
+ GET /undefined/business/get-business-by-id-client?businessId=undefined 404 in 1260ms
+ GET / 200 in 87ms
