@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Montserrat, Playfair_Display } from 'next/font/google';
 
 import { BusinessProvider } from '@/context/BusinessProvider';
 import { ServicesProvider } from '@/context/ServicesProvider';
@@ -7,31 +7,31 @@ import { AppointmentsProvider } from '@/context/AppointmentsProvider';
 
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const montserrat = Montserrat({ subsets: ['latin'], variable: '--font-montserrat', display: 'swap' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 
 export const metadata = {
-  metadataBase: new URL('https://dentallanz.netlify.app'),
+  metadataBase: new URL('https://elsalon.netlify.app'),
   title: {
-    default: 'Dental Lanz | Odontología Integral en CDMX',
-    template: '%s | Dental Lanz'
+    default: 'el Salon | Centro de Estética en CDMX',
+    template: '%s | el Salon'
   },
   description:
-    'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales. Agenda tu cita hoy. Calificación 5.0 en Google.',
+    'Centro de estética "el Salon" en Coapa, CDMX. Especialistas en cortes de cabello, manicura, pedicura, microblading y servicios de spa. Agenda tu cita hoy. Calificación 5.0 en Google.',
   keywords: [
-    'Dental Lanz',
-    'clínica dental CDMX',
-    'dentista Prado Coapa',
-    'ortodoncia CDMX',
-    'blanqueamiento dental',
-    'odontología integral'
+    'el Salon',
+    'salón de belleza CDMX',
+    'estética Coapa',
+    'manicura CDMX',
+    'microblading',
+    'centro de estética'
   ],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Dental Lanz | Odontología Integral en CDMX',
-    description: 'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales.',
-    url: 'https://dentallanz.netlify.app',
-    siteName: 'Dental Lanz',
+    title: 'el Salon | Centro de Estética en CDMX',
+    description: 'Centro de estética "el Salon" en Coapa, CDMX. Especialistas en cortes de cabello, manicura, pedicura y microblading.',
+    url: 'https://elsalon.netlify.app',
+    siteName: 'el Salon',
     locale: 'es_MX',
     type: 'website'
   }
@@ -40,22 +40,22 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const businessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Dentist',
-    name: 'Dental Lanz',
-    image: 'https://dentallanz.netlify.app/og-image.jpg',
+    '@type': 'BeautySalon',
+    name: 'el Salon',
+    image: 'https://elsalon.netlify.app/og-image.jpg',
     telephone: '+52 55 5801 9251',
     priceRange: '$$',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5.0',
-      reviewCount: '7'
+      reviewCount: '3'
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Calz Acoxpa 566-int 2, Coapa, Prado Coapa',
+      streetAddress: 'Coapa, Ex-Hacienda Coapa',
       addressLocality: 'Tlalpan',
       addressRegion: 'Ciudad de México',
-      postalCode: '14357',
+      postalCode: '04980',
       addressCountry: 'MX'
     },
     openingHoursSpecification: [
@@ -72,11 +72,11 @@ export default function RootLayout({ children }) {
         closes: '14:00'
       }
     ],
-    url: 'https://dentallanz.netlify.app'
+    url: 'https://elsalon.netlify.app'
   };
 
   return (
-    <html lang="es-MX" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="es-MX" className={`${montserrat.variable} ${playfair.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }} />
         <BusinessProvider>

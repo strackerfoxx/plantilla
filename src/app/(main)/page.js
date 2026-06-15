@@ -12,16 +12,16 @@ import Reviews from '@/components/ReUsableComponents/Reviews';
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Paciente sonriendo en clínica dental'
+    src: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1200&auto=format&fit=crop',
+    alt: 'Mujer en salón de belleza'
   },
   {
-    src: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Instrumentos dentales de alta tecnología'
+    src: 'https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1074&auto=format&fit=crop',
+    alt: 'Productos y herramientas de salón de belleza'
   },
   {
-    src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop',
-    alt: 'Odontólogo revisando radiografías'
+    src: 'https://images.unsplash.com/photo-1595476108010-b4d1f10d5e43?q=80&w=900&auto=format&fit=crop',
+    alt: 'Manicura y pedicura profesional'
   }
 ];
 
@@ -29,35 +29,35 @@ export default function HomePage() {
   const { services } = useServices();
   return (
     <>
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.1),_transparent_36%),linear-gradient(135deg,_#f8fafc_0%,_#e2e8f0_48%,_#f1f5f9_100%)]" />
+      <section className="relative overflow-hidden bg-background">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(255,20,147,0.05),_transparent_40%),linear-gradient(135deg,_#ffffff_0%,_#fff0f5_48%,_#ffffff_100%)]" />
         <div className="container grid min-h-[680px] items-center gap-12 py-14 md:grid-cols-[1fr_0.9fr] md:py-20">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-pink-200 bg-white/80 px-4 py-2 text-sm font-semibold text-primary shadow-sm backdrop-blur-sm">
               <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 5.0 en Google
             </div>
             <h1 className="text-balance text-5xl font-black tracking-tight md:text-7xl">
-              Tu sonrisa en manos expertas
+              Tu belleza en manos expertas
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Atención odontológica integral y especializada en CDMX. Nos enfocamos en tu comodidad, brindando tratamientos de alta calidad con un trato humano y profesional.
+              Centro de estética integral y especializado en Coapa. Nos enfocamos en resaltar tu belleza natural, brindando servicios de alta calidad con un trato profesional y vanguardista.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg"><Link href="/agendar">Agendar Cita</Link></Button>
-              <Button asChild size="lg" variant="outline"><Link href="/servicios">Ver Tratamientos</Link></Button>
+              <Button asChild size="lg" variant="outline"><Link href="/servicios">Ver Servicios</Link></Button>
             </div>
               <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Trato Profesional</span>
+                  <ShieldCheck className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium text-slate-600">Atención Premium</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
+                  <WandSparkles className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-medium text-slate-600">Estilistas Expertas</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Star className="w-5 h-5 text-primary" />
                   <span className="text-sm font-medium text-slate-600">Alta Calidad</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Sin Dolor</span>
                 </div>
               </div>
           </div>
@@ -76,7 +76,7 @@ export default function HomePage() {
 
       <section className="section-padding bg-white" id="servicios-destacados">
         <div className="container">
-          <SectionHeading eyebrow="Nuestros Servicios" title="Tratamientos de Primer Nivel" description="Ofrecemos lo más indicado para cada caso individualizando tu tratamiento para garantizar los mejores resultados." centered />
+          <SectionHeading eyebrow="Nuestros Servicios" title="Servicios de Primer Nivel" description="Ofrecemos la mejor asesoría y servicios para resaltar tu belleza, utilizando técnicas modernas e innovadoras." centered />
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {services.slice(0, 3).map((service) => (
               <Card key={service.name} className="border-none bg-background/80 shadow-sm transition-transform hover:-translate-y-1">
