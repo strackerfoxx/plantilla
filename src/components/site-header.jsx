@@ -1,9 +1,8 @@
 "use client";
 import { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowLeft, Search, MoreVertical } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
 import { useClient } from '@/hooks/useClient';
 
 const navItems = [
@@ -21,58 +20,33 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur-xl">
-      <div className="container flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio de Dental Lanz">
-          <span>
-            <span className="block text-lg font-black tracking-tight">Dental Lanz</span>
-            <span className="hidden text-xs text-muted-foreground sm:block">Odontología en CDMX</span>
-          </span>
-        </Link>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-transparent pointer-events-none">
+      <div className="flex h-14 items-center justify-between px-4 mt-2">
+        {/* Back Button */}
+        <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur shadow flex items-center justify-center pointer-events-auto text-slate-700">
+           <ArrowLeft className="w-6 h-6" />
+        </div>
 
-        {/* Desktop Navigation */}
-        {token ? (
-          <nav className="hidden items-center gap-7 md:flex" aria-label="Navegación principal">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
-                {item.label}
-              </Link>
-            ))}
-            <Button variant="ghost" onClick={logout} className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
-              Cerrar sesión
-            </Button>
-          </nav>
-        ) : (
-          <div className="hidden md:flex items-center gap-2">
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
-              <Link href="/servicios">Servicios</Link>
-            </Button>
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
-              <Link href="/agendar">Agendar</Link>
-            </Button>
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
-              <Link href="/iniciar-sesion">Ingresar</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/crear-cuenta">Crear cuenta</Link>
-            </Button>
+        {/* Right Actions */}
+        <div className="flex gap-2 pointer-events-auto">
+          <div className="w-10 h-10 rounded-full bg-white/90 backdrop-blur shadow flex items-center justify-center text-slate-700">
+             <Search className="w-5 h-5" />
           </div>
-        )}
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden flex items-center justify-center p-2 text-muted-foreground hover:text-foreground focus:outline-none"
-          onClick={toggleMobileMenu}
-          aria-label="Abrir menú"
-        >
-          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+          <button
+            onClick={toggleMobileMenu}
+            className="w-10 h-10 rounded-full bg-white/90 backdrop-blur shadow flex items-center justify-center text-slate-700 focus:outline-none"
+            aria-label="Abrir menú"
+          >
+             {isMobileMenuOpen ? <X className="h-5 h-5" /> : <MoreVertical className="w-5 h-5" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Hidden Mobile Menu that overlays when MoreVertical is clicked */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-background border-b border-border shadow-lg p-4">
-          <nav className="flex flex-col gap-4">
+        <div className="pointer-events-auto absolute top-16 right-4 w-48 bg-white rounded-lg shadow-xl py-2 border border-slate-100 z-50">
+          <nav className="flex flex-col">
             {token ? (
               <>
                 {navItems.map((item) => (
@@ -80,30 +54,25 @@ export function SiteHeader() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-lg font-semibold text-foreground hover:text-primary py-2"
+                    className="px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 font-medium"
                   >
                     {item.label}
                   </Link>
                 ))}
-                <Button variant="ghost" onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="justify-start text-lg h-auto py-2">
+                <button
+                  onClick={() => { logout(); setIsMobileMenuOpen(false); }}
+                  className="px-4 py-2 text-sm text-left text-red-600 hover:bg-slate-50 font-medium border-t border-slate-100 mt-1"
+                >
                   Cerrar sesión
-                </Button>
+                </button>
               </>
             ) : (
-              <div className="flex flex-col gap-3 mt-2">
-                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Link href="/servicios">Servicios</Link>
-                </Button>
-                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Link href="/agendar">Agendar</Link>
-                </Button>
-                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Link href="/iniciar-sesion">Ingresar</Link>
-                </Button>
-                <Button asChild className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Link href="/crear-cuenta">Crear cuenta</Link>
-                </Button>
-              </div>
+              <>
+                <Link href="/servicios" onClick={() => setIsMobileMenuOpen(false)} className="px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 font-medium">Servicios</Link>
+                <Link href="/agendar" onClick={() => setIsMobileMenuOpen(false)} className="px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 font-medium">Agendar</Link>
+                <Link href="/iniciar-sesion" onClick={() => setIsMobileMenuOpen(false)} className="px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 font-medium border-t border-slate-100 mt-1">Ingresar</Link>
+                <Link href="/crear-cuenta" onClick={() => setIsMobileMenuOpen(false)} className="px-4 py-2 text-sm text-blue-600 hover:bg-slate-50 font-medium">Crear cuenta</Link>
+              </>
             )}
           </nav>
         </div>

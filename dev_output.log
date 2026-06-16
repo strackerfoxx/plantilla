@@ -5,26 +5,21 @@
    ▲ Next.js 15.5.18
    - Local:        http://localhost:3000
    - Network:      http://192.168.0.2:3000
-   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 1612ms
- ○ Compiling /servicios ...
- ✓ Compiled /servicios in 10.6s (879 modules)
- GET /servicios 200 in 12549ms
- ○ Compiling /agendar ...
- ✓ Compiled /agendar in 4s (2029 modules)
- ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
- GET /agendar 200 in 4875ms
+ ✓ Ready in 1607ms
  ○ Compiling / ...
- ✓ Compiled / in 1410ms (1490 modules)
- GET / 200 in 2133ms
- ✓ Compiled in 579ms (932 modules)
- ✓ Compiled in 308ms (932 modules)
- ⨯ ./node_modules/luxon/build/es6/luxon.mjs
-Error: ENOENT: no such file or directory, open '/app/node_modules/luxon/build/es6/luxon.mjs'
-
-Import trace for requested module:
-./node_modules/luxon/build/es6/luxon.mjs
-./src/app/agendar/AgendarClient.jsx
- ✓ Compiled in 379ms (918 modules)
+ ✓ Compiled / in 8s (938 modules)
+ GET / 200 in 9527ms
+ ✓ Compiled in 1159ms (350 modules)
+ ○ Compiling / ...
+ ✓ Compiled / in 710ms (570 modules)
+ GET / 200 in 1459ms
+ ✓ Compiled in 915ms (922 modules)
+ ✓ Compiled in 513ms (908 modules)
+ GET / 200 in 425ms
+ GET / 200 in 240ms
+ ✓ Compiled in 969ms (922 modules)
+ GET / 200 in 340ms
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 1276ms (912 modules)
