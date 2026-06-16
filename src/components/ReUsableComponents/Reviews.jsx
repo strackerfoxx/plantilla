@@ -2,21 +2,21 @@ import { Star, Quote } from "lucide-react";
 
 const reviews = [
   {
-    name: "Tere Tlahuiz",
-    date: "Hace un año",
-    text: "Tomé mi tratamiento de ortodoncia hace algunos años, además de otros procedimientos, con el Doctor Lanz y quedé encantada con los resultados!!! Me agradó desde el instante en que brinda toda la información detallada...",
+    name: "Arya Jacobs",
+    date: "Hace un mes",
+    text: "Ojalá pudiera dar más estrellas. Llevamos años llevando a nuestras mascotas con el doctor Enrique, quien es, sin lugar a duda, el más extraordinario médico veterinario que hemos conocido. Su dedicación es incomparable.",
     rating: 5,
   },
   {
-    name: "Elizabeth Vázquez",
-    date: "Hace un año",
-    text: "Desde el primer momento, el Dr. Lanz me brindó una atención excepcional. Su amabilidad y profesionalismo me hicieron sentir cómoda durante todo el tratamiento. Explicó cada paso del procedimiento de forma clara...",
+    name: "leyla mariana",
+    date: "Hace 3 meses",
+    text: "Mi experiencia ha sido solo con vacunas desde que rescaté a mis dos gatitas. El trato y la atención siempre es buena. Recomiendo ir con disponibilidad de tiempo ya que puede ser algo tardado porque no hay citas (nada exagerado tampoco). Al día de hoy mis gatitas están sanas :)",
     rating: 5,
   },
   {
-    name: "Daniela Tlahuiz",
+    name: "Claudia Solis",
     date: "Hace un año",
-    text: "El Dr explica de manera profesional cada tratamiento; de igual manera te ofrece lo más indicado para cada caso individualizando que desde mi punto de vista eso es algo primordial. En general te hace la consulta amena.",
+    text: "El doctor Enrique es el mejor. Salvó a mi perrita salchicha que fue atacada por otro perro y quedó muy mal herida en la parte de la cabeza, tenía fracturada la mandíbula y un ojito a punto de salirse. También le extirpó un tumor a otra de mis perritas.",
     rating: 5,
   },
 ];
@@ -40,14 +40,14 @@ export default function Reviews() {
           </div>
           <div className="flex flex-col items-start md:items-end bg-white p-4 rounded-xl shadow-sm border border-slate-100">
             <div className="flex items-center gap-2">
-              <span className="text-4xl font-bold text-secondary-900">5.0</span>
+              <span className="text-4xl font-bold text-secondary-900">4.7</span>
               <div className="flex text-yellow-400">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-current" />
                 ))}
               </div>
             </div>
-            <p className="text-sm font-medium text-slate-500 mt-1">Basado en 7 opiniones de Google</p>
+            <p className="text-sm font-medium text-slate-500 mt-1">Basado en 621 opiniones de Google</p>
           </div>
         </div>
 
@@ -81,7 +81,7 @@ export default function Reviews() {
         
         <div className="mt-12 text-center">
           <a 
-            href="https://maps.google.com/?q=Dental+Lanz+Calz+Acoxpa+566-int+2" 
+            href="https://maps.google.com/?q=Centro+Veterinario+PAWS+Calz+del+Hueso+160"
             className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 hover:underline"
           >
             Ver todas las opiniones en Google Maps →
