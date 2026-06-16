@@ -12,16 +12,16 @@ import Reviews from '@/components/ReUsableComponents/Reviews';
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Paciente sonriendo en clínica dental'
+    src: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200',
+    alt: 'Mujer relajándose en el spa'
   },
   {
-    src: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Instrumentos dentales de alta tecnología'
+    src: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=1074',
+    alt: 'Toallas y aceites de masaje'
   },
   {
-    src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop',
-    alt: 'Odontólogo revisando radiografías'
+    src: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=900',
+    alt: 'Ambiente tranquilo de spa'
   }
 ];
 
