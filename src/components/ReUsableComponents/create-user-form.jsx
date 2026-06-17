@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { toast, Toaster } from "sonner";
-import axios from 'axios';
+import api from '@/lib/api';
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
@@ -56,11 +56,11 @@ export function AuthForm() {
     if(!name) return toast.error('El nombre es obligatorio para crear una cuenta');
 
     setLoading(true);
-    const endpoint = `${process.env.NEXT_PUBLIC_API_URL}/client/self-create`;
+    const endpoint = `/client/self-create`;
     const payload = { name, phone: fullPhone, businessId: business?.id };
 
     try {
-      await axios.post(endpoint, payload);
+      await api.post(endpoint, payload);
       toast.success('Cuenta creada. Revisa tu teléfono para el código de verificación.');
       await sendOTP();
 

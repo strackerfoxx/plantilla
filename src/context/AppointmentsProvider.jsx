@@ -1,5 +1,5 @@
 "use client"
-import axios from "axios"
+import api from '@/lib/api'
 import { createContext, useState, useEffect } from "react"
 import { useClient } from "@/hooks/useClient";
 const AppointmentsContext = createContext()
@@ -15,7 +15,7 @@ const AppointmentsProvider = ({ children }) => {
         if (client?.businessClient && token) {
             setLoading(true)
             try {
-                const { data } = await axios(`${process.env.NEXT_PUBLIC_API_URL}/appointment/get-appointments-by-client-id?clientId=${client?.businessClient}&page=1&limit=20`, {
+                const { data } = await api(`/appointment/get-appointments-by-client-id?clientId=${client?.businessClient}&page=1&limit=20`, {
                     headers: {
                         Authorization: token
                     }
