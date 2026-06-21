@@ -2,6 +2,8 @@ import axios from 'axios';
 
 let accessToken = null;
 let tokenChangeCallback = null;
+let isRefreshing = false;
+let refreshSubscribers = [];
 
 export const setAccessToken = (token) => {
     accessToken = token;
@@ -16,9 +18,17 @@ export const onTokenChange = (callback) => {
     tokenChangeCallback = callback;
 };
 
+const onRefreshed = (error, token) => {
+    refreshSubscribers.forEach(cb => cb(error, token));
+};
+
+const subscribeTokenRefresh = (cb) => {
+    refreshSubscribers.push(cb);
+};
+
 const api = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_URL,
-    withCredentials: true // MUY IMPORTANTE: Permite que se envíen y reciban las cookies
+    withCredentials: true // Permite que se envíen y reciban las cookies
 });
 
 // 1. Agregar el access token a todas las peticiones
@@ -38,8 +48,8 @@ api.interceptors.response.use(
         const originalRequest = error.config;
 
         // Si el servidor nos devuelve 401 intentamos hacer refresh.
-        // Nos aseguramos de no hacer un bucle infinito validando !originalRequest._retry
-        // y de no interceptar las peticiones de refresh o login.
+        // Evitar bucles infinitos validando !originalRequest._retry
+        // No interceptar /client/refresh o /client/login
         if (
             error.response &&
             error.response.status === 401 &&
@@ -48,35 +58,56 @@ api.interceptors.response.use(
             !originalRequest.url.includes('/client/refresh') &&
             !originalRequest.url.includes('/client/login')
         ) {
+            if (isRefreshing) {
+                // Si ya estamos refrescando, ponemos la petición en cola
+                return new Promise((resolve, reject) => {
+                    subscribeTokenRefresh((err, token) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            // Cuando el token se refresque, reintentamos con el nuevo token
+                            originalRequest.headers.Authorization = `Bearer ${token}`;
+                            resolve(api(originalRequest));
+                        }
+                    });
+                });
+            }
+
             originalRequest._retry = true;
+            isRefreshing = true;
 
             try {
                 // Hacemos un request POST al nuevo endpoint de refresh
-                // llama a '/client/refresh'
-
                 const response = await axios.post(
                     `${process.env.NEXT_PUBLIC_API_URL}/client/refresh`,
                     {},
-                    { withCredentials: true } // MUY IMPORTANTE enviar cookies
+                    { withCredentials: true } // Enviar cookies
                 );
 
-                // Guardamos el nuevo access token
                 const newAccessToken = response.data.token;
                 setAccessToken(newAccessToken);
 
-                // Actualizamos el header de la petición que falló y la reintentamos
+                // Reintentar la petición original con el nuevo token
                 originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
+
+                // Notificamos a los pendientes
+                onRefreshed(null, newAccessToken);
+                refreshSubscribers = []; // Limpiamos la cola
+
                 return api(originalRequest);
 
             } catch (refreshError) {
-                // Si falla el refresh token, la sesión expiró de verdad o es inválido.
-                // Aca rediriges al usuario al login
+                // Si falla el refresh token, expiró o es inválido.
+                onRefreshed(refreshError, null);
+                refreshSubscribers = []; // Limpiamos la cola
                 setAccessToken(null);
                 if (typeof window !== 'undefined') {
                     localStorage.removeItem("client");
                     window.location.href = '/iniciar-sesion';
                 }
                 return Promise.reject(refreshError);
+            } finally {
+                isRefreshing = false;
             }
         }
 

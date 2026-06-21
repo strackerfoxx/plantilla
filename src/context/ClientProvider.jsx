@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState, useEffect, useRef } from "react"
 import api, { setAccessToken, onTokenChange } from "@/lib/api";
 
 const ClientContext = createContext()
@@ -11,6 +11,7 @@ const ClientProvider = ({children}) => {
     const [confirmationResult, setConfirmationResult] = useState(null);
     const [appointments, setAppointments] = useState([])
     const [isLogin, setIsLogin] = useState(false)
+    const initRef = useRef(false);
 
     useEffect(() => {
         onTokenChange((newToken) => {
@@ -46,7 +47,8 @@ const ClientProvider = ({children}) => {
             setIsTokenLoaded(true);
         };
 
-        if (!isTokenLoaded) {
+        if (!isTokenLoaded && !initRef.current) {
+            initRef.current = true;
             initializeAuth();
         }
     }, [isTokenLoaded])
