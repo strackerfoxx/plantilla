@@ -1,6 +1,6 @@
 "use client"
 import { createContext, useState, useEffect } from "react"
-import api from "@/lib/api";
+import api, { setAccessToken, onTokenChange } from "@/lib/api";
 
 const ClientContext = createContext()
 
@@ -13,11 +13,11 @@ const ClientProvider = ({children}) => {
     const [isLogin, setIsLogin] = useState(false)
 
     useEffect(() => {
-        if (isTokenLoaded) return
+        onTokenChange((newToken) => {
+            setToken(newToken ? `Bearer ${newToken}` : null);
+        });
 
-        const storedToken = JSON.parse(localStorage.getItem("token"));
         const storedClient = localStorage.getItem("client");
-
         let parsedClient = null;
         if (storedClient) {
             try {
@@ -27,15 +27,33 @@ const ClientProvider = ({children}) => {
             }
         }
 
-        setToken(storedToken ? `Bearer ${storedToken}` : null);
-        setClient(parsedClient || {})
-        setIsTokenLoaded(true)
+        const initializeAuth = async () => {
+            if (parsedClient) {
+                try {
+                    const response = await api.post('/client/refresh');
+                    const newAccessToken = response.data.token;
+                    setAccessToken(newAccessToken);
+                    setClient(parsedClient);
+                } catch (error) {
+                    localStorage.removeItem("client");
+                    setClient({});
+                    setAccessToken(null);
+                }
+            } else {
+                setClient({});
+                setAccessToken(null);
+            }
+            setIsTokenLoaded(true);
+        };
+
+        if (!isTokenLoaded) {
+            initializeAuth();
+        }
     }, [isTokenLoaded])
 
-    function login(clientData, token) {
+    function login(clientData, newToken) {
         setClient(clientData);
-        setToken(`Bearer ${token}`);
-        localStorage.setItem("token", JSON.stringify(token));
+        setAccessToken(newToken);
         localStorage.setItem("client", JSON.stringify(clientData));
     }
     
@@ -45,9 +63,8 @@ const ClientProvider = ({children}) => {
         } catch (e) {
             console.error(e);
         } finally {
-            localStorage.removeItem("token");
             localStorage.removeItem("client");
-            setToken(null);
+            setAccessToken(null);
             setClient({});
             window.location.href = '/iniciar-sesion';
         }

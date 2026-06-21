@@ -1,5 +1,21 @@
 import axios from 'axios';
 
+let accessToken = null;
+let tokenChangeCallback = null;
+
+export const setAccessToken = (token) => {
+    accessToken = token;
+    if (tokenChangeCallback) {
+        tokenChangeCallback(token);
+    }
+};
+
+export const getAccessToken = () => accessToken;
+
+export const onTokenChange = (callback) => {
+    tokenChangeCallback = callback;
+};
+
 const api = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_URL,
     withCredentials: true // MUY IMPORTANTE: Permite que se envíen y reciban las cookies
@@ -7,20 +23,8 @@ const api = axios.create({
 
 // 1. Agregar el access token a todas las peticiones
 api.interceptors.request.use((config) => {
-    let token = null;
-    if (typeof window !== 'undefined') {
-        const storedToken = localStorage.getItem("token");
-        if (storedToken) {
-            try {
-                token = JSON.parse(storedToken);
-            } catch(e) {
-                token = storedToken;
-            }
-        }
-    }
-
-    if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
+    if (accessToken) {
+        config.headers.Authorization = `Bearer ${accessToken}`;
     }
     return config;
 }, (error) => Promise.reject(error));
@@ -33,13 +37,16 @@ api.interceptors.response.use(
     async (error) => {
         const originalRequest = error.config;
 
-        // Si el servidor nos devuelve 401 y el mensaje es "TokenExpiredError", intentamos hacer refresh.
+        // Si el servidor nos devuelve 401 intentamos hacer refresh.
         // Nos aseguramos de no hacer un bucle infinito validando !originalRequest._retry
+        // y de no interceptar las peticiones de refresh o login.
         if (
             error.response &&
             error.response.status === 401 &&
-            error.response.data?.msg === "TokenExpiredError" &&
-            !originalRequest._retry
+            !originalRequest._retry &&
+            originalRequest.url &&
+            !originalRequest.url.includes('/client/refresh') &&
+            !originalRequest.url.includes('/client/login')
         ) {
             originalRequest._retry = true;
 
@@ -55,9 +62,7 @@ api.interceptors.response.use(
 
                 // Guardamos el nuevo access token
                 const newAccessToken = response.data.token;
-                if (typeof window !== 'undefined') {
-                    localStorage.setItem("token", JSON.stringify(newAccessToken)); // O tu logica de estado (Context)
-                }
+                setAccessToken(newAccessToken);
 
                 // Actualizamos el header de la petición que falló y la reintentamos
                 originalRequest.headers.Authorization = `Bearer ${newAccessToken}`;
@@ -66,8 +71,8 @@ api.interceptors.response.use(
             } catch (refreshError) {
                 // Si falla el refresh token, la sesión expiró de verdad o es inválido.
                 // Aca rediriges al usuario al login
+                setAccessToken(null);
                 if (typeof window !== 'undefined') {
-                    localStorage.removeItem("token");
                     localStorage.removeItem("client");
                     window.location.href = '/iniciar-sesion';
                 }
