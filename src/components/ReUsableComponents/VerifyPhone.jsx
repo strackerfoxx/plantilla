@@ -5,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Label } from '@/components/ui/label';
 import { InputOTPControlled } from '@/components/ReUsableComponents/otp-input';
 import { toast, Toaster } from "sonner";
-import axios from 'axios';
+import api from '@/lib/api';
 
 import { useRouter } from 'next/navigation';
 import { useClient } from '@/hooks/useClient';
@@ -28,8 +28,8 @@ export default function VerifyPhone({ phone, mode = "create" }) {
       if(!phone) return toast.error('El teléfono es obligatorio');
 
       const endpoint = isLogin
-        ? `${process.env.NEXT_PUBLIC_API_URL}/client/login`
-        : `${process.env.NEXT_PUBLIC_API_URL}/client/confirm-client`;
+        ? `/client/login`
+        : `/client/confirm-client`;
 
       setValidating(true);
 
@@ -42,7 +42,7 @@ export default function VerifyPhone({ phone, mode = "create" }) {
           ? { idToken, businessId: business?.id }
           : { phone, idToken, businessId: business?.id };
 
-        const {data} = await axios.post(endpoint, payload);
+        const {data} = await api.post(endpoint, payload);
 
         if (data.token) {
           login(data.client || {}, data.token);

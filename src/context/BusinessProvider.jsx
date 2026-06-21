@@ -1,5 +1,5 @@
 "use client"
-import axios from "axios"
+import api from '@/lib/api'
 import { createContext, useState, useEffect } from "react"
 const BusinessContext = createContext()
 
@@ -11,7 +11,7 @@ const BusinessProvider = ({ children }) => {
         const getBusiness = async () => {
             setLoading(true)
             try {
-                const { data } = await axios(`${process.env.NEXT_PUBLIC_API_URL}/business/get-business-by-id-client?businessId=${process.env.NEXT_PUBLIC_BUSINESS_ID}`)
+                const { data } = await api(`/business/get-business-by-id-client?businessId=${process.env.NEXT_PUBLIC_BUSINESS_ID}`)
                 setBusiness(data)
             } catch (error) {
                 console.error(error.message)

@@ -1,4 +1,4 @@
-import axios from "axios"
+import api from '@/lib/api'
 import { DateTime } from "luxon"
 
 export async function getAvailableSlots({ date, selectedServices = [], business, token, userId, excludeAppointmentId = undefined }) {
@@ -23,7 +23,7 @@ export async function getAvailableSlots({ date, selectedServices = [], business,
     }
 
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/appointment/availability/slots`, data, { headers })
+      const response = await api.post(`/appointment/availability/slots`, data, { headers })
       return response.data ?? []
     } catch (error) {
       console.error("Error al obtener los slots disponibles:", error)

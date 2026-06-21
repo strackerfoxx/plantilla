@@ -1,5 +1,7 @@
 "use client"
 import { createContext, useState, useEffect } from "react"
+import api from "@/lib/api";
+
 const ClientContext = createContext()
 
 const ClientProvider = ({children}) => {
@@ -37,11 +39,18 @@ const ClientProvider = ({children}) => {
         localStorage.setItem("client", JSON.stringify(clientData));
     }
     
-    function logout() {
-        localStorage.removeItem("token");
-        localStorage.removeItem("client");
-        setToken(null);
-        setClient({});
+    async function logout() {
+        try {
+            await api.post('/client/logout');
+        } catch (e) {
+            console.error(e);
+        } finally {
+            localStorage.removeItem("token");
+            localStorage.removeItem("client");
+            setToken(null);
+            setClient({});
+            window.location.href = '/iniciar-sesion';
+        }
     }
 
     return (

@@ -1,4 +1,4 @@
-import axios from "axios"
+import api from '@/lib/api'
 import { DateTime } from "luxon"
 import { toast } from "sonner"
 
@@ -15,7 +15,7 @@ export async function getAvailableUsers(selectedServices, selectedTime, selected
     }
 
     try {
-        const { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/appointment/availability/users`, usersData, {
+        const { data } = await api.post(`/appointment/availability/users`, usersData, {
                 headers,
             }
         )

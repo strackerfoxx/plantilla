@@ -26,7 +26,7 @@ import { useClient } from '@/hooks/useClient';
 import { useRouter } from 'next/navigation';
 import { toast, Toaster } from 'sonner';
 import { DateTime } from 'luxon';
-import axios from 'axios';
+import api from '@/lib/api';
 
 import { getAvailableUsers } from '@/lib/getAvailableUsers';
 
@@ -53,7 +53,7 @@ export default function AgendarClient({ id }) {
     async function fetchAppointment() {
       if (id && token) {
         try {
-          const { data } = await axios(`${process.env.NEXT_PUBLIC_API_URL}/appointment/get-appointments-by-id?id=${id}`, {
+          const { data } = await api(`/appointment/get-appointments-by-id?id=${id}`, {
             headers: {
               Authorization: token
             }
@@ -266,10 +266,10 @@ export default function AgendarClient({ id }) {
       ...(id ? { status: selectedStatus } : {}),
     };
 
-    const endpoint = id ? `${process.env.NEXT_PUBLIC_API_URL}/appointment/update` : `${process.env.NEXT_PUBLIC_API_URL}/appointment/create`;
+    const endpoint = id ? `/appointment/update` : `/appointment/create`;
 
     try {
-      const response = await axios({
+      const response = await api({
         method: id ? 'put' : 'post',
         url: endpoint,
         data: payload,
