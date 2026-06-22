@@ -21,13 +21,10 @@ export function SiteHeader() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur-xl">
-      <div className="container flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio de Dental Lanz">
-          <span>
-            <span className="block text-lg font-black tracking-tight">Dental Lanz</span>
-            <span className="hidden text-xs text-muted-foreground sm:block">Odontología en CDMX</span>
-          </span>
+    <header className="sticky top-0 w-full z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+      <div className="container max-w-6xl flex h-20 items-center justify-between gap-4">
+        <Link href="/" className="flex items-center gap-2" aria-label="Ir al inicio de Gut Klinik">
+          <span className="text-2xl font-bold text-blue-600">Gut Klinik</span>
         </Link>
 
         {/* Desktop Navigation */}
