@@ -27,7 +27,7 @@ const subscribeTokenRefresh = (cb) => {
 };
 
 const api = axios.create({
-    baseURL: process.env.NEXT_PUBLIC_API_URL,
+    baseURL: '/api',
     withCredentials: true // Permite que se envíen y reciban las cookies
 });
 
@@ -79,7 +79,7 @@ api.interceptors.response.use(
             try {
                 // Hacemos un request POST al nuevo endpoint de refresh
                 const response = await axios.post(
-                    `${process.env.NEXT_PUBLIC_API_URL}/client/refresh`,
+                    `/api/client/refresh`,
                     {},
                     { withCredentials: true } // Enviar cookies
                 );
