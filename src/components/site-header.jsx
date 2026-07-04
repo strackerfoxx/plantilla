@@ -8,8 +8,6 @@ import { useClient } from '@/hooks/useClient';
 
 const navItems = [
   { href: '/servicios', label: 'Servicios' },
-  { href: '/mis-citas', label: 'Mis citas' },
-  { href: '/agendar', label: 'Agendar' }
 ];
 
 export function SiteHeader() {
@@ -20,94 +18,166 @@ export function SiteHeader() {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur-xl">
-      <div className="container flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio de Dental Lanz">
-          <span>
-            <span className="block text-lg font-black tracking-tight">Dental Lanz</span>
-            <span className="hidden text-xs text-muted-foreground sm:block">Odontología en CDMX</span>
-          </span>
-        </Link>
+<header className="sticky top-0 z-50 w-full bg-[#f5f3f0]/90 backdrop-blur-md border-b border-neutral-200">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-between items-center h-20">
 
-        {/* Desktop Navigation */}
-        {token ? (
-          <nav className="hidden items-center gap-7 md:flex" aria-label="Navegación principal">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
-                {item.label}
-              </Link>
-            ))}
-            <Button variant="ghost" onClick={logout} className="text-sm font-semibold text-muted-foreground transition-colors hover:text-primary">
-              Cerrar sesión
-            </Button>
-          </nav>
-        ) : (
-          <div className="hidden md:flex items-center gap-2">
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
-              <Link href="/servicios">Servicios</Link>
-            </Button>
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
-              <Link href="/agendar">Agendar</Link>
-            </Button>
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
-              <Link href="/iniciar-sesion">Ingresar</Link>
-            </Button>
-            <Button asChild>
-              <Link href="/crear-cuenta">Crear cuenta</Link>
-            </Button>
-          </div>
-        )}
-
-        {/* Mobile Menu Button */}
+      {/* Mobile Menu Button */}
+      <div className="md:hidden">
         <button
-          className="md:hidden flex items-center justify-center p-2 text-muted-foreground hover:text-foreground focus:outline-none"
+          type="button"
           onClick={toggleMobileMenu}
+          className="p-2 text-neutral-900 hover:text-neutral-600"
           aria-label="Abrir menú"
         >
-          {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          {isMobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-background border-b border-border shadow-lg p-4">
-          <nav className="flex flex-col gap-4">
-            {token ? (
-              <>
-                {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-lg font-semibold text-foreground hover:text-primary py-2"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <Button variant="ghost" onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="justify-start text-lg h-auto py-2">
-                  Cerrar sesión
-                </Button>
-              </>
-            ) : (
-              <div className="flex flex-col gap-3 mt-2">
-                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Link href="/servicios">Servicios</Link>
-                </Button>
-                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Link href="/agendar">Agendar</Link>
-                </Button>
-                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Link href="/iniciar-sesion">Ingresar</Link>
-                </Button>
-                <Button asChild className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Link href="/crear-cuenta">Crear cuenta</Link>
-                </Button>
-              </div>
-            )}
-          </nav>
-        </div>
-      )}
-    </header>
+      {/* Logo */}
+      <div className="flex-1 md:flex-none flex justify-center md:justify-start">
+        <Link
+          href="/"
+          className="text-3xl font-black tracking-tighter uppercase"
+          aria-label="Salon Inicio"
+        >
+          Salon
+        </Link>
+      </div>
+
+      {/* Desktop Navigation */}
+      <nav
+        className="hidden md:flex space-x-8 items-center"
+        aria-label="Navegación principal"
+      >
+        {navItems.map((item) => (
+          <Link
+            key={item.label}
+            href={item.href}
+            className="text-sm font-semibold tracking-wide hover:text-neutral-500 transition-colors uppercase"
+          >
+            {item.label}
+          </Link>
+        ))}
+
+        {token ? (
+          <>
+            <Link
+              href="/mis-citas"
+              className="text-sm font-semibold tracking-wide hover:text-neutral-500 transition-colors uppercase"
+            >
+              Mis citas
+            </Link>
+
+            <button
+              onClick={logout}
+              className="text-sm font-semibold tracking-wide hover:text-neutral-500 transition-colors uppercase"
+            >
+              Cerrar sesión
+            </button>
+
+            <Link
+              href="/agendar"
+              className="bg-neutral-900 text-white px-6 py-2.5 text-sm font-semibold tracking-wide uppercase hover:bg-neutral-800 transition-colors"
+            >
+              Agendar
+            </Link>
+          </>
+        ) : (
+          <>
+            <Link
+              href="/iniciar-sesion"
+              className="text-sm font-semibold tracking-wide hover:text-neutral-500 transition-colors uppercase"
+            >
+              Ingresar
+            </Link>
+
+            <Link
+              href="/crear-cuenta"
+              className="bg-neutral-900 text-white px-6 py-2.5 text-sm font-semibold tracking-wide uppercase hover:bg-neutral-800 transition-colors"
+            >
+              Crear cuenta
+            </Link>
+          </>
+        )}
+      </nav>
+
+      {/* Spacer para mantener el logo centrado en móvil */}
+      <div className="w-10 md:hidden" />
+    </div>
+  </div>
+
+  {/* Mobile Menu */}
+  {isMobileMenuOpen && (
+    <div className="md:hidden absolute top-20 left-0 right-0 bg-[#f5f3f0] border-b border-neutral-200 shadow-lg">
+      <nav className="flex flex-col p-6">
+  {navItems.map((item) => (
+    <Link
+      key={item.label}
+      href={item.href}
+      onClick={() => setIsMobileMenuOpen(false)}
+      className="py-3 text-sm font-semibold tracking-wide uppercase"
+    >
+      {item.label}
+    </Link>
+  ))}
+
+  {token ? (
+    <>
+      <Link
+        href="/mis-citas"
+        onClick={() => setIsMobileMenuOpen(false)}
+        className="py-3 text-sm font-semibold tracking-wide uppercase"
+      >
+        Mis citas
+      </Link>
+
+      <Link
+        href="/agendar"
+        onClick={() => setIsMobileMenuOpen(false)}
+        className="mt-4 bg-neutral-900 text-white px-6 py-3 text-center text-sm font-semibold tracking-wide uppercase hover:bg-neutral-800 transition-colors"
+      >
+        Agendar
+      </Link>
+
+      <button
+        onClick={() => {
+          logout();
+          setIsMobileMenuOpen(false);
+        }}
+        className="mt-3 text-left py-3 text-sm font-semibold tracking-wide uppercase"
+      >
+        Cerrar sesión
+      </button>
+    </>
+  ) : (
+    <>
+      <Link
+        href="/iniciar-sesion"
+        onClick={() => setIsMobileMenuOpen(false)}
+        className="py-3 text-sm font-semibold tracking-wide uppercase"
+      >
+        Ingresar
+      </Link>
+
+      <Link
+        href="/crear-cuenta"
+        onClick={() => setIsMobileMenuOpen(false)}
+        className="mt-4 bg-neutral-900 text-white px-6 py-3 text-center text-sm font-semibold tracking-wide uppercase hover:bg-neutral-800 transition-colors"
+      >
+        Crear cuenta
+      </Link>
+    </>
+  )}
+</nav>
+    </div>
+  )}
+</header>
   );
 }

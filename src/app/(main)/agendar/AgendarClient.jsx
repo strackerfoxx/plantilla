@@ -23,7 +23,7 @@ import { es } from 'date-fns/locale';
 import { useBusiness } from '@/hooks/useBusiness';
 import { useServices } from '@/hooks/useServices';
 import { useClient } from '@/hooks/useClient';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { toast, Toaster } from 'sonner';
 import { DateTime } from 'luxon';
 import api from '@/lib/api';
@@ -45,6 +45,25 @@ export default function AgendarClient({ id }) {
   const { business, loading: loadingBusiness } = useBusiness();
   const { services, getServices, loading: loadingServices } = useServices();
   const { token, client } = useClient();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    // Auto-select a service when navigated with ?serviceId=...
+    try {
+      const serviceIdParam = searchParams?.get?.('serviceId');
+      if (serviceIdParam) {
+        const idFromParam = Number(serviceIdParam);
+        if (!Number.isNaN(idFromParam)) {
+          setSelectedServices(prev => {
+            if (prev.some(s => s.serviceId === idFromParam)) return prev;
+            return [...prev, { serviceId: idFromParam }];
+          });
+        }
+      }
+    } catch (e) {
+      // ignore when searchParams unavailable
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     // Fetch existing appointment details using the ID and populate state
