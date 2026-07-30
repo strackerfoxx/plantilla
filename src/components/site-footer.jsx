@@ -7,7 +7,7 @@ export function SiteFooter() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div className="col-span-1 lg:col-span-1">
               <Link href="/" className="text-4xl font-black tracking-tighter uppercase mb-6 inline-block">
-                Salon
+                Beauty
               </Link>
               <p className="text-neutral-400 text-sm leading-relaxed pr-4">
                 Tu refugio para encontrar equilibrio y bienestar. Dedicados a ofrecerte la mejor experiencia posible.
@@ -27,7 +27,7 @@ export function SiteFooter() {
             <div>
               <h3 className="text-sm font-bold tracking-widest uppercase mb-6">Contacto</h3>
               <ul className="space-y-4 text-neutral-400 text-sm">
-                <li>contacto@Salonbienestar.com</li>
+                <li>contacto@ClinicadeBelleza.com</li>
                 <li>+1 (555) 123-4567</li>
                 <li>Av. Principal 123, Ciudad</li>
               </ul>
@@ -52,7 +52,7 @@ export function SiteFooter() {
           </div>
           
           <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-neutral-500">
-            <p>&copy; {new Date().getFullYear()} Salon Bienestar. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Clinica de Belleza. Todos los derechos reservados.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="#" className="hover:text-white transition-colors">Privacidad</Link>
               <Link href="#" className="hover:text-white transition-colors">Términos</Link>

@@ -45,9 +45,9 @@ export function SiteHeader() {
         <Link
           href="/"
           className="text-3xl font-black tracking-tighter uppercase"
-          aria-label="Salon Inicio"
+          aria-label="Clinica Inicio"
         >
-          Salon
+          Clinica
         </Link>
       </div>
 

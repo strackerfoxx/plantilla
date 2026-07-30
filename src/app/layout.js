@@ -13,13 +13,13 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 export const metadata = {
   metadataBase: new URL('https://salonlazarini.netlify.app'),
   title: {
-    default: 'Salon Lazarini | Clínica de Belleza y Spa',
-    template: '%s | Salon Lazarini'
+    default: 'Clinica de Belleza | Clínica de Belleza y Spa',
+    template: '%s | Clinica de Belleza'
   },
   description:
     'Clínica de belleza y spa. Especialistas en tratamientos faciales, corporales y relajación. Agenda tu cita hoy y descubre tu mejor versión.',
   keywords: [
-    'Salon Lazarini',
+    'Clinica de Belleza',
     'spa CDMX',
     'clínica de belleza',
     'tratamientos faciales',
@@ -28,10 +28,10 @@ export const metadata = {
   ],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Salon Lazarini | Clínica de Belleza y Spa',
+    title: 'Clinica de Belleza | Clínica de Belleza y Spa',
     description: 'Clínica de belleza y spa. Especialistas en tratamientos faciales, corporales y relajación.',
     url: 'https://salonlazarini.netlify.app',
-    siteName: 'Salon Lazarini',
+    siteName: 'Clinica de Belleza',
     locale: 'es_MX',
     type: 'website'
   }
@@ -41,7 +41,7 @@ export default function RootLayout({ children }) {
   const businessJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'BeautySalon',
-    name: 'Salon Lazarini',
+    name: 'Clinica de Belleza',
     image: 'https://salonlazarini.netlify.app/og-image.jpg',
     telephone: '+52 55 5801 9251',
     priceRange: '$$',
