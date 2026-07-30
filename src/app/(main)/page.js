@@ -9,6 +9,7 @@ import { testimonials } from '@/lib/content';
 import BusinessContact from '@/components/ReUsableComponents/BusinessContact';
 import { useServices } from '@/hooks/useServices';
 import Reviews from '@/components/ReUsableComponents/Reviews';
+import PromotionsCarousel from '@/components/ReUsableComponents/PromotionsCarousel';
 
 
 export default function Page() {
@@ -60,6 +61,15 @@ export default function Page() {
             <span>• EXPERIENCIA ÚNICA</span>
           </div>
         </div>
+
+        {/* Promociones */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">Promociones del Mes</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto font-medium">Aprovecha nuestras ofertas especiales y regálate un momento de relajación.</p>
+          </div>
+          <PromotionsCarousel />
+        </section>
 
         {/* Values / Features Grid */}
         <section 
