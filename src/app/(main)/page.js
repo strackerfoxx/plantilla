@@ -14,7 +14,7 @@ import Reviews from '@/components/ReUsableComponents/Reviews';
 export default function Page() {
     const { services } = useServices();
   return (
-    <div className="min-h-screen bg-[#f5f3f0] text-neutral-900 font-sans selection:bg-neutral-900 selection:text-white">
+    <div className="min-h-screen bg-[#f5f3f0] text-neutral-900 font-sans selection:bg-primary selection:text-white">
       {/* Navigation */}
 
       <main>
@@ -28,14 +28,14 @@ export default function Page() {
               Un espacio dedicado a tu bienestar y equilibrio. Conoce nuestros servicios personalizados y transforma tu día.
             </p>
             <div>
-              <Link href="/agendar" className="inline-flex items-center justify-center bg-neutral-900 text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-all hover:scale-105" aria-label="Agendar una cita ahora">
+              <Link href="/agendar" className="inline-flex items-center justify-center bg-primary text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-all hover:scale-105" aria-label="Agendar una cita ahora">
                 Agendar Cita
               </Link>
             </div>
           </div>
           <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&q=80&w=1200" 
+              src="https://images.unsplash.com/photo-1702312721918-62235a0b77d2?q=80&w=1101&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
               alt="Ambiente relajante del negocio Salon" 
               className="absolute inset-0 w-full h-full object-cover object-center"
               loading="eager"
@@ -44,7 +44,7 @@ export default function Page() {
         </section>
 
         {/* Marquee */}
-        <div className="bg-neutral-900 py-4 overflow-hidden flex whitespace-nowrap" aria-hidden="true">
+        <div className="bg-primary py-4 overflow-hidden flex whitespace-nowrap" aria-hidden="true">
           <div className="animate-marquee flex space-x-8 text-white/90 text-sm font-bold tracking-widest uppercase">
             <span>• AGENDA TU CITA HOY</span>
             <span>• DESCUBRE NUESTRO ESPACIO</span>
@@ -120,7 +120,7 @@ export default function Page() {
           </div>
 
           <div className='w-full flex justify-center align-middle'>
-            <Link href="/agendar" className="mt-12 bg-neutral-900 text-white px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-colors shadow-lg" aria-label="Comienza ahora, agendar cita">
+            <Link href="/agendar" className="mt-12 bg-primary text-white px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-colors shadow-lg" aria-label="Comienza ahora, agendar cita">
               Comienza Ahora
             </Link>
           </div>
@@ -128,9 +128,9 @@ export default function Page() {
         </section>
 
         {/* Split Info Section (Dark) */}
-        <section id="nosotros" className="flex flex-col md:flex-row w-full bg-neutral-900 text-white">
+        <section id="nosotros" className="flex flex-col md:flex-row w-full bg-primary text-white">
           <div className="w-full md:w-1/2 h-[500px] md:h-auto overflow-hidden">
-             <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1200&q=80" alt="Instalaciones de Salon" className="w-full h-full object-cover object-center" loading="lazy" />
+             <img src="https://images.unsplash.com/photo-1684014286330-ddbeb4a40c92?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Instalaciones de Salon" className="w-full h-full object-cover object-center" loading="lazy" />
           </div>
           <div className="w-full md:w-1/2 flex flex-col justify-center p-12 md:p-20 lg:p-32">
              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 leading-none">
@@ -160,7 +160,7 @@ export default function Page() {
                </Link>
              </div>
            </div>
-           <div className="w-full md:w-1/2 bg-neutral-900 p-12 md:p-24 flex flex-col justify-center text-white">
+           <div className="w-full md:w-1/2 bg-secondary p-12 md:p-24 flex flex-col justify-center text-white">
              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6">Servicios Especiales</h2>
              <p className="text-neutral-400 leading-relaxed mb-8">
                Desde consultas de valoración hasta sesiones completas de renovación. Estamos preparados para guiarte en cada paso de tu proceso.
@@ -191,7 +191,7 @@ export default function Page() {
             <p className="text-neutral-600 text-lg mb-10 font-medium">
               Agenda tu cita hoy mismo y comienza tu viaje hacia una mejor versión de ti.
             </p>
-            <Link href="/agendar" className="bg-neutral-900 text-white px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-colors shadow-lg" aria-label="Comienza ahora, agendar cita">
+            <Link href="/agendar" className="bg-primary text-white px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-colors shadow-lg" aria-label="Comienza ahora, agendar cita">
               Comienza Ahora
             </Link>
           </div>
