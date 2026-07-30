@@ -11,27 +11,27 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 
 export const metadata = {
-  metadataBase: new URL('https://dentallanz.netlify.app'),
+  metadataBase: new URL('https://salonlazarini.netlify.app'),
   title: {
-    default: 'Dental Lanz | Odontología Integral en CDMX',
-    template: '%s | Dental Lanz'
+    default: 'Salon Lazarini | Clínica de Belleza y Spa',
+    template: '%s | Salon Lazarini'
   },
   description:
-    'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales. Agenda tu cita hoy. Calificación 5.0 en Google.',
+    'Clínica de belleza y spa. Especialistas en tratamientos faciales, corporales y relajación. Agenda tu cita hoy y descubre tu mejor versión.',
   keywords: [
-    'Dental Lanz',
-    'clínica dental CDMX',
-    'dentista Prado Coapa',
-    'ortodoncia CDMX',
-    'blanqueamiento dental',
-    'odontología integral'
+    'Salon Lazarini',
+    'spa CDMX',
+    'clínica de belleza',
+    'tratamientos faciales',
+    'masajes relajantes',
+    'bienestar integral'
   ],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Dental Lanz | Odontología Integral en CDMX',
-    description: 'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales.',
-    url: 'https://dentallanz.netlify.app',
-    siteName: 'Dental Lanz',
+    title: 'Salon Lazarini | Clínica de Belleza y Spa',
+    description: 'Clínica de belleza y spa. Especialistas en tratamientos faciales, corporales y relajación.',
+    url: 'https://salonlazarini.netlify.app',
+    siteName: 'Salon Lazarini',
     locale: 'es_MX',
     type: 'website'
   }
@@ -40,9 +40,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const businessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Dentist',
-    name: 'Dental Lanz',
-    image: 'https://dentallanz.netlify.app/og-image.jpg',
+    '@type': 'BeautySalon',
+    name: 'Salon Lazarini',
+    image: 'https://salonlazarini.netlify.app/og-image.jpg',
     telephone: '+52 55 5801 9251',
     priceRange: '$$',
     aggregateRating: {
@@ -72,7 +72,7 @@ export default function RootLayout({ children }) {
         closes: '14:00'
       }
     ],
-    url: 'https://dentallanz.netlify.app'
+    url: 'https://salonlazarini.netlify.app'
   };
 
   return (
