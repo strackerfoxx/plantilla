@@ -47,7 +47,7 @@ export default function BusinessContact({horario}) {
             <div className="mt-1 text-slate-600 space-y-1">
                 <p className="flex justify-between w-48"><span>Lun - Vie:</span> <span>09:00 - 18:00</span></p>
                 <p className="flex justify-between w-48"><span>Sábado:</span> <span>09:00 - 14:00</span></p>
-                <p className="flex justify-between w-48 text-slate-400"><span>Domingo:</span> <span>09:00 - 13:00</span></p>
+                <p className="flex justify-between w-48"><span>Domingo:</span> <span>09:00 - 13:00</span></p>
             </div>
             </div>
         </div>

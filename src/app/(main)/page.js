@@ -149,7 +149,7 @@ export default function Page() {
              <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 leading-none">
                Dedicados a tu<br/>Bienestar
              </h2>
-             <p className="text-neutral-400 mb-10 text-lg leading-relaxed">
+             <p className="text-neutral-200 mb-10 text-lg leading-relaxed">
                En nuestra Clinica de Belleza, creemos que el tiempo que inviertes en ti mismo es el más valioso. Nuestro propósito es brindarte un refugio donde puedas renovarte física y mentalmente. 
              </p>
              <div>
@@ -175,7 +175,7 @@ export default function Page() {
            </div>
            <div className="w-full md:w-1/2 bg-secondary p-12 md:p-24 flex flex-col justify-center text-white">
              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6">Servicios Especiales</h2>
-             <p className="text-neutral-400 leading-relaxed mb-8">
+             <p className="text-neutral-200 leading-relaxed mb-8">
                Desde consultas de valoración hasta sesiones completas de renovación. Estamos preparados para guiarte en cada paso de tu proceso.
              </p>
              <div>
@@ -191,7 +191,7 @@ export default function Page() {
           {/* Background Text */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden" aria-hidden="true">
             <span className="text-[20rem] md:text-[30rem] lg:text-[40rem] font-black text-neutral-200/50 uppercase tracking-tighter leading-none select-none">
-              Beauty
+              Acoxpa
             </span>
           </div>
           
@@ -210,7 +210,7 @@ export default function Page() {
           </div>
         </section>
 
-              {/* <Reviews/> */}
+              <Reviews />
 
       <section className="p-5 my-20 bg-[#f5f3f0]" id="ubicacion">
         <BusinessContact />

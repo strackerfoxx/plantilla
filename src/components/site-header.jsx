@@ -47,7 +47,7 @@ export function SiteHeader() {
           className="text-3xl font-black tracking-tighter uppercase"
           aria-label="Clinica Inicio"
         >
-          Clinica
+          Acoxpa 419
         </Link>
       </div>
 
