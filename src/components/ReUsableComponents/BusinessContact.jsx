@@ -57,7 +57,7 @@ export default function BusinessContact({horario}) {
             href="https://maps.app.goo.gl/FGVUXyDfkAcrKBf29" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-2 px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-neutral-800 hover:bg-secondary-800 transition-colors shadow-md"
+            className="w-full flex items-center justify-center gap-2 px-6 py-3 border border-transparent text-base font-medium rounded-xl text-white bg-neutral-700 hover:bg-secondary-800 transition-colors shadow-md"
             >
             <MapPin className="w-5 h-5" />
             Abrir en Google Maps

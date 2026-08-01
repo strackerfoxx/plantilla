@@ -173,14 +173,14 @@ export default function Reviews() {
             ))}
           </div>
 
-          <button type="button" onClick={() => goToSlide((currentSlide - 1 + reviews.length) % reviews.length)} className="absolute left-0 top-[calc(50%-1.5rem)] hidden size-11 -translate-y-1/2 place-items-center border border-neutral-900 bg-[#f5f3f0] text-neutral-900 transition-colors hover:bg-neutral-900 hover:text-white md:grid" aria-label="Ver reseña anterior"><ChevronLeft className="size-5" /></button>
-          <button type="button" onClick={() => goToSlide((currentSlide + 1) % reviews.length)} className="absolute right-0 top-[calc(50%-1.5rem)] hidden size-11 -translate-y-1/2 place-items-center bg-neutral-900 text-white transition-colors hover:bg-primary md:grid" aria-label="Ver siguiente reseña"><ChevronRight className="size-5" /></button>
+          <button type="button" onClick={() => goToSlide((currentSlide - 1 + reviews.length) % reviews.length)} className="absolute left-0 top-[calc(50%-1.5rem)] hidden size-11 -translate-y-1/2 place-items-center border border-neutral-900 bg-[#f5f3f0] text-neutral-900 transition-colors hover:bg-neutral-700 hover:text-white md:grid" aria-label="Ver reseña anterior"><ChevronLeft className="size-5" /></button>
+          <button type="button" onClick={() => goToSlide((currentSlide + 1) % reviews.length)} className="absolute right-0 top-[calc(50%-1.5rem)] hidden size-11 -translate-y-1/2 place-items-center bg-neutral-700 text-white transition-colors hover:bg-primary md:grid" aria-label="Ver siguiente reseña"><ChevronRight className="size-5" /></button>
 
           <div className="mt-6 flex items-center justify-between gap-4 md:justify-center">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-neutral-500"><span className="text-neutral-900">{String(currentSlide + 1).padStart(2, "0")}</span> / {String(reviews.length).padStart(2, "0")}</p>
             <div className="flex gap-2 md:hidden">
-              <button type="button" onClick={() => goToSlide((currentSlide - 1 + reviews.length) % reviews.length)} className="grid size-11 place-items-center border border-neutral-900 text-neutral-900 transition-colors hover:bg-neutral-900 hover:text-white" aria-label="Ver reseña anterior"><ChevronLeft className="size-5" /></button>
-              <button type="button" onClick={() => goToSlide((currentSlide + 1) % reviews.length)} className="grid size-11 place-items-center bg-neutral-900 text-white transition-colors hover:bg-primary" aria-label="Ver siguiente reseña"><ChevronRight className="size-5" /></button>
+              <button type="button" onClick={() => goToSlide((currentSlide - 1 + reviews.length) % reviews.length)} className="grid size-11 place-items-center border border-neutral-900 text-neutral-900 transition-colors hover:bg-neutral-700 hover:text-white" aria-label="Ver reseña anterior"><ChevronLeft className="size-5" /></button>
+              <button type="button" onClick={() => goToSlide((currentSlide + 1) % reviews.length)} className="grid size-11 place-items-center bg-neutral-700 text-white transition-colors hover:bg-primary" aria-label="Ver siguiente reseña"><ChevronRight className="size-5" /></button>
             </div>
           </div>
         </div>

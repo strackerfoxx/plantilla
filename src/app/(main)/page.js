@@ -38,7 +38,7 @@ export default function Page() {
               </p>
               <Link
                 href="/agendar"
-                className="inline-flex items-center justify-center bg-primary text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-all hover:scale-105"
+                className="inline-flex items-center justify-center bg-primary text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-700 transition-all hover:scale-105"
                 aria-label="Agendar una cita ahora"
               >
                 Agendar Cita
@@ -121,7 +121,7 @@ export default function Page() {
               <CardContent className="p-8">
                 <h3 className="tracking-tighter text-2xl font-black ">{service.name}</h3>
                   <p className="mt-3 min-h-24 text-md leading-7 text-muted-foreground">{service.description}</p>
-                  <div className="mt-5 flex items-center justify-between text-sm font-bold text-white bg-neutral-800">
+                  <div className="mt-5 flex items-center justify-between text-sm font-bold text-white bg-neutral-700">
                     <span className='text-lg'>{service.durationMin} mins</span>
                     {/* <span className='text-lg'>${service.price.toFixed(2)}</span> */}
                   </div>
@@ -133,7 +133,7 @@ export default function Page() {
           </div>
 
           <div className='w-full flex justify-center align-middle'>
-            <Link href="/agendar" className="mt-12 bg-primary text-white px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-colors shadow-lg" aria-label="Comienza ahora, agendar cita">
+            <Link href="/agendar" className="mt-12 bg-primary text-white px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-700 transition-colors shadow-lg" aria-label="Comienza ahora, agendar cita">
               Comienza Ahora
             </Link>
           </div>
@@ -204,7 +204,7 @@ export default function Page() {
             <p className="text-neutral-600 text-lg mb-10 font-medium">
               Agenda tu cita hoy mismo y comienza tu viaje hacia una mejor versión de ti.
             </p>
-            <Link href="/agendar" className="bg-primary text-white px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-colors shadow-lg" aria-label="Comienza ahora, agendar cita">
+            <Link href="/agendar" className="bg-primary text-white px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-700 transition-colors shadow-lg" aria-label="Comienza ahora, agendar cita">
               Comienza Ahora
             </Link>
           </div>

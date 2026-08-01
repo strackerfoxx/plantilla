@@ -84,7 +84,7 @@ export function SiteHeader() {
 
             <Link
               href="/agendar"
-              className="bg-neutral-900 text-white px-6 py-2.5 text-sm font-semibold tracking-wide uppercase hover:bg-neutral-800 transition-colors"
+              className="bg-neutral-700 text-white px-6 py-2.5 text-sm font-semibold tracking-wide uppercase hover:bg-neutral-700 transition-colors"
             >
               Agendar
             </Link>
@@ -100,7 +100,7 @@ export function SiteHeader() {
 
             <Link
               href="/crear-cuenta"
-              className="bg-neutral-900 text-white px-6 py-2.5 text-sm font-semibold tracking-wide uppercase hover:bg-neutral-800 transition-colors"
+              className="bg-neutral-700 text-white px-6 py-2.5 text-sm font-semibold tracking-wide uppercase hover:bg-neutral-700 transition-colors"
             >
               Crear cuenta
             </Link>
@@ -141,7 +141,7 @@ export function SiteHeader() {
       <Link
         href="/agendar"
         onClick={() => setIsMobileMenuOpen(false)}
-        className="mt-4 bg-neutral-900 text-white px-6 py-3 text-center text-sm font-semibold tracking-wide uppercase hover:bg-neutral-800 transition-colors"
+        className="mt-4 bg-neutral-700 text-white px-6 py-3 text-center text-sm font-semibold tracking-wide uppercase hover:bg-neutral-700 transition-colors"
       >
         Agendar
       </Link>
@@ -169,7 +169,7 @@ export function SiteHeader() {
       <Link
         href="/crear-cuenta"
         onClick={() => setIsMobileMenuOpen(false)}
-        className="mt-4 bg-neutral-900 text-white px-6 py-3 text-center text-sm font-semibold tracking-wide uppercase hover:bg-neutral-800 transition-colors"
+        className="mt-4 bg-neutral-700 text-white px-6 py-3 text-center text-sm font-semibold tracking-wide uppercase hover:bg-neutral-700 transition-colors"
       >
         Crear cuenta
       </Link>
