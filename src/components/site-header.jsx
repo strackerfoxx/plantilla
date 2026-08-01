@@ -44,7 +44,7 @@ export function SiteHeader() {
       <div className="flex-1 md:flex-none flex justify-center md:justify-start">
         <Link
           href="/"
-          className="text-3xl font-black tracking-tighter uppercase"
+          className="text-3xl font-black tracking-tighter uppercase text-neutral-700"
           aria-label="Clinica Inicio"
         >
           Acoxpa 419

@@ -145,10 +145,10 @@ export default function Reviews() {
         <div className="mb-12 grid gap-8 border-b border-neutral-300 pb-10 md:mb-16 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
           <div className="max-w-2xl">
             <p className="mb-4 text-sm font-bold uppercase tracking-[0.22em] text-secondary">Opiniones</p>
-            <h2 className="text-4xl font-black uppercase leading-[0.9] tracking-tighter text-neutral-900 sm:text-5xl md:text-6xl">Su experiencia,<br />nuestra inspiración</h2>
+            <h2 className="text-4xl font-black uppercase leading-[0.9] tracking-tighter text-neutral-700 sm:text-5xl md:text-6xl">Su experiencia,<br />nuestra inspiración</h2>
           </div>
           <div className="flex items-center gap-4 md:justify-self-end">
-            <span className="text-5xl font-black tracking-tighter text-neutral-900">4.6</span>
+            <span className="text-5xl font-black tracking-tighter text-neutral-700">4.6</span>
             <div><Rating /><p className="mt-2 text-xs font-bold uppercase tracking-wider text-neutral-500">Opiniones de clientes</p></div>
           </div>
         </div>
