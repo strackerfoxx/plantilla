@@ -20,27 +20,30 @@ export default function Page() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative w-full h-[90vh] min-h-[600px] flex flex-col md:flex-row bg-[#f5f3f0]">
-          <div className="w-full md:w-1/2 h-1/2 md:h-full flex flex-col justify-center px-8 md:px-16 lg:px-24 z-10 relative">
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none mb-6">
-              Descubre<br/>Tu<br/>Energía
-            </h1>
-            <p className="max-w-md text-lg text-neutral-600 mb-10 leading-relaxed font-medium">
-              Un espacio dedicado a tu bienestar y equilibrio. Conoce nuestros servicios personalizados y transforma tu día.
-            </p>
-            <div>
-              <Link href="/agendar" className="inline-flex items-center justify-center bg-primary text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-all hover:scale-105" aria-label="Agendar una cita ahora">
+        <section className="relative w-full h-[90vh] min-h-[600px] overflow-hidden bg-[#f5f3f0]">
+          <img
+            src="https://images.unsplash.com/photo-1683579808784-6faf6af67a40?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Ambiente relajante del negocio Clinica de Belleza"
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            loading="eager"
+          />
+          <div className="absolute inset-0 bg-black/35" />
+          <div className="relative z-10 flex h-full items-center justify-center px-8 md:px-16 lg:px-24">
+            <div className="flex max-w-2xl flex-col items-center justify-center text-center text-white">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none mb-6">
+                Descubre<br/>Tu<br/>Energía
+              </h1>
+              <p className="max-w-md text-lg mb-10 leading-relaxed font-medium text-white/90">
+                Un espacio dedicado a tu bienestar y equilibrio. Conoce nuestros servicios personalizados y transforma tu día.
+              </p>
+              <Link
+                href="/agendar"
+                className="inline-flex items-center justify-center bg-primary text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-800 transition-all hover:scale-105"
+                aria-label="Agendar una cita ahora"
+              >
                 Agendar Cita
               </Link>
             </div>
-          </div>
-          <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden">
-            <img 
-              src="https://images.unsplash.com/photo-1702312721918-62235a0b77d2?q=80&w=1101&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-              alt="Ambiente relajante del negocio Clinica de Belleza" 
-              className="absolute inset-0 w-full h-full object-cover object-center"
-              loading="eager"
-            />
           </div>
         </section>
 
@@ -120,7 +123,7 @@ export default function Page() {
                   <p className="mt-3 min-h-24 text-md leading-7 text-muted-foreground">{service.description}</p>
                   <div className="mt-5 flex items-center justify-between text-sm font-bold text-white bg-neutral-800">
                     <span className='text-lg'>{service.durationMin} mins</span>
-                    <span className='text-lg'>${service.price.toFixed(2)}</span>
+                    {/* <span className='text-lg'>${service.price.toFixed(2)}</span> */}
                   </div>
                 </CardContent>
               </Card>

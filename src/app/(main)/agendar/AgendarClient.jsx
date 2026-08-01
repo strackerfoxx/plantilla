@@ -379,7 +379,7 @@ export default function AgendarClient({ id }) {
                         </div>
                         <div className="flex justify-between items-end">
                            <span className="text-sm text-muted-foreground">{service.durationMin} min</span>
-                           <span className="font-bold text-primary">${service.price}</span>
+                           {/* <span className="font-bold text-primary">${service.price}</span> */}
                         </div>
                       </button>
                     );
@@ -576,7 +576,7 @@ export default function AgendarClient({ id }) {
 
                 <div className="flex justify-between items-end pt-4 pb-2 border-t border-white/20 mt-4">
                   <span className="text-lg">Total</span>
-                  <span className="text-2xl font-bold">${totalPrice.toFixed(2)}</span>
+                  {/* <span className="text-2xl font-bold">${totalPrice.toFixed(2)}</span> */}
                 </div>
 
                 <button
