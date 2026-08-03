@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Star, WandSparkles, MapPin, Phone, CalendarCheck } from 'lucide-react';
+import { ShieldCheck, Star, WandSparkles, MapPin, Phone, CalendarCheck, Instagram, Facebook, Linkedin, Twitter, MessageCircleMore, Music2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { SectionHeading } from '@/components/section-heading';
@@ -22,12 +22,78 @@ export default function Page() {
         {/* Hero Section */}
         <section className="relative w-full h-[90vh] min-h-[600px] overflow-hidden bg-[#f5f3f0]">
           <img
-            src="https://images.unsplash.com/photo-1683579808784-6faf6af67a40?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="/cover.png"
             alt="Ambiente relajante del negocio Clinica de Belleza"
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover object-center will-change-transform"
             loading="eager"
+            style={{ animation: 'heroZoom 18s ease-in-out infinite alternate' }}
           />
           <div className="absolute inset-0 bg-black/35" />
+          <div className="absolute top-4 left-4 z-20 flex gap-2 sm:top-8 sm:right-6">
+            <a
+              href="https://www.instagram.com/clinicadebellezaacoxpa419/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/acoxpa419/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://www.facebook.com/ClinicaBellezaAcoxpa419"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="Facebook"
+            >
+              <Facebook size={20} />
+            </a>
+            <a
+              href="https://www.facebook.com/Acoxpa419/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="Facebook"
+            >
+              <Facebook size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/cl%C3%ADnica-de-belleza-acoxpa-419/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href="https://x.com/ClinB_acoxpa419"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="Twitter"
+            >
+              <Twitter size={20} />
+            </a>
+            <a
+              href="https://wa.me/525524948191?text=Hola%20%F0%9F%91%8B.%20Vi%20la%20p%C3%A1gina%20de%20Aera%20y%20me%20interesa%20conocer%20c%C3%B3mo%20puede%20ayudar%20a%20mi%20negocio.%20Me%20gustar%C3%ADa%20agendar%20una%20demostraci%C3%B3n."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="WhatsApp"
+            >
+              <MessageCircleMore size={20} />
+            </a>
+          </div>
           <div className="relative z-10 flex h-full items-center justify-center px-8 md:px-16 lg:px-24">
             <div className="flex max-w-2xl flex-col items-center justify-center text-center text-white">
               <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none mb-6">
@@ -64,15 +130,6 @@ export default function Page() {
             <span>• EXPERIENCIA ÚNICA</span>
           </div>
         </div>
-
-        {/* Promociones */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">Promociones del Mes</h2>
-            <p className="text-neutral-600 max-w-2xl mx-auto font-medium">Aprovecha nuestras ofertas especiales y regálate un momento de relajación.</p>
-          </div>
-          <PromotionsCarousel />
-        </section>
 
         {/* Values / Features Grid */}
         <section 
@@ -140,6 +197,15 @@ export default function Page() {
 
         </section>
 
+        {/* Promociones */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">Promociones del Mes</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto font-medium">Aprovecha nuestras ofertas especiales y regálate un momento de relajación.</p>
+          </div>
+          <PromotionsCarousel />
+        </section>
+
         {/* Split Info Section (Dark) */}
         <section id="nosotros" className="flex flex-col md:flex-row w-full bg-primary text-white">
           <div className="w-full md:w-1/2 h-[500px] md:h-auto overflow-hidden">
@@ -187,16 +253,16 @@ export default function Page() {
         </section>
 
         {/* Large Typography Section */}
-        <section className="relative py-32 overflow-hidden bg-[#f5f3f0] flex items-center justify-center min-h-[800px]">
+        {/* <section className="relative py-32 overflow-hidden bg-[#f5f3f0] flex items-center justify-center min-h-[800px]"> */}
           {/* Background Text */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden" aria-hidden="true">
+          {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden" aria-hidden="true">
             <span className="text-[20rem] md:text-[30rem] lg:text-[40rem] font-black text-neutral-200/50 uppercase tracking-tighter leading-none select-none">
               Acoxpa
             </span>
-          </div>
+          </div> */}
           
           {/* Overlapping Content */}
-          <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-6">
+          {/* <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-6">
             <div className="w-64 h-80 md:w-80 md:h-[28rem] mb-10 overflow-hidden shadow-2xl">
               <img src="https://images.unsplash.com/photo-1498842812179-c81beecf902c?auto=format&fit=crop&w=800&q=80" alt="Momentos en Clinica de Belleza" className="w-full h-full object-cover" loading="lazy" />
             </div>
@@ -208,7 +274,7 @@ export default function Page() {
               Comienza Ahora
             </Link>
           </div>
-        </section>
+        </section> */}
 
               <Reviews />
 

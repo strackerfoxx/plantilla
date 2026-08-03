@@ -4,9 +4,10 @@ import Image from 'next/image';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
 
 const images = [
-  '/promo1.png',
-  '/promo2.png',
-  '/promo3.png'
+  '/promo1.jpeg',
+  '/promo2.jpeg',
+  '/promo3.jpeg',
+  '/promo4.jpeg',
 ];
 
 export default function PromotionsCarousel() {

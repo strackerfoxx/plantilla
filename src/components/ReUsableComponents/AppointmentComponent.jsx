@@ -69,10 +69,10 @@ export default function AppointmentComponent({ appointments }) {
                     </li>
                     ))}
                 </ul>
-                <div className="flex justify-between items-center pt-4 mt-4 border-t border-slate-100">
+                {/* <div className="flex justify-between items-center pt-4 mt-4 border-t border-slate-100">
                     <span className="font-semibold text-slate-900">Total</span>
                     <span className="font-bold text-lg text-primary-600">${appointment.amount}</span>
-                </div>
+                </div> */}
                 </div>
             </div>
         ))}
