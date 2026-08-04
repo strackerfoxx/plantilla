@@ -10,7 +10,7 @@ import BusinessContact from '@/components/ReUsableComponents/BusinessContact';
 import { useServices } from '@/hooks/useServices';
 import Reviews from '@/components/ReUsableComponents/Reviews';
 import PromotionsCarousel from '@/components/ReUsableComponents/PromotionsCarousel';
-
+import TreatmentsSection from '@/components/ReUsableComponents/TreatmentsSection';
 
 export default function Page() {
     const { services } = useServices();
@@ -130,6 +130,8 @@ export default function Page() {
             <span>• EXPERIENCIA ÚNICA</span>
           </div>
         </div>
+
+        <TreatmentsSection />
 
         {/* Values / Features Grid */}
         <section 
