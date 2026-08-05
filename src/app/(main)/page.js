@@ -230,18 +230,36 @@ export default function Page() {
 
         {/* Two Column Info Blocks */}
         <section id="filosofia" className="flex flex-col md:flex-row w-full">
-           <div className="w-full md:w-1/2 bg-[#e6e2db] p-12 md:p-24 flex flex-col justify-center">
-             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6">Nuestra Filosofía</h2>
-             <p className="text-neutral-700 leading-relaxed mb-8">
+           <div className="w-full bg-[#e6e2db] p-12 md:p-24 flex flex-col justify-center">
+             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6 text-center">Medicina estetica con enfoque integral</h2>
+             <p className="text-neutral-700 leading-relaxed mb-8 text-center">
                Buscamos el equilibrio perfecto entre la técnica experta y un trato profundamente humano. Cada visita es una oportunidad para conectar contigo mismo.
              </p>
-             <div>
-               <Link href="/agendar" className="text-sm font-bold tracking-widest uppercase border-b-2 border-neutral-900 pb-1 hover:text-neutral-600 hover:border-neutral-600 transition-colors">
-                 Conoce Más
-               </Link>
+             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
+               <div className="flex flex-col items-center text-center p-6 bg-white/30 rounded-lg">
+                 <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center mb-4 shadow-lg">
+                   <Star size={28} />
+                 </div>
+                 <h3 className="text-xl font-black uppercase">Atención Profesional</h3>
+                 <p className="mt-2 text-neutral-700 max-w-xs">Nuestro equipo ofrece un trato atento y personalizado, cuidando cada detalle para tu confort y seguridad.</p>
+               </div>
+               <div className="flex flex-col items-center text-center p-6 bg-white/30 rounded-lg">
+                 <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center mb-4 shadow-lg">
+                   <ShieldCheck size={28} />
+                 </div>
+                 <h3 className="text-xl font-black uppercase">Médicos Certificados</h3>
+                 <p className="mt-2 text-neutral-700 max-w-xs">Profesionales con formación y experiencia comprobada para procedimientos seguros y eficaces.</p>
+               </div>
+               <div className="flex flex-col items-center text-center p-6 bg-white/30 rounded-lg">
+                 <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center mb-4 shadow-lg">
+                   <WandSparkles size={28} />
+                 </div>
+                 <h3 className="text-xl font-black uppercase">Resultados Comprobados</h3>
+                 <p className="mt-2 text-neutral-700 max-w-xs">Testimonios y resultados visibles que respaldan nuestro compromiso con tu bienestar.</p>
+               </div>
              </div>
            </div>
-           <div className="w-full md:w-1/2 bg-secondary p-12 md:p-24 flex flex-col justify-center text-white">
+           {/* <div className="w-full md:w-1/2 bg-secondary p-12 md:p-24 flex flex-col justify-center text-white">
              <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6">Servicios Especiales</h2>
              <p className="text-neutral-200 leading-relaxed mb-8">
                Desde consultas de valoración hasta sesiones completas de renovación. Estamos preparados para guiarte en cada paso de tu proceso.
@@ -251,7 +269,7 @@ export default function Page() {
                  Ver Catálogo de Servicios
                </Link>
              </div>
-           </div>
+           </div> */}
         </section>
 
         {/* Large Typography Section */}
