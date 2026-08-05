@@ -1,4 +1,4 @@
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Playfair_Display, Poppins } from 'next/font/google';
 
 import { BusinessProvider } from '@/context/BusinessProvider';
 import { ServicesProvider } from '@/context/ServicesProvider';
@@ -7,7 +7,7 @@ import { AppointmentsProvider } from '@/context/AppointmentsProvider';
 
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '600', '700', '800'], variable: '--font-poppins', display: 'swap' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 
 export const metadata = {
@@ -76,7 +76,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="es-MX" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="es-MX" className={`${poppins.variable} ${playfair.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }} />
         <BusinessProvider>
