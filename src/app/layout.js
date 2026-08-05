@@ -7,6 +7,14 @@ import { AppointmentsProvider } from '@/context/AppointmentsProvider';
 
 import './globals.css';
 
+import { Gelasio } from "next/font/google";
+
+const gelasio = Gelasio({
+  subsets: ["latin"],
+  variable: "--font-gelasio",
+  display: "swap",
+});
+
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 
@@ -76,7 +84,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="es-MX" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="es-MX" className={`${inter.variable} ${playfair.variable} ${gelasio.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }} />
         <BusinessProvider>

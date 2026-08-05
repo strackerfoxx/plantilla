@@ -37,6 +37,16 @@
     @apply bg-background text-foreground antialiased;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-gelasio);
+    font-weight: bold;
+  }
+
   html {
     scroll-behavior: smooth;
   }

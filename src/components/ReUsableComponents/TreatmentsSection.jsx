@@ -61,7 +61,7 @@ export default function TreatmentsSection() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
           <div>
             <p className="text-xs font-bold tracking-[0.2em] text-neutral-500 uppercase mb-3">Atención Personalizada</p>
-            <h2 className="text-4xl md:text-5xl text-[#330d3b] font-serif tracking-tight">Nuestros tratamientos</h2>
+            <h2 className="text-4xl md:text-5xl text-[#330d3b] tracking-tight">Nuestros tratamientos</h2>
           </div>
           <div className="flex gap-2 mt-6 md:mt-0">
             <button
@@ -110,7 +110,7 @@ export default function TreatmentsSection() {
                       isActive ? "opacity-100" : "opacity-0 pointer-events-none"
                     )}
                   >
-                    <h3 className="text-3xl font-serif italic mb-3 transform transition-transform duration-500 delay-100 translate-y-0 opacity-100">{item.title}</h3>
+                    <h3 className="text-3xl italic mb-3 transform transition-transform duration-500 delay-100 translate-y-0 opacity-100">{item.title}</h3>
                     <p className="text-sm text-neutral-200 mb-6 max-w-xs leading-relaxed transform transition-transform duration-500 delay-200 translate-y-0 opacity-100">
                       {item.description}
                     </p>
@@ -133,7 +133,7 @@ export default function TreatmentsSection() {
                     isActive ? "opacity-0 h-0 overflow-hidden" : "opacity-100"
                   )}
                 >
-                  <h3 className="text-[#330d3b] font-serif text-lg leading-tight w-4/5 mx-auto">
+                  <h3 className="text-[#330d3b] text-lg leading-tight w-4/5 mx-auto">
                     {item.title}
                   </h3>
                 </div>

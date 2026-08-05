@@ -48,8 +48,8 @@ module.exports = {
         sm: 'calc(var(--radius) - 4px)'
       },
       fontFamily: {
-        sans: ['var(--font-playfair)', 'ui-sans-serif', 'system-ui'],
-        serif: ['var(--font-playfair)', 'ui-serif', 'Georgia']
+        poppins: ['var(--font-poppins)', 'sans-serif'],
+        gelasio: ['var(--font-gelasio)', 'serif'],
       },
       boxShadow: {
         glow: '0 24px 80px rgba(28, 100, 242, 0.18)'

@@ -15,7 +15,7 @@ import TreatmentsSection from '@/components/ReUsableComponents/TreatmentsSection
 export default function Page() {
     const { services } = useServices();
   return (
-    <div className="min-h-screen bg-[#f5f3f0] text-neutral-900 font-sans selection:bg-primary selection:text-white">
+    <div className="min-h-screen bg-[#f5f3f0] text-neutral-900 font-poppins selection:bg-primary selection:text-white">
       {/* Navigation */}
 
       <main>
@@ -96,7 +96,7 @@ export default function Page() {
           </div>
           <div className="relative z-10 flex h-full items-center justify-center px-8 md:px-16 lg:px-24">
             <div className="flex max-w-2xl flex-col items-center justify-center text-center text-white">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none mb-6">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none mb-6 font-gelasio">
                 Descubre<br/>Tu<br/>Energía
               </h1>
               <p className="max-w-md text-lg mb-10 leading-relaxed font-medium text-white/90">
