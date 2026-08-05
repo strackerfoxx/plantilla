@@ -85,7 +85,7 @@ export default function Page() {
               <Twitter size={20} />
             </a>
             <a
-              href="https://wa.me/525524948191?text=Hola%20%F0%9F%91%8B.%20Vi%20la%20p%C3%A1gina%20de%20Aera%20y%20me%20interesa%20conocer%20c%C3%B3mo%20puede%20ayudar%20a%20mi%20negocio.%20Me%20gustar%C3%ADa%20agendar%20una%20demostraci%C3%B3n."
+              href="https://wa.me/525524948191?text=¡Hola!%20Encontré%20su%20página%20web%20y%20quisiera%20saber%20más%20sobre%20sus%20servicios.%20¿Podrían%20ayudarme?"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
