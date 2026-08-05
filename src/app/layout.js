@@ -43,7 +43,7 @@ export const metadata = {
     url: 'https://acoxpa419.com',
     siteName: 'Clínica de Belleza ACOXPA 419',
     locale: 'es_MX',
-    type: 'place'
+    type: 'website'
   },
   icons: {
     icon: '/logo.png',
@@ -92,7 +92,7 @@ export default function RootLayout({ children }) {
       }
     ],
     sameAs: [
-      'https://acoxpa419-clinicadebelleza.negocio.site/',
+      'https://acoxpa419.com/',
       'https://api.whatsapp.com/send?phone=5215561184123'
     ],
     amenityFeature: {
