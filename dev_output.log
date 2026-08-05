@@ -2,29 +2,18 @@
 > salon-lazarini@0.1.0 dev
 > next dev
 
-   ▲ Next.js 15.5.18
+   ▲ Next.js 15.5.22
    - Local:        http://localhost:3000
    - Network:      http://192.168.0.2:3000
-   - Environments: .env
 
  ✓ Starting...
- ✓ Ready in 1612ms
- ○ Compiling /servicios ...
- ✓ Compiled /servicios in 10.6s (879 modules)
- GET /servicios 200 in 12549ms
- ○ Compiling /agendar ...
- ✓ Compiled /agendar in 4s (2029 modules)
- ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
- GET /agendar 200 in 4875ms
+ ✓ Ready in 1577ms
  ○ Compiling / ...
- ✓ Compiled / in 1410ms (1490 modules)
- GET / 200 in 2133ms
- ✓ Compiled in 579ms (932 modules)
- ✓ Compiled in 308ms (932 modules)
- ⨯ ./node_modules/luxon/build/es6/luxon.mjs
-Error: ENOENT: no such file or directory, open '/app/node_modules/luxon/build/es6/luxon.mjs'
-
-Import trace for requested module:
-./node_modules/luxon/build/es6/luxon.mjs
-./src/app/agendar/AgendarClient.jsx
- ✓ Compiled in 379ms (918 modules)
+ ✓ Compiled / in 10.6s (967 modules)
+ GET / 200 in 12621ms
+Failed to proxy http://localhost:4000/service/get-services-client?businessId=undefined [AggregateError: ] { code: 'ECONNREFUSED' }
+[AggregateError: ] { code: 'ECONNREFUSED' }
+Failed to proxy http://localhost:4000/business/get-business-by-id-client?businessId=undefined [AggregateError: ] { code: 'ECONNREFUSED' }
+[AggregateError: ] { code: 'ECONNREFUSED' }
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 2.7s (1302 modules)
