@@ -4,7 +4,7 @@ import LoginPrompt from '@/components/ReUsableComponents/LoginPrompt';
 
 export const metadata = {
   title: 'Mis citas',
-  description: 'Consulta tus citas agendadas en El Salon.'
+  description: 'Consulta tus citas agendadas en Barbería y salón Alex y gestiona tu próxima visita en Tlalpan, CDMX.'
 };
 
 export default function MisCitasPage() {
