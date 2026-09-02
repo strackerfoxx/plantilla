@@ -9,6 +9,7 @@ import { testimonials } from '@/lib/content';
 import BusinessContact from '@/components/ReUsableComponents/BusinessContact';
 import { useServices } from '@/hooks/useServices';
 import Reviews from '@/components/ReUsableComponents/Reviews';
+import ProductsSection from '@/components/ReUsableComponents/ProductsSection';
 
 
 export default function Page() {
@@ -166,6 +167,8 @@ export default function Page() {
             </Link>
           </div>
         </section>
+
+        <ProductsSection />
 
         <Reviews/>
 
