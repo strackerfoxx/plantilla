@@ -6,31 +6,31 @@ import { ArrowLeft, ArrowRight, X } from 'lucide-react';
 const products = [
   {
     id: 1,
-    name: "CREAMY LATE",
-    price: 25.00,
-    image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop",
-    description: "Un esmalte de uñas premium de larga duración con un acabado brillante. Perfecto para el cuidado de tus manos y darles un toque elegante en cualquier ocasión.",
+    name: "CLASSIC POMADE",
+    price: 22.00,
+    image: "https://images.unsplash.com/photo-1599305090598-fe179d501227?q=80&w=800&auto=format&fit=crop",
+    description: "Pomada clásica de base agua que ofrece una fijación fuerte con un brillo medio. Ideal para estilos pulidos como pompadours y slick backs. Se lava fácilmente sin dejar residuos.",
   },
   {
     id: 2,
-    name: "MINI SUGAR OIL",
-    price: 15.00,
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=800&auto=format&fit=crop",
-    description: "Aceite hidratante de cutículas. Protege y revitaliza tus uñas de forma natural, manteniéndolas sanas y fuertes con su uso diario.",
+    name: "MATTE CLAY WAX",
+    price: 24.00,
+    image: "https://images.unsplash.com/photo-1621607512214-68297480165e?q=80&w=800&auto=format&fit=crop",
+    description: "Cera de arcilla con acabado mate y textura flexible. Aporta volumen y definición duradera, perfecta para looks naturales y texturizados que puedes remodelar durante el día.",
   },
   {
     id: 3,
-    name: "OIL FACEWASH",
-    price: 30.00,
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop",
-    description: "Limpiador facial en aceite que remueve impurezas y maquillaje sin resecar la piel. Deja tu rostro suave, limpio e hidratado.",
+    name: "PREMIUM BEARD OIL",
+    price: 28.00,
+    image: "https://images.unsplash.com/photo-1621607512022-6aecc4fed814?q=80&w=800&auto=format&fit=crop",
+    description: "Aceite premium para barba enriquecido con aceites esenciales de argán y jojoba. Hidrata la piel, suaviza el vello facial y elimina la picazón, dejando un aroma varonil a madera y cítricos.",
   },
   {
     id: 4,
-    name: "LIPSTICK RED",
-    price: 35.00,
-    image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?q=80&w=800&auto=format&fit=crop",
-    description: "Labial rojo intenso de acabado mate y fórmula intransferible. Realza tus labios con un color vibrante que dura todo el día.",
+    name: "SOOTHING AFTERSHAVE",
+    price: 30.00,
+    image: "https://images.unsplash.com/photo-1587520448057-087095629c15?q=80&w=800&auto=format&fit=crop",
+    description: "Loción calmante para después del afeitado. Su fórmula sin alcohol con aloe vera y manzanilla alivia instantáneamente la irritación, cerrando los poros y refrescando la piel.",
   }
 ];
 
