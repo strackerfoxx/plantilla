@@ -101,12 +101,12 @@ export default function ProductsSection() {
 
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto pb-8 snap-x no-scrollbar"
+            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar scroll-smooth"
           >
             {products.map((product) => (
               <div
                 key={product.id}
-              className="min-w-[280px] md:min-w-[320px] bg-white rounded-xl p-4 shadow-sm border border-neutral-100 flex flex-col snap-start shrink-0 cursor-pointer"
+              className="min-w-[280px] md:min-w-[350px] lg:min-w-[400px] w-full max-w-[85vw] bg-white rounded-xl p-4 shadow-sm border border-neutral-100 flex flex-col snap-center shrink-0 cursor-pointer"
               onClick={() => openModal(product)}
             >
               <div className="relative w-full h-80 bg-neutral-100 rounded-lg overflow-hidden mb-6">
