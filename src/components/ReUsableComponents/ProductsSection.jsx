@@ -15,21 +15,21 @@ const products = [
     id: 2,
     name: "MATTE CLAY WAX",
     price: 24.00,
-    image: "https://images.unsplash.com/photo-1621607512214-68297480165e?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1602023427299-a44c1cfb4854?q=80&w=1176&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Cera de arcilla con acabado mate y textura flexible. Aporta volumen y definición duradera, perfecta para looks naturales y texturizados que puedes remodelar durante el día.",
   },
   {
     id: 3,
     name: "PREMIUM BEARD OIL",
     price: 28.00,
-    image: "https://images.unsplash.com/photo-1621607512022-6aecc4fed814?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1677511255825-78533743b356?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Aceite premium para barba enriquecido con aceites esenciales de argán y jojoba. Hidrata la piel, suaviza el vello facial y elimina la picazón, dejando un aroma varonil a madera y cítricos.",
   },
   {
     id: 4,
     name: "SOOTHING AFTERSHAVE",
     price: 30.00,
-    image: "https://images.unsplash.com/photo-1587520448057-087095629c15?q=80&w=800&auto=format&fit=crop",
+    image: "https://plus.unsplash.com/premium_photo-1661270415179-f7bcff006edb?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Loción calmante para después del afeitado. Su fórmula sin alcohol con aloe vera y manzanilla alivia instantáneamente la irritación, cerrando los poros y refrescando la piel.",
   }
 ];
@@ -62,41 +62,21 @@ export default function ProductsSection() {
     <section className="bg-[#faf8f6] py-20 px-4 sm:px-6 lg:px-8 overflow-hidden font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Top Header Section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-16 gap-10">
-          <div className="lg:w-1/3 flex flex-col gap-8">
-            <p className="text-neutral-600 text-sm md:text-base leading-relaxed">
-              Hairstylists, cosmetologists, and manicurists, along with receptionists, rank among the most common roles in the beauty salon industry.
-            </p>
-            <div className="flex items-center gap-6">
-              <div className="flex items-center gap-2">
-                <div className="w-2.5 h-2.5 rounded-full bg-black"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-neutral-300"></div>
-                <div className="w-2.5 h-2.5 rounded-full bg-neutral-300"></div>
-              </div>
-            </div>
-          </div>
-          <div className="lg:w-2/3 text-right">
-            <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black uppercase tracking-tighter leading-[0.9] text-black">
-              START YOUR SHOPPING<br />
-              <span className="flex items-center justify-end gap-2 md:gap-4">
-                <svg className="w-10 h-10 md:w-16 md:h-16 shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" />
-                </svg>
-                WITH ALEX
-              </span>
+        <div className=" text-center">
+            <h2 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black uppercase tracking-tighter leading-[0.9] text-black flex space-between items-center justify-center gap-2 md:gap-4">
+              PRODUCTOS DE ALEX
             </h2>
           </div>
-        </div>
 
         {/* Products Grid / Carousel */}
         <div className="relative group -mx-4 sm:-mx-6 lg:mx-0">
           {/* Lateral Left Control */}
           <button
             onClick={scrollLeft}
-            className="absolute left-2 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-full shadow-lg flex items-center justify-center hover:bg-neutral-50 transition-all opacity-100 md:opacity-0 group-hover:opacity-100 disabled:opacity-0"
+            className="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-neutral-200 rounded-full shadow-lg items-center justify-center hover:bg-neutral-50 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
             aria-label="Previous product"
           >
-            <ArrowLeft size={20} className="md:w-6 md:h-6" />
+            <ArrowLeft size={24} />
           </button>
 
           <div
@@ -115,7 +95,7 @@ export default function ProductsSection() {
                   alt={product.name}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 right-3 bg-[#cc0000] text-white text-lg font-black px-3 py-1 shadow-md">
+                <div className="absolute top-3 right-3 bg-neutral-700 text-white text-lg font-black px-3 py-1 shadow-md">
                   ${product.price.toFixed(2)}
                 </div>
                   </div>
@@ -127,10 +107,10 @@ export default function ProductsSection() {
           {/* Lateral Right Control */}
           <button
             onClick={scrollRight}
-            className="absolute right-2 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 bg-[#cc0000]/90 backdrop-blur-sm text-white border border-[#cc0000] rounded-full shadow-lg flex items-center justify-center hover:bg-red-700 transition-all opacity-100 md:opacity-0 group-hover:opacity-100 disabled:opacity-0"
+            className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-neutral-700 text-white border border-neutral-700 rounded-full shadow-lg items-center justify-center hover:bg-red-700 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
             aria-label="Next product"
           >
-            <ArrowRight size={20} className="md:w-6 md:h-6" />
+            <ArrowRight size={24} />
           </button>
         </div>
       </div>
@@ -163,7 +143,7 @@ export default function ProductsSection() {
                 Detalle del Producto
               </div>
               <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">{selectedProduct.name}</h3>
-              <p className="text-[#cc0000] text-3xl font-black mb-8">${selectedProduct.price.toFixed(2)}</p>
+              <p className="text-neutral-700 text-3xl font-black mb-8">${selectedProduct.price.toFixed(2)}</p>
 
               <p className="text-neutral-600 text-lg leading-relaxed">
                 {selectedProduct.description}
