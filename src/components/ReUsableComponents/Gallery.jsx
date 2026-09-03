@@ -20,7 +20,7 @@ export default function Gallery() {
       type: "image",
     },
     {
-      src: "https://www.w3schools.com/html/mov_bbb.mp4",
+      src: "https://www.pexels.com/es-es/download/video/4177803",
       alt: "Video de prueba",
       type: "video",
     },
