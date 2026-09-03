@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ArrowLeft, ArrowRight, X } from 'lucide-react';
 
 const products = [
@@ -36,6 +36,7 @@ const products = [
 
 export default function ProductsSection() {
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const scrollContainerRef = useRef(null);
 
   const openModal = (product) => {
     setSelectedProduct(product);
@@ -43,6 +44,18 @@ export default function ProductsSection() {
 
   const closeModal = () => {
     setSelectedProduct(null);
+  };
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -60,14 +73,6 @@ export default function ProductsSection() {
                 <div className="w-2.5 h-2.5 rounded-full bg-neutral-300"></div>
                 <div className="w-2.5 h-2.5 rounded-full bg-neutral-300"></div>
               </div>
-              <div className="flex items-center gap-3 ml-4">
-                <button className="w-12 h-10 rounded-full border border-black flex items-center justify-center hover:bg-neutral-100 transition-colors" aria-label="Previous">
-                  <ArrowLeft size={18} />
-                </button>
-                <button className="w-12 h-10 rounded-full bg-[#cc0000] text-white flex items-center justify-center hover:bg-red-700 transition-colors shadow-md" aria-label="Next">
-                  <ArrowRight size={18} />
-                </button>
-              </div>
             </div>
           </div>
           <div className="lg:w-2/3 text-right">
@@ -84,13 +89,27 @@ export default function ProductsSection() {
         </div>
 
         {/* Products Grid / Carousel */}
-        <div className="flex gap-6 overflow-x-auto pb-8 snap-x no-scrollbar">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="min-w-[280px] md:min-w-[320px] bg-white rounded-xl p-4 shadow-sm border border-neutral-100 flex flex-col snap-start shrink-0"
+        <div className="relative group">
+          {/* Lateral Left Control */}
+          <button
+            onClick={scrollLeft}
+            className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-neutral-200 rounded-full shadow-lg flex items-center justify-center hover:bg-neutral-50 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
+            aria-label="Previous product"
+          >
+            <ArrowLeft size={24} />
+          </button>
+
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto pb-8 snap-x no-scrollbar"
+          >
+            {products.map((product) => (
+              <div
+                key={product.id}
+              className="min-w-[280px] md:min-w-[320px] bg-white rounded-xl p-4 shadow-sm border border-neutral-100 flex flex-col snap-start shrink-0 cursor-pointer"
+              onClick={() => openModal(product)}
             >
-              <div className="relative w-full h-64 bg-neutral-100 rounded-lg overflow-hidden mb-6 cursor-pointer" onClick={() => openModal(product)}>
+              <div className="relative w-full h-80 bg-neutral-100 rounded-lg overflow-hidden mb-6">
                 <img
                   src={product.image}
                   alt={product.name}
@@ -99,16 +118,20 @@ export default function ProductsSection() {
                 <div className="absolute top-3 right-3 bg-[#cc0000] text-white text-lg font-black px-3 py-1 shadow-md">
                   ${product.price.toFixed(2)}
                 </div>
+                  </div>
+                  <h3 className="text-2xl font-black uppercase tracking-tighter text-center">{product.name}</h3>
               </div>
-              <h3 className="text-2xl font-black uppercase tracking-tighter text-center mb-6">{product.name}</h3>
-              <button
-                onClick={() => openModal(product)}
-                className="w-full bg-black text-white font-bold py-4 rounded-full uppercase tracking-widest text-sm hover:bg-neutral-800 transition-colors mt-auto"
-              >
-                Buy Now
-              </button>
-            </div>
-          ))}
+              ))}
+          </div>
+
+          {/* Lateral Right Control */}
+          <button
+            onClick={scrollRight}
+            className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-[#cc0000] text-white border border-[#cc0000] rounded-full shadow-lg flex items-center justify-center hover:bg-red-700 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
+            aria-label="Next product"
+          >
+            <ArrowRight size={24} />
+          </button>
         </div>
       </div>
 
@@ -116,7 +139,7 @@ export default function ProductsSection() {
       {selectedProduct && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/60 backdrop-blur-sm" onClick={closeModal}>
           <div
-            className="bg-white rounded-2xl w-full max-w-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row relative"
+            className="bg-white rounded-2xl w-full max-w-4xl overflow-hidden shadow-2xl flex flex-col md:flex-row relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -127,7 +150,7 @@ export default function ProductsSection() {
               <X size={18} className="text-black" />
             </button>
 
-            <div className="w-full md:w-1/2 h-64 md:h-auto relative bg-neutral-100">
+            <div className="w-full md:w-1/2 h-80 md:h-auto md:min-h-[400px] relative bg-neutral-100">
               <img
                 src={selectedProduct.image}
                 alt={selectedProduct.name}
@@ -135,26 +158,16 @@ export default function ProductsSection() {
               />
             </div>
 
-            <div className="w-full md:w-1/2 p-8 flex flex-col justify-center">
+            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
               <div className="inline-block bg-neutral-100 text-neutral-800 text-xs font-bold px-2 py-1 rounded mb-4 w-fit uppercase tracking-wider">
                 Detalle del Producto
               </div>
-              <h3 className="text-3xl font-black uppercase tracking-tighter mb-2">{selectedProduct.name}</h3>
-              <p className="text-[#cc0000] text-2xl font-black mb-6">${selectedProduct.price.toFixed(2)}</p>
+              <h3 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">{selectedProduct.name}</h3>
+              <p className="text-[#cc0000] text-3xl font-black mb-8">${selectedProduct.price.toFixed(2)}</p>
 
-              <p className="text-neutral-600 mb-8 leading-relaxed">
+              <p className="text-neutral-600 text-lg leading-relaxed">
                 {selectedProduct.description}
               </p>
-
-              <button
-                onClick={() => {
-                  alert("Producto añadido al carrito (Demo)");
-                  closeModal();
-                }}
-                className="w-full bg-black text-white font-bold py-4 rounded-full uppercase tracking-widest text-sm hover:bg-neutral-800 transition-colors shadow-lg"
-              >
-                Agregar al carrito
-              </button>
             </div>
           </div>
         </div>
