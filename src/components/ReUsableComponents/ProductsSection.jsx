@@ -89,11 +89,11 @@ export default function ProductsSection() {
         </div>
 
         {/* Products Grid / Carousel */}
-        <div className="relative group">
+        <div className="relative group -mx-4 sm:-mx-6 lg:mx-0">
           {/* Lateral Left Control */}
           <button
             onClick={scrollLeft}
-            className="absolute -left-4 md:-left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-neutral-200 rounded-full shadow-lg flex items-center justify-center hover:bg-neutral-50 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
+            className="hidden md:flex absolute -left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white border border-neutral-200 rounded-full shadow-lg items-center justify-center hover:bg-neutral-50 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
             aria-label="Previous product"
           >
             <ArrowLeft size={24} />
@@ -101,12 +101,12 @@ export default function ProductsSection() {
 
           <div
             ref={scrollContainerRef}
-            className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory no-scrollbar scroll-smooth"
+            className="flex gap-4 md:gap-6 overflow-x-auto pb-8 px-4 sm:px-6 lg:px-0 snap-x snap-mandatory no-scrollbar scroll-smooth w-full"
           >
             {products.map((product) => (
               <div
                 key={product.id}
-              className="min-w-[280px] md:min-w-[350px] lg:min-w-[400px] w-full max-w-[85vw] bg-white rounded-xl p-4 shadow-sm border border-neutral-100 flex flex-col snap-center shrink-0 cursor-pointer"
+              className="min-w-[85vw] sm:min-w-[60vw] md:min-w-[350px] lg:min-w-[400px] bg-white rounded-xl p-4 shadow-sm border border-neutral-100 flex flex-col snap-center shrink-0 cursor-pointer"
               onClick={() => openModal(product)}
             >
               <div className="relative w-full h-80 bg-neutral-100 rounded-lg overflow-hidden mb-6">
@@ -127,7 +127,7 @@ export default function ProductsSection() {
           {/* Lateral Right Control */}
           <button
             onClick={scrollRight}
-            className="absolute -right-4 md:-right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-[#cc0000] text-white border border-[#cc0000] rounded-full shadow-lg flex items-center justify-center hover:bg-red-700 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
+            className="hidden md:flex absolute -right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-[#cc0000] text-white border border-[#cc0000] rounded-full shadow-lg items-center justify-center hover:bg-red-700 transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
             aria-label="Next product"
           >
             <ArrowRight size={24} />
