@@ -105,7 +105,7 @@ export default function Page() {
 
         <section id="nosotros" className="flex flex-col md:flex-row w-full bg-neutral-900 text-white">
           <div className="w-full md:w-1/2 h-[500px] md:h-auto overflow-hidden">
-             <img src="https://images.unsplash.com/photo-1672968831840-ab691ce8f263?q=80&w=1633&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior de Barbería y salón Alex" className="w-full h-full object-cover object-center" loading="lazy" />
+             <img src="/WhatsApp%20Image%202026-09-03%20at%2012.15.55%20PM.jpeg" alt="Interior de Barbería y salón Alex" className="w-full h-full object-cover object-center" loading="lazy" />
           </div>
           <div className="w-full md:w-1/2 flex flex-col justify-center p-12 md:p-20 lg:p-32">
              <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-neutral-300">Sobre nosotros</p>

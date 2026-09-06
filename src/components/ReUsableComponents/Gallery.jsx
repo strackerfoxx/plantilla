@@ -8,38 +8,44 @@ export default function Gallery() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef(null);
 
-  const images = [
-    {
-      src: "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop",
-      alt: "Herramientas de barbería",
-      type: "image",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop",
-      alt: "Corte de cabello moderno",
-      type: "image",
-    },
-    {
-      src: "https://www.pexels.com/es-es/download/video/4177803",
-      alt: "Video de prueba",
-      type: "video",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800&auto=format&fit=crop",
-      alt: "Interior de la barbería",
-      type: "image",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?q=80&w=800&auto=format&fit=crop",
-      alt: "Lavado de cabello",
-      type: "image",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=800&auto=format&fit=crop",
-      alt: "Atención personalizada",
-      type: "image",
-    },
+  const mediaItems = [
+    { src: "/WhatsApp%20Video%202026-09-03%20at%2011.57.03%20AM.mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.47.56%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.47.56%20AM%20(1).jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.47.56%20AM%20(2).jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.47.56%20AM%20(3).jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.52.31%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Video%202026-09-03%20at%2011.57.05%20AM.mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
+    { src: "/WhatsApp%20Video%202026-09-03%20at%2011.47.56%20AM.mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
+    { src: "/WhatsApp%20Video%202026-09-03%20at%2011.48.55%20AM.mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.48.40%20AM%20(1).jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.48.40%20AM%20(2).jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.48.40%20AM%20(3).jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.48.40%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Video%202026-09-03%20at%2011.57.04%20AM.mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.50.20%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.51.20%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.52.21%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.53.02%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.53.35%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.54.01%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.54.20%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.54.50%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.55.02%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.55.17%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.56.24%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.57.01%20AM%20(1).jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.57.01%20AM%20(2).jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Image%202026-09-03%20at%2011.57.01%20AM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Video%202026-09-03%20at%2011.57.04%20AM%20(1).mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
+    { src: "/WhatsApp%20Video%202026-09-03%20at%2011.47.56%20AM%20(1).mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
+    // { src: "/WhatsApp%20Image%202026-09-03%20at%2012.15.55%20PM.jpeg", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/WhatsApp%20Video%202026-09-03%20at%2011.49.47%20AM%20(1).mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
+    { src: "/WhatsApp%20Video%202026-09-03%20at%2011.49.47%20AM.mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
+    { src: "/WhatsApp%20Video%202026-09-03%20at%2011.49.36%20AM.mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
   ];
+
+  const images = mediaItems;
 
   const scrollLeft = () => {
     if (carouselRef.current) {
@@ -101,7 +107,7 @@ export default function Gallery() {
             Galería
           </h2>
           <p className="text-neutral-600 max-w-2xl mx-auto font-medium">
-            Descubre nuestras instalaciones, cortes y el ambiente de Barbería y salón Alex. Un vistazo a lo que ofrecemos.
+            Descubre nuestras instalaciones, cortes, tratamientos y el ambiente de Barbería y salón Alex. Un vistazo a lo que ofrecemos.
           </p>
         </div>
 
@@ -132,9 +138,9 @@ export default function Gallery() {
           >
             {images.map((media, index) => (
               <div
-                key={index}
+                key={`${media.src}-${index}`}
                 onClick={() => openModal(index)}
-                className="flex-none w-[280px] sm:w-[320px] md:w-[400px] h-[300px] md:h-[400px] relative overflow-hidden group snap-center cursor-pointer shadow-md rounded-sm"
+                className="flex-none w-[380px] sm:w-[420px] md:w-[500px] h-[500px] md:h-[700px] relative overflow-hidden group snap-center cursor-pointer shadow-md rounded-sm"
               >
                 <div className="absolute inset-0 bg-neutral-900/0 group-hover:bg-neutral-900/20 transition-colors duration-300 z-10 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 text-neutral-900 px-4 py-2 uppercase text-xs font-bold tracking-widest rounded-sm">
