@@ -7,34 +7,28 @@ import { cn } from "@/lib/utils";
 
 const treatments = [
   {
-    title: "Pestañas",
-    description: "Realza tu mirada con extensiones y diseño de cejas personalizados para un acabado natural y sofisticado.",
-    imgUrl: "https://images.unsplash.com/photo-1735151226446-1d364b4adc2f?q=80&w=1170&auto=format&fit=crop",
-    offset: "md:mt-0"
-  },
-  {
     title: "Tratamientos Faciales",
     description: "Limpiezas profundas, hidratación y cuidado especializado para una piel fresca, luminosa y más joven.",
     imgUrl: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop",
     offset: "md:mt-12"
   },
-  {
+    {
     title: "Tratamientos Corporales",
     description: "Sesiones de masaje, remodelación y bienestar corporal diseñadas para revitalizar cuerpo y mente.",
     imgUrl: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=800&auto=format&fit=crop",
     offset: "md:mt-24"
   },
   {
-    title: "Medicina Estética",
-    description: "Procedimientos avanzados con tecnología segura para rejuvenecer y embellecer con resultados naturales.",
-    imgUrl: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1170&auto=format&fit=crop",
-    offset: "md:mt-8"
-  },
-  {
     title: "Depilación Permanente",
     description: "Elimina el vello de forma duradera con técnicas expertas para una piel suave y sin irritaciones.",
     imgUrl: "https://images.unsplash.com/photo-1702261952387-e35f3dc5d0c3?q=80&w=1170&auto=format&fit=crop",
     offset: "md:mt-16"
+  },
+  {
+    title: "Medicina Estética",
+    description: "Procedimientos avanzados con tecnología segura para rejuvenecer y embellecer con resultados naturales.",
+    imgUrl: "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=1170&auto=format&fit=crop",
+    offset: "md:mt-8"
   },
   {
     title: "Angiologia",
