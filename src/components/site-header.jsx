@@ -21,15 +21,15 @@ export function SiteHeader() {
 
   return (
 <header className="sticky top-0 z-50 w-full bg-[#f5f3f0]/90 backdrop-blur-md border-b border-neutral-200">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="flex justify-between items-center h-20">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="grid h-16 grid-cols-[2.5rem_1fr_2.5rem] items-center md:flex md:h-20 md:justify-between">
 
       {/* Mobile Menu Button */}
       <div className="md:hidden">
         <button
           type="button"
           onClick={toggleMobileMenu}
-          className="p-2 text-neutral-900 hover:text-neutral-600"
+          className="flex h-10 w-10 items-center justify-center text-neutral-900 hover:text-neutral-600"
           aria-label="Abrir menú"
         >
           {isMobileMenuOpen ? (
@@ -41,7 +41,7 @@ export function SiteHeader() {
       </div>
 
       {/* Logo */}
-      <div className="flex-1 md:flex-none flex justify-center md:justify-start">
+      <div className="flex justify-center md:flex-none md:justify-start">
         <Link
           href="/"
           className="text-3xl font-black tracking-tighter uppercase"
@@ -109,13 +109,13 @@ export function SiteHeader() {
       </nav>
 
       {/* Spacer para mantener el logo centrado en móvil */}
-      <div className="w-10 md:hidden" />
+      <div className="md:hidden" />
     </div>
   </div>
 
   {/* Mobile Menu */}
   {isMobileMenuOpen && (
-    <div className="md:hidden absolute top-20 left-0 right-0 bg-[#f5f3f0] border-b border-neutral-200 shadow-lg">
+    <div className="absolute left-0 right-0 top-16 border-b border-neutral-200 bg-[#f5f3f0] shadow-lg md:top-20">
       <nav className="flex flex-col p-6">
   {navItems.map((item) => (
     <Link

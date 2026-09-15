@@ -32,13 +32,13 @@ export default function Page() {
                 Agendar cita
               </Link>
             </div>
-            <div className="mt-8 flex items-center gap-3 text-sm text-neutral-700">
+            {/* <div className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-neutral-700">
               <span className="inline-flex items-center gap-1 font-semibold">★ 4.0</span>
-              <span>•</span>
+              <span aria-hidden="true">•</span>
               <span>4 opiniones</span>
-              <span>•</span>
+              <span aria-hidden="true">•</span>
               <span>Abierto hoy hasta las 8:00 p.m.</span>
-            </div>
+            </div> */}
           </div>
           <div className="w-full md:w-1/2 h-1/2 md:h-full relative overflow-hidden">
             <img 
