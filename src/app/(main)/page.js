@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Star, WandSparkles, MapPin, Phone, CalendarCheck } from 'lucide-react';
+import { ShieldCheck, Star, WandSparkles, MapPin, Phone, CalendarCheck, Instagram, Facebook, Linkedin, Twitter, MessageCircleMore, Music2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { SectionHeading } from '@/components/section-heading';
@@ -9,97 +9,311 @@ import { testimonials } from '@/lib/content';
 import BusinessContact from '@/components/ReUsableComponents/BusinessContact';
 import { useServices } from '@/hooks/useServices';
 import Reviews from '@/components/ReUsableComponents/Reviews';
+import PromotionsCarousel from '@/components/ReUsableComponents/PromotionsCarousel';
+import TreatmentsSection from '@/components/ReUsableComponents/TreatmentsSection';
 
-const galleryImages = [
-  {
-    src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Paciente sonriendo en clínica dental'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Instrumentos dentales de alta tecnología'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop',
-    alt: 'Odontólogo revisando radiografías'
-  }
-];
-
-export default function HomePage() {
-  const { services } = useServices();
+export default function Page() {
+    const { services } = useServices();
   return (
-    <>
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.1),_transparent_36%),linear-gradient(135deg,_#f8fafc_0%,_#e2e8f0_48%,_#f1f5f9_100%)]" />
-        <div className="container grid min-h-[680px] items-center gap-12 py-14 md:grid-cols-[1fr_0.9fr] md:py-20">
-          <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 5.0 en Google
-            </div>
-            <h1 className="text-balance text-5xl font-black tracking-tight md:text-7xl">
-              Tu sonrisa en manos expertas
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Atención odontológica integral y especializada en CDMX. Nos enfocamos en tu comodidad, brindando tratamientos de alta calidad con un trato humano y profesional.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg"><Link href="/agendar">Agendar Cita</Link></Button>
-              <Button asChild size="lg" variant="outline"><Link href="/servicios">Ver Tratamientos</Link></Button>
-            </div>
-              <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Trato Profesional</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Alta Calidad</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Sin Dolor</span>
-                </div>
-              </div>
+    <div className="min-h-screen bg-[#f5f3f0] text-neutral-900 font-poppins selection:bg-primary selection:text-white">
+      {/* Navigation */}
+
+      <main>
+        {/* Hero Section */}
+        <section className="relative w-full h-[90vh] min-h-[600px] overflow-hidden bg-[#f5f3f0]">
+          <img
+            src="/cover.png"
+            alt="Ambiente relajante del negocio Clinica de Belleza"
+            className="absolute inset-0 w-full h-full object-cover object-center will-change-transform"
+            loading="eager"
+            style={{ animation: 'heroZoom 18s ease-in-out infinite alternate' }}
+          />
+          <div className="absolute inset-0 bg-black/35" />
+          <div className="absolute top-4 left-4 z-20 flex gap-2 sm:top-8 sm:right-6">
+            <a
+              href="https://www.instagram.com/clinicadebellezaacoxpa419/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://www.instagram.com/acoxpa419/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href="https://www.facebook.com/ClinicaBellezaAcoxpa419"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="Facebook"
+            >
+              <Facebook size={20} />
+            </a>
+            <a
+              href="https://www.facebook.com/Acoxpa419/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="Facebook"
+            >
+              <Facebook size={20} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/cl%C3%ADnica-de-belleza-acoxpa-419/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={20} />
+            </a>
+            <a
+              href="https://x.com/ClinB_acoxpa419"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="Twitter"
+            >
+              <Twitter size={20} />
+            </a>
+            <a
+              href="https://wa.me/525524948191?text=¡Hola!%20Encontré%20su%20página%20web%20y%20quisiera%20saber%20más%20sobre%20sus%20servicios.%20¿Podrían%20ayudarme?"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="WhatsApp"
+            >
+              <MessageCircleMore size={20} />
+            </a>
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative col-span-2 h-80 overflow-hidden rounded-[2.5rem] shadow-glow md:h-96">
-              <Image src={galleryImages[0].src} alt={galleryImages[0].alt} fill priority sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
+          <div className="relative z-10 flex h-full items-center justify-center px-8 md:px-16 lg:px-24">
+            <div className="flex max-w-2xl flex-col items-center justify-center text-center text-white">
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none mb-6 font-gelasio">
+                Descubre<br/>Tu<br/>Energía
+              </h1>
+              <p className="max-w-md text-lg mb-10 leading-relaxed font-medium text-white/90">
+                Un espacio dedicado a tu bienestar y equilibrio. Conoce nuestros servicios personalizados y transforma tu día.
+              </p>
+              <Link
+                href="/agendar"
+                className="inline-flex items-center justify-center bg-primary text-white px-8 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-700 transition-all hover:scale-105"
+                aria-label="Agendar una cita ahora"
+              >
+                Agendar Cita
+              </Link>
             </div>
-            {galleryImages.slice(1).map((image) => (
-              <div key={image.src} className="relative h-48 overflow-hidden rounded-[2rem] shadow-sm">
-                <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 22vw, 50vw" className="object-cover" />
-              </div>
-            ))}
+          </div>
+        </section>
+
+        {/* Marquee */}
+        <div className="bg-primary py-4 overflow-hidden flex whitespace-nowrap" aria-hidden="true">
+          <div className="animate-marquee flex space-x-8 text-white/90 text-sm font-bold tracking-widest uppercase">
+            <span>• AGENDA TU CITA HOY</span>
+            <span>• DESCUBRE NUESTRO ESPACIO</span>
+            <span>• ATENCIÓN PERSONALIZADA</span>
+            <span>• EXPERIENCIA ÚNICA</span>
+            <span>• AGENDA TU CITA HOY</span>
+            <span>• DESCUBRE NUESTRO ESPACIO</span>
+            <span>• ATENCIÓN PERSONALIZADA</span>
+            <span>• EXPERIENCIA ÚNICA</span>
+            <span>• AGENDA TU CITA HOY</span>
+            <span>• DESCUBRE NUESTRO ESPACIO</span>
+            <span>• ATENCIÓN PERSONALIZADA</span>
+            <span>• EXPERIENCIA ÚNICA</span>
           </div>
         </div>
-      </section>
 
-      <section className="section-padding bg-white" id="servicios-destacados">
-        <div className="container">
-          <SectionHeading eyebrow="Nuestros Servicios" title="Tratamientos de Primer Nivel" description="Ofrecemos lo más indicado para cada caso individualizando tu tratamiento para garantizar los mejores resultados." centered />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <TreatmentsSection />
+
+        {/* Values / Features Grid */}
+        <section 
+          id="servicios" 
+          className="py-28 md:py-40 px-4 sm:px-6 lg:px-8  mx-auto" 
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1633423411797-9a7317784d2b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+        <div className="text-center mb-16 md:mb-24">
+            <h2 className="text-white text-5xl md:text-6xl font-black uppercase tracking-tighter mb-4">La Experiencia Belleza</h2>
+            <p className="text-white max-w-2xl mx-auto font-medium">Diseñamos cada detalle para ofrecerte un servicio excepcional y resultados que superen tus expectativas.</p>
+          </div>
+          
+          <div className="my-12 grid gap-5 md:grid-cols-3">
             {services.slice(0, 3).map((service) => (
-              <Card key={service.name} className="border-none bg-background/80 shadow-sm transition-transform hover:-translate-y-1">
-                <CardContent className="p-7">
-                  <WandSparkles className="mb-6 h-9 w-9 text-primary" aria-hidden="true" />
-                  <h3 className="text-xl font-black">{service.name}</h3>
-                  <p className="mt-3 min-h-24 text-sm leading-7 text-muted-foreground">{service.description}</p>
-                  <div className="mt-5 flex items-center justify-between text-sm font-bold text-primary">
-                    <span>{service.durationMin} mins</span>
-                    <span>${service.price.toFixed(2)}</span>
+              <Card
+                key={service.name}
+                className="
+                  group
+                  relative
+                  overflow-hidden
+                  border-0
+                  bg-white
+                  shadow-none
+                "
+              >
+                <div
+                  className="
+                    absolute
+                    top-0
+                    left-0
+                    h-1
+                    w-0
+                    bg-black
+                    transition-all
+                    duration-300
+                    group-hover:w-full
+                  "
+                />
+
+              <CardContent className="p-8">
+                <h3 className="tracking-tighter text-2xl font-black ">{service.name}</h3>
+                  <p className="mt-3 min-h-24 text-md leading-7 text-muted-foreground">{service.description}</p>
+                  <div className="mt-5 flex items-center justify-between text-sm font-bold text-white bg-neutral-700">
+                    <span className='text-lg'>{service.durationMin} mins</span>
+                    {/* <span className='text-lg'>${service.price.toFixed(2)}</span> */}
                   </div>
                 </CardContent>
               </Card>
+
+                  
             ))}
           </div>
-        </div>
-      </section>
 
-      <Reviews/>
+          <div className='w-full flex justify-center align-middle'>
+            <Link href="/agendar" className="mt-12 bg-primary text-white px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-700 transition-colors shadow-lg" aria-label="Comienza ahora, agendar cita">
+              Comienza Ahora
+            </Link>
+          </div>
 
-      <section className="p-5 bg-white" id="ubicacion">
+        </section>
+
+        {/* Promociones */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">Promociones del Mes</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto font-medium">Aprovecha nuestras ofertas especiales y regálate un momento de relajación.</p>
+          </div>
+          <PromotionsCarousel />
+        </section>
+
+        {/* Split Info Section (Dark) */}
+        <section id="nosotros" className="flex flex-col md:flex-row w-full bg-primary text-white">
+          <div className="w-full md:w-1/2 h-[500px] md:h-auto overflow-hidden">
+             <img src="https://images.unsplash.com/photo-1684014286330-ddbeb4a40c92?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Instalaciones de Clinica de Belleza" className="w-full h-full object-cover object-center" loading="lazy" />
+          </div>
+          <div className="w-full md:w-1/2 flex flex-col justify-center p-12 md:p-20 lg:p-32">
+             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6 leading-none">
+               Dedicados a tu<br/>Bienestar
+             </h2>
+             <p className="text-neutral-200 mb-10 text-lg leading-relaxed">
+               En nuestra Clinica de Belleza, creemos que el tiempo que inviertes en ti mismo es el más valioso. Nuestro propósito es brindarte un refugio donde puedas renovarte física y mentalmente. 
+             </p>
+             <div>
+               <Link href="/agendar" className="inline-block border-2 border-white px-8 py-3 text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-neutral-900 transition-colors" aria-label="Reserva tu experiencia">
+                 Reserva tu experiencia
+               </Link>
+             </div>
+          </div>
+        </section>
+
+        {/* Two Column Info Blocks */}
+        <section id="filosofia" className="flex flex-col md:flex-row w-full">
+           <div className="w-full bg-[#e6e2db] p-12 md:p-24 flex flex-col justify-center">
+             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6 text-center">Medicina estetica con enfoque integral</h2>
+             <p className="text-neutral-700 leading-relaxed mb-8 text-center">
+               Buscamos el equilibrio perfecto entre la técnica experta y un trato profundamente humano. Cada visita es una oportunidad para conectar contigo mismo.
+             </p>
+             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
+               <div className="flex flex-col items-center text-center p-6 bg-white/30 rounded-lg">
+                 <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center mb-4 shadow-lg">
+                   <Star size={28} />
+                 </div>
+                 <h3 className="text-xl font-black uppercase">Atención Profesional</h3>
+                 <p className="mt-2 text-neutral-700 max-w-xs">Nuestro equipo ofrece un trato atento y personalizado, cuidando cada detalle para tu confort y seguridad.</p>
+               </div>
+               <div className="flex flex-col items-center text-center p-6 bg-white/30 rounded-lg">
+                 <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center mb-4 shadow-lg">
+                   <ShieldCheck size={28} />
+                 </div>
+                 <h3 className="text-xl font-black uppercase">Médicos Certificados</h3>
+                 <p className="mt-2 text-neutral-700 max-w-xs">Profesionales con formación y experiencia comprobada para procedimientos seguros y eficaces.</p>
+               </div>
+               <div className="flex flex-col items-center text-center p-6 bg-white/30 rounded-lg">
+                 <div className="w-14 h-14 rounded-full bg-primary text-white flex items-center justify-center mb-4 shadow-lg">
+                   <WandSparkles size={28} />
+                 </div>
+                 <h3 className="text-xl font-black uppercase">Resultados Comprobados</h3>
+                 <p className="mt-2 text-neutral-700 max-w-xs">Testimonios y resultados visibles que respaldan nuestro compromiso con tu bienestar.</p>
+               </div>
+             </div>
+           </div>
+           {/* <div className="w-full md:w-1/2 bg-secondary p-12 md:p-24 flex flex-col justify-center text-white">
+             <h2 className="text-3xl md:text-4xl font-black uppercase tracking-tighter mb-6">Servicios Especiales</h2>
+             <p className="text-neutral-200 leading-relaxed mb-8">
+               Desde consultas de valoración hasta sesiones completas de renovación. Estamos preparados para guiarte en cada paso de tu proceso.
+             </p>
+             <div>
+               <Link href="/agendar" className="text-sm font-bold tracking-widest uppercase border-b-2 border-white pb-1 hover:text-neutral-300 hover:border-neutral-300 transition-colors">
+                 Ver Catálogo de Servicios
+               </Link>
+             </div>
+           </div> */}
+        </section>
+
+        {/* Large Typography Section */}
+        {/* <section className="relative py-32 overflow-hidden bg-[#f5f3f0] flex items-center justify-center min-h-[800px]"> */}
+          {/* Background Text */}
+          {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden" aria-hidden="true">
+            <span className="text-[20rem] md:text-[30rem] lg:text-[40rem] font-black text-neutral-200/50 uppercase tracking-tighter leading-none select-none">
+              Acoxpa
+            </span>
+          </div> */}
+          
+          {/* Overlapping Content */}
+          {/* <div className="relative z-10 flex flex-col items-center text-center max-w-2xl px-6">
+            <div className="w-64 h-80 md:w-80 md:h-[28rem] mb-10 overflow-hidden shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1498842812179-c81beecf902c?auto=format&fit=crop&w=800&q=80" alt="Momentos en Clinica de Belleza" className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-6">Encuentra Tu Centro</h2>
+            <p className="text-neutral-600 text-lg mb-10 font-medium">
+              Agenda tu cita hoy mismo y comienza tu viaje hacia una mejor versión de ti.
+            </p>
+            <Link href="/agendar" className="bg-primary text-white px-10 py-4 text-sm font-bold tracking-widest uppercase hover:bg-neutral-700 transition-colors shadow-lg" aria-label="Comienza ahora, agendar cita">
+              Comienza Ahora
+            </Link>
+          </div>
+        </section> */}
+
+              <Reviews />
+
+      <section className="p-5 my-20 bg-[#f5f3f0]" id="ubicacion">
         <BusinessContact />
       </section>
-    </>
+
+      </main>
+
+      {/* Marquee Animation Styles */}
+      <style dangerouslySetInnerHTML={{__html: `
+        @keyframes marquee {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+          animation: marquee 20s linear infinite;
+        }
+      `}} />
+    </div>
   );
 }

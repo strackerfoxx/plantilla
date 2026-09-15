@@ -65,14 +65,14 @@ export default function AppointmentComponent({ appointments }) {
                     {appointment.services.map((svc) => (
                     <li key={svc.id} className="flex justify-between items-center text-slate-600">
                         <span>{svc.service.name}</span>
-                        <span className="font-medium">${svc.service.price}</span>
+                        {/* <span className="font-medium">${svc.service.price}</span> */}
                     </li>
                     ))}
                 </ul>
-                <div className="flex justify-between items-center pt-4 mt-4 border-t border-slate-100">
+                {/* <div className="flex justify-between items-center pt-4 mt-4 border-t border-slate-100">
                     <span className="font-semibold text-slate-900">Total</span>
                     <span className="font-bold text-lg text-primary-600">${appointment.amount}</span>
-                </div>
+                </div> */}
                 </div>
             </div>
         ))}
