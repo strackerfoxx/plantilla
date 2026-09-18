@@ -3,7 +3,7 @@ import { AuthForm } from '@/components/ReUsableComponents/create-user-form';
 
 export const metadata = {
   title: 'Crear cuenta',
-  description: 'Crea tu cuenta en Dental Lanz con nombre, teléfono y email opcional.'
+  description: 'Crea tu cuenta en Barbería y salón Alex para reservar citas, ver servicios y agendar tu próximo corte o tratamiento.'
 };
 
 export default function CrearCuentaPage() {

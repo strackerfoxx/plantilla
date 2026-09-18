@@ -4,7 +4,7 @@ import LoginPrompt from '@/components/ReUsableComponents/LoginPrompt';
 
 export const metadata = {
   title: 'Agendar cita',
-  description: 'Agenda tu próxima cita en Dental Lanz para brackets, endodoncia, consulta, limpieza o revision.'
+  description: 'Reserva tu cita en Barbería y salón Alex en Tlalpan, CDMX. Corte de cabello, estética y atención personalizada con agenda rápida.'
 };
 
 export default async function AgendarPage({ searchParams }) {

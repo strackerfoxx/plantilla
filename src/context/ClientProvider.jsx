@@ -68,7 +68,7 @@ const ClientProvider = ({children}) => {
             localStorage.removeItem("client");
             setAccessToken(null);
             setClient({});
-            window.location.href = '/iniciar-sesion';
+            window.location.href = '/crear-cuenta';
         }
     }
 
