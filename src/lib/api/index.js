@@ -103,7 +103,7 @@ api.interceptors.response.use(
                 setAccessToken(null);
                 if (typeof window !== 'undefined') {
                     localStorage.removeItem("client");
-                    window.location.href = '/iniciar-sesion';
+                    window.location.href = '/crear-cuenta';
                 }
                 return Promise.reject(refreshError);
             } finally {

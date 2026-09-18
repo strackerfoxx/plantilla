@@ -92,13 +92,6 @@ export function SiteHeader() {
         ) : (
           <>
             <Link
-              href="/iniciar-sesion"
-              className="text-sm font-semibold tracking-wide hover:text-neutral-500 transition-colors uppercase"
-            >
-              Ingresar
-            </Link>
-
-            <Link
               href="/crear-cuenta"
               className="bg-neutral-900 text-white px-6 py-2.5 text-sm font-semibold tracking-wide uppercase hover:bg-neutral-800 transition-colors"
             >
@@ -158,14 +151,6 @@ export function SiteHeader() {
     </>
   ) : (
     <>
-      <Link
-        href="/iniciar-sesion"
-        onClick={() => setIsMobileMenuOpen(false)}
-        className="py-3 text-sm font-semibold tracking-wide uppercase"
-      >
-        Ingresar
-      </Link>
-
       <Link
         href="/crear-cuenta"
         onClick={() => setIsMobileMenuOpen(false)}
