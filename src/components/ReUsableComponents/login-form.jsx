@@ -11,7 +11,7 @@ import { auth } from "@/lib/firebase";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { getFirebaseErrorMessage } from '@/lib/firebase-errors';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { useClient } from '@/hooks/useClient';
 import { useBusiness } from '@/hooks/useBusiness';
@@ -21,6 +21,8 @@ export function LoginForm() {
   const [ phone, setPhone ] = useState('');
   const [ countryName, setCountryName ] = useState(countryCodes[0].country);
   const [ validating, setValidating ] = useState(false);
+  const recaptchaVerifier = useRef(null);
+  const recaptchaContainer = useRef(null);
   
   const { confirmationResult, setConfirmationResult, setIsLogin } = useClient();
 
@@ -29,21 +31,40 @@ export function LoginForm() {
   const fullPhone = getFullPhone(phone, countryName);
 
   useEffect(() => {
-    const initializeRecaptcha = async () => {
-      if (window.recaptchaVerifier) return;
+    const activeContainer = document.getElementById('login-recaptcha-container');
+    if (!activeContainer) return;
+    if (window.recaptchaVerifier && window.recaptchaOwner === 'login' && window.recaptchaContainer === activeContainer) return;
+    if (window.recaptchaVerifier && !window.recaptchaVerifier.destroyed) window.recaptchaVerifier.clear();
+    window.recaptchaVerifier = new RecaptchaVerifier(auth, activeContainer, { size: 'normal' });
+    window.recaptchaOwner = 'login';
+    window.recaptchaContainer = activeContainer;
+    window.recaptchaVerifier.render();
+    return;
 
-      window.recaptchaVerifier = new RecaptchaVerifier(
+    const host = recaptchaContainer.current;
+    if (!host) return;
+
+    // Firebase puede terminar un render cancelado después del desmontaje. Al
+    // usar un nodo interno nuevo, ese render tardío queda fuera del DOM visible.
+    const container = document.createElement('div');
+    host.replaceChildren(container);
+    const verifier = new RecaptchaVerifier(
         auth,
-        "recaptcha-container",
+        container,
         {
           size: "normal",
         }
       );
+    recaptchaVerifier.current = verifier;
+    verifier.render().catch((error) => {
+      if (!verifier.destroyed) console.error('Error al renderizar reCAPTCHA:', error);
+    });
 
-      await window.recaptchaVerifier.render();
+    return () => {
+      if (verifier && !verifier.destroyed) verifier.clear();
+      if (host.contains(container)) host.replaceChildren();
+      if (recaptchaVerifier.current === verifier) recaptchaVerifier.current = null;
     };
-
-    initializeRecaptcha();
   }, []);
 
   const handleSubmit = async (e) => {
@@ -105,7 +126,7 @@ export function LoginForm() {
                   onCountryChange={setCountryName}
                 />
               </div>
-              <div id="recaptcha-container" />
+              <div id="login-recaptcha-container" ref={recaptchaContainer} />
               <Button disabled={validating} type="submit" size="lg" className="w-full">Iniciar sesión</Button>
             </form>
             <p className="mt-6 text-center text-sm text-muted-foreground">
