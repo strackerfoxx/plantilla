@@ -75,12 +75,12 @@ export function SiteHeader() {
               Mis citas
             </Link>
 
-            <button
+            {/* <button
               onClick={logout}
               className="text-sm font-semibold tracking-wide hover:text-neutral-500 transition-colors uppercase"
             >
               Cerrar sesión
-            </button>
+            </button> */}
 
             <Link
               href="/agendar"
@@ -139,7 +139,7 @@ export function SiteHeader() {
         Agendar
       </Link>
 
-      <button
+      {/* <button
         onClick={() => {
           logout();
           setIsMobileMenuOpen(false);
@@ -147,7 +147,7 @@ export function SiteHeader() {
         className="mt-3 text-left py-3 text-sm font-semibold tracking-wide uppercase"
       >
         Cerrar sesión
-      </button>
+      </button> */}
     </>
   ) : (
     <>
