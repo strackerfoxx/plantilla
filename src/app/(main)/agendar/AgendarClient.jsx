@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Skeleton } from '@/components/ui/skeleton';
 import { getServicesDurationLabel } from '@/lib/formatDuration';
@@ -35,6 +35,7 @@ export default function AgendarClient({ id }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
+  const servicesListRef = useRef(null);
 
   const [availableUsers, setAvailableUsers] = useState({});
   const [selectedStatus, setSelectedStatus] = useState('SCHEDULED');
@@ -226,6 +227,13 @@ export default function AgendarClient({ id }) {
   const selectedServiceDetails = services.filter(service =>
     selectedServices.some(selectedService => selectedService.serviceId === service.id)
   );
+
+  useEffect(() => {
+    if (servicesListRef.current) {
+      servicesListRef.current.scrollTop = 0;
+    }
+  }, [services]);
+
   const totalDurationLabel = getServicesDurationLabel(selectedServiceDetails);
   const totalPrice = selectedServiceDetails.reduce((acc, curr) => acc + curr.price, 0);
   const canSubmit = selectedServices.length > 0 && selectedDate && selectedTime && (!isCanceledSelected || Boolean(id));
@@ -344,7 +352,7 @@ export default function AgendarClient({ id }) {
             <div className="mb-12">
               <h2 className="text-2xl font-bold  text-foreground mb-6">Selecciona el Servicio</h2>
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Tratamientos Disponibles *</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-auto max-h-[300px] overflow-y-auto pr-2 mb-6">
+              <div ref={servicesListRef} className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-4 h-auto max-h-[300px] overflow-y-auto pr-2 mb-6">
                 {loadingServices ? (
                   Array.from({ length: 4 }).map((_, i) => (
                     <div key={i} className="text-left p-5 rounded-2xl border border-border">
@@ -542,6 +550,7 @@ export default function AgendarClient({ id }) {
 
               <div className="space-y-6">
                 <div>
+                  <p>se aceptan pagos en efectivo, transferencia y tarjeta</p>
                   <p className="text-xs font-bold uppercase tracking-wider text-white/60 mb-1">Servicio</p>
                   {selectedServices.length > 0 ? (
                     <>
