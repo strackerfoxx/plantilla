@@ -550,7 +550,6 @@ export default function AgendarClient({ id }) {
 
               <div className="space-y-6">
                 <div>
-                  <p>se aceptan pagos en efectivo, transferencia y tarjeta</p>
                   <p className="text-xs font-bold uppercase tracking-wider text-white/60 mb-1">Servicio</p>
                   {selectedServices.length > 0 ? (
                     <>
@@ -583,6 +582,10 @@ export default function AgendarClient({ id }) {
                   <span className="text-lg">Total</span>
                   <span className="text-2xl font-bold">${totalPrice.toFixed(2)}</span>
                 </div>
+
+                <p className="text-sm text-white/80">
+                  se aceptan pagos en efectivo, transferencia y tarjeta
+                </p>
 
                 <button
                   type="button"
