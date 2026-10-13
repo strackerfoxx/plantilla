@@ -7,76 +7,104 @@ import { AppointmentsProvider } from '@/context/AppointmentsProvider';
 
 import './globals.css';
 
+import { Gelasio } from "next/font/google";
+
+const gelasio = Gelasio({
+  subsets: ["latin"],
+  variable: "--font-gelasio",
+  display: "swap",
+});
+
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 
 export const metadata = {
-  metadataBase: new URL('https://dentallanz.netlify.app'),
+  metadataBase: new URL('https://acoxpa419-clinicadebelleza.negocio.site'),
   title: {
-    default: 'Dental Lanz | Odontología Integral en CDMX',
-    template: '%s | Dental Lanz'
+    default: 'Clínica de Belleza ACOXPA 419',
+    template: '%s | Clínica de Belleza ACOXPA 419'
   },
   description:
-    'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales. Agenda tu cita hoy. Calificación 5.0 en Google.',
+    'Clínica de Belleza ACOXPA 419 — Centro de estética en Coapa, Tlalpan, CDMX. Servicios de depilación, tratamientos faciales y corporales. 4.6 (69 opiniones). Abierto; cierra a las 18:00.',
   keywords: [
-    'Dental Lanz',
-    'clínica dental CDMX',
-    'dentista Prado Coapa',
-    'ortodoncia CDMX',
-    'blanqueamiento dental',
-    'odontología integral'
+    'Clínica de Belleza ACOXPA 419',
+    'Acoxpa 419',
+    'Centro de estética Coapa',
+    'depilación CDMX',
+    'estética Tlalpan',
+    'tratamientos faciales',
+    'LGBTQ friendly',
+    'servicios de belleza CDMX'
   ],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Dental Lanz | Odontología Integral en CDMX',
-    description: 'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales.',
-    url: 'https://dentallanz.netlify.app',
-    siteName: 'Dental Lanz',
+    title: 'Clínica de Belleza ACOXPA 419',
+    description: 'Centro de estética en Coapa, Tlalpan, CDMX. Alta valoración: 4.6 (69 opiniones). Reserva por teléfono o WhatsApp.',
+    url: 'https://acoxpa419.com',
+    siteName: 'Clínica de Belleza ACOXPA 419',
     locale: 'es_MX',
     type: 'website'
+  },
+  icons: {
+    icon: '/logo.png',
   }
 };
 
 export default function RootLayout({ children }) {
   const businessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Dentist',
-    name: 'Dental Lanz',
-    image: 'https://dentallanz.netlify.app/og-image.jpg',
-    telephone: '+52 55 5801 9251',
+    '@type': 'BeautySalon',
+    name: 'Clínica de Belleza ACOXPA 419',
+    image: 'https://acoxpa419.com',
+    telephone: '+525547524305',
     priceRange: '$$',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '7'
+      ratingValue: '4.6',
+      reviewCount: '69'
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Calz Acoxpa 566-int 2, Coapa, Prado Coapa',
+      streetAddress: 'Calz Acoxpa 419, Coapa, Villa Lázaro Cárdenas',
       addressLocality: 'Tlalpan',
       addressRegion: 'Ciudad de México',
-      postalCode: '14357',
+      postalCode: '14370',
       addressCountry: 'MX'
     },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '10:00',
-        closes: '19:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday'],
-        opens: '10:00',
-        closes: '14:00'
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '09:00',
+        closes: '18:00'
       }
     ],
-    url: 'https://dentallanz.netlify.app'
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+52 55 4752 4305',
+        contactType: 'customer service'
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: '+52 55 2494 8191',
+        contactType: 'WhatsApp'
+      }
+    ],
+    sameAs: [
+      'https://acoxpa419.com/',
+      'https://api.whatsapp.com/send?phone=5215561184123'
+    ],
+    amenityFeature: {
+      '@type': 'LocationFeatureSpecification',
+      name: 'LGBTQ+ friendly',
+      value: true
+    },
+    url: 'https://acoxpa419.com'
   };
 
   return (
-    <html lang="es-MX" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="es-MX" className={`${inter.variable} ${playfair.variable} ${gelasio.variable}`}>
       <body className="flex min-h-dvh flex-col">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }} />
         <BusinessProvider>
