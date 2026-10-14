@@ -8,7 +8,12 @@ import { toast, Toaster } from "sonner";
 import api from '@/lib/api';
 
 import { auth } from "@/lib/firebase";
-import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import {
+  GoogleAuthProvider,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+  signInWithPopup,
+} from "firebase/auth";
 import { getFirebaseErrorMessage } from '@/lib/firebase-errors';
 
 import { useState, useEffect } from 'react';
@@ -17,16 +22,44 @@ import { useClient } from '@/hooks/useClient';
 import { useBusiness } from '@/hooks/useBusiness';
 import PhoneInput, { countryCodes, getFullPhone, isValidPhone } from '@/components/ReUsableComponents/PhoneInput';
 
+const googleProvider = new GoogleAuthProvider();
+
 export function LoginForm() {
   const [ phone, setPhone ] = useState('');
   const [ countryName, setCountryName ] = useState(countryCodes[0].country);
   const [ validating, setValidating ] = useState(false);
   
-  const { confirmationResult, setConfirmationResult, setIsLogin } = useClient();
+  const { confirmationResult, setConfirmationResult, setIsLogin, login } = useClient();
+  const { business } = useBusiness();
 
   const router = useRouter();
 
   const fullPhone = getFullPhone(phone, countryName);
+
+  const handleGoogleSignIn = async () => {
+    setValidating(true);
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const idToken = await result.user.getIdToken();
+      const { data } = await api.post('/client/login', {
+        idToken,
+        businessId: business?.id,
+      });
+
+      if (!data?.token) {
+        throw new Error('El servidor no devolvió una sesión válida.');
+      }
+
+      login(data.client || {}, data.token);
+      toast.success('Sesión iniciada. Redirigiendo...');
+      router.push('/');
+    } catch (error) {
+      console.error('Error al iniciar sesión con Google:', error);
+      toast.error(error?.response?.data?.message || getFirebaseErrorMessage(error));
+    } finally {
+      setValidating(false);
+    }
+  };
 
   useEffect(() => {
     const initializeRecaptcha = async () => {
@@ -108,6 +141,21 @@ export function LoginForm() {
               <div id="recaptcha-container" />
               <Button disabled={validating} type="submit" size="lg" className="w-full">Iniciar sesión</Button>
             </form>
+            <div className="my-5 flex items-center gap-3 text-sm text-muted-foreground">
+              <div className="h-px flex-1 bg-border" />
+              <span>O continúa con</span>
+              <div className="h-px flex-1 bg-border" />
+            </div>
+            <Button
+              disabled={validating}
+              type="button"
+              variant="outline"
+              size="lg"
+              className="w-full"
+              onClick={handleGoogleSignIn}
+            >
+              Continuar con Google
+            </Button>
             <p className="mt-6 text-center text-sm text-muted-foreground">
               ¿Primera vez en Dental Lanz?
               <Link href={'/crear-cuenta'} className="font-bold text-primary hover:underline">
