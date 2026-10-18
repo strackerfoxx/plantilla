@@ -1,104 +1,205 @@
 "use client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { ShieldCheck, Star, WandSparkles, MapPin, Phone, CalendarCheck } from 'lucide-react';
+import { ArrowRight, Activity, Bone, Hand, Monitor, Zap, Move } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { SectionHeading } from '@/components/section-heading';
-import { testimonials } from '@/lib/content';
 import BusinessContact from '@/components/ReUsableComponents/BusinessContact';
 import { useServices } from '@/hooks/useServices';
 import Reviews from '@/components/ReUsableComponents/Reviews';
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop',
-    alt: 'Paciente sonriendo en clínica dental'
+    src: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop',
+    alt: 'Clínica de fisioterapia moderna',
+    title: 'Nuestras Instalaciones',
+    subtitle: 'Equipamiento de Última Generación'
   },
   {
-    src: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Instrumentos dentales de alta tecnología'
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=900&auto=format&fit=crop',
-    alt: 'Odontólogo revisando radiografías'
+    src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop',
+    alt: 'Fisioterapeuta tratando a un paciente',
+    title: 'Nuestro Equipo',
+    subtitle: 'Especialistas Certificados'
   }
 ];
 
 export default function HomePage() {
   const { services } = useServices();
+
+  const getIconForService = (name) => {
+    switch(name) {
+        case 'Fisioterapia Deportiva': return Activity;
+        case 'Rehabilitación Post-op': return Bone;
+        case 'Terapia Manual': return Hand;
+        case 'Ecografía Diagnóstica': return Monitor;
+        case 'Neuromodulación': return Zap;
+        case 'Readaptación Funcional': return Move;
+        default: return Activity;
+    }
+  }
+
   return (
     <>
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,_rgba(37,99,235,0.1),_transparent_36%),linear-gradient(135deg,_#f8fafc_0%,_#e2e8f0_48%,_#f1f5f9_100%)]" />
-        <div className="container grid min-h-[680px] items-center gap-12 py-14 md:grid-cols-[1fr_0.9fr] md:py-20">
-          <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border bg-white/70 px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-              <Star className="h-4 w-4 fill-primary" aria-hidden="true" /> Calificación 5.0 en Google
+      {/* Hero Section */}
+      <section className="relative min-h-[80vh] flex items-center pt-20 pb-32 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1588286840104-8957b019727f?q=80&w=2070&auto=format&fit=crop"
+            alt="Clínica de fisioterapia"
+            fill
+            className="object-cover object-center"
+            priority
+          />
+          <div className="absolute inset-0 bg-white/80 backdrop-blur-sm bg-gradient-to-r from-white via-white/90 to-transparent"></div>
+        </div>
+
+        <div className="container relative z-10">
+          <div className="max-w-2xl">
+            <div className="mb-6 inline-flex items-center rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-xs font-semibold tracking-wide text-primary uppercase">
+              EXCELENCIA EN FISIOTERAPIA
             </div>
-            <h1 className="text-balance text-5xl font-black tracking-tight md:text-7xl">
-              Tu sonrisa en manos expertas
+            <h1 className="text-balance text-5xl font-bold tracking-tight text-slate-900 md:text-6xl lg:text-7xl mb-4 leading-tight">
+              Recupera tu movimiento. <br />
+              <span className="text-primary">Redescubre tu potencial.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Atención odontológica integral y especializada en CDMX. Nos enfocamos en tu comodidad, brindando tratamientos de alta calidad con un trato humano y profesional.
+            <p className="mt-6 text-lg text-slate-600 leading-relaxed max-w-xl">
+              Fisioterapia de vanguardia que combina precisión clínica con tecnología de recuperación avanzada para atletas y personas activas.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg"><Link href="/agendar">Agendar Cita</Link></Button>
-              <Button asChild size="lg" variant="outline"><Link href="/servicios">Ver Tratamientos</Link></Button>
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <Button asChild size="lg" className="rounded-full px-8 h-12 text-base shadow-lg shadow-primary/25">
+                <Link href="/agendar">
+                  Agendar Cita <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="rounded-full px-8 h-12 text-base bg-white/50 backdrop-blur-md border-slate-200 hover:bg-white">
+                <Link href="/servicios">Conoce más</Link>
+              </Button>
             </div>
-              <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Trato Profesional</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Alta Calidad</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-emerald-500" />
-                  <span className="text-sm font-medium text-slate-600">Sin Dolor</span>
-                </div>
-              </div>
-          </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="relative col-span-2 h-80 overflow-hidden rounded-[2.5rem] shadow-glow md:h-96">
-              <Image src={galleryImages[0].src} alt={galleryImages[0].alt} fill priority sizes="(min-width: 768px) 45vw, 100vw" className="object-cover" />
-            </div>
-            {galleryImages.slice(1).map((image) => (
-              <div key={image.src} className="relative h-48 overflow-hidden rounded-[2rem] shadow-sm">
-                <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 22vw, 50vw" className="object-cover" />
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
-      <section className="section-padding bg-white" id="servicios-destacados">
+      {/* Image Cards Section */}
+      <section className="relative z-20 -mt-24 pb-16">
         <div className="container">
-          <SectionHeading eyebrow="Nuestros Servicios" title="Tratamientos de Primer Nivel" description="Ofrecemos lo más indicado para cada caso individualizando tu tratamiento para garantizar los mejores resultados." centered />
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {services.slice(0, 3).map((service) => (
-              <Card key={service.name} className="border-none bg-background/80 shadow-sm transition-transform hover:-translate-y-1">
-                <CardContent className="p-7">
-                  <WandSparkles className="mb-6 h-9 w-9 text-primary" aria-hidden="true" />
-                  <h3 className="text-xl font-black">{service.name}</h3>
-                  <p className="mt-3 min-h-24 text-sm leading-7 text-muted-foreground">{service.description}</p>
-                  <div className="mt-5 flex items-center justify-between text-sm font-bold text-primary">
-                    <span>{service.durationMin} mins</span>
-                    <span>${service.price.toFixed(2)}</span>
-                  </div>
-                </CardContent>
-              </Card>
+          <div className="grid md:grid-cols-2 gap-6">
+            {galleryImages.map((image, index) => (
+              <div key={index} className="group relative h-64 md:h-80 overflow-hidden rounded-3xl shadow-xl">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-8">
+                  <p className="text-xs font-bold tracking-widest text-white/80 uppercase mb-1">{image.title}</p>
+                  <h3 className="text-2xl font-bold text-white">{image.subtitle}</h3>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      <Reviews/>
+      {/* Services Section */}
+      <section className="section-padding bg-slate-50">
+        <div className="container max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">Servicios Especializados</h2>
+            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+              Ofrecemos soluciones personalizadas basadas en evidencia científica para cada etapa de tu recuperación.
+            </p>
+          </div>
 
-      <section className="p-5 bg-white" id="ubicacion">
-        <BusinessContact />
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {services.slice(0, 6).map((service, idx) => {
+              const Icon = getIconForService(service.name);
+              return (
+                <Card key={idx} className="border-none bg-white shadow-sm hover:shadow-md transition-all duration-300 rounded-2xl overflow-hidden group">
+                  <CardContent className="p-8">
+                    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">{service.name}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+                    <Link href="/servicios" className="inline-flex items-center text-sm font-semibold text-primary hover:text-primary/80 transition-colors">
+                      Saber más <ArrowRight className="ml-1 w-4 h-4" />
+                    </Link>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Expertise Section */}
+      <section className="section-padding bg-white overflow-hidden">
+        <div className="container max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative">
+              <div className="relative h-[600px] w-full rounded-[2.5rem] overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop"
+                  alt="Doctora especialista"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              {/* Experience Badge */}
+              <div className="absolute -bottom-8 right-8 bg-white/90 backdrop-blur-md p-6 rounded-3xl shadow-xl border border-white/20">
+                <div className="text-center">
+                  <span className="block text-4xl font-bold text-primary">15+</span>
+                  <span className="text-sm font-medium text-slate-600">Años de experiencia</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:pl-8">
+              <div className="mb-4 inline-flex items-center text-xs font-bold tracking-widest text-primary uppercase">
+                NUESTRA MISIÓN
+              </div>
+              <h2 className="text-4xl font-bold tracking-tight text-slate-900 mb-6">
+                Expertise que inspira confianza.
+              </h2>
+              <div className="space-y-6 text-lg text-slate-600">
+                <p>
+                  En Gut Klinik Fisioterapia, no solo tratamos síntomas. Buscamos el origen de cada disfunción para ofrecer una solución integral y duradera. Nuestro enfoque se basa en la excelencia clínica y la cercanía humana.
+                </p>
+                <p>
+                  Creemos que cada paciente merece una atención excepcional, utilizando las herramientas tecnológicas más avanzadas del mercado en un entorno diseñado para la calma y la recuperación.
+                </p>
+              </div>
+
+              <div className="mt-10 flex items-center gap-4 bg-slate-50 p-4 rounded-2xl inline-flex">
+                <div className="flex -space-x-3">
+                  <Image src="https://i.pravatar.cc/100?img=1" width={40} height={40} alt="Patient" className="rounded-full border-2 border-white" />
+                  <Image src="https://i.pravatar.cc/100?img=2" width={40} height={40} alt="Patient" className="rounded-full border-2 border-white" />
+                  <Image src="https://i.pravatar.cc/100?img=3" width={40} height={40} alt="Patient" className="rounded-full border-2 border-white" />
+                </div>
+                <div className="text-sm font-bold text-slate-900">
+                  +2,500 Pacientes satisfechos
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <div className="bg-slate-50">
+         <Reviews />
+      </div>
+
+      {/* Contact Section */}
+      <section className="section-padding bg-white" id="ubicacion">
+        <div className="container max-w-6xl">
+            <BusinessContact />
+        </div>
       </section>
     </>
   );

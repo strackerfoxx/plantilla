@@ -11,27 +11,27 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'sw
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', display: 'swap' });
 
 export const metadata = {
-  metadataBase: new URL('https://dentallanz.netlify.app'),
+  metadataBase: new URL('https://gutklinik.netlify.app'),
   title: {
-    default: 'Dental Lanz | Odontología Integral en CDMX',
-    template: '%s | Dental Lanz'
+    default: 'Gut Klinik Fisioterapia | Fisioterapia en CDMX',
+    template: '%s | Gut Klinik Fisioterapia'
   },
   description:
-    'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales. Agenda tu cita hoy. Calificación 5.0 en Google.',
+    'Clínica de fisioterapia en Coyoacán, CDMX. Especialistas en fisioterapia deportiva, rehabilitación post-op, terapia manual. Agenda tu cita hoy. Calificación 4.9 en Google.',
   keywords: [
-    'Dental Lanz',
-    'clínica dental CDMX',
-    'dentista Prado Coapa',
-    'ortodoncia CDMX',
-    'blanqueamiento dental',
-    'odontología integral'
+    'Gut Klinik Fisioterapia',
+    'clínica de fisioterapia CDMX',
+    'fisioterapia Coyoacán',
+    'rehabilitación',
+    'terapia manual',
+    'fisioterapia deportiva'
   ],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Dental Lanz | Odontología Integral en CDMX',
-    description: 'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales.',
-    url: 'https://dentallanz.netlify.app',
-    siteName: 'Dental Lanz',
+    title: 'Gut Klinik Fisioterapia | Fisioterapia en CDMX',
+    description: 'Clínica de fisioterapia en Coyoacán, CDMX. Especialistas en fisioterapia deportiva, rehabilitación post-op, terapia manual.',
+    url: 'https://gutklinik.netlify.app',
+    siteName: 'Gut Klinik Fisioterapia',
     locale: 'es_MX',
     type: 'website'
   }
@@ -40,39 +40,39 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const businessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Dentist',
-    name: 'Dental Lanz',
-    image: 'https://dentallanz.netlify.app/og-image.jpg',
-    telephone: '+52 55 5801 9251',
+    '@type': 'MedicalClinic',
+    name: 'Gut Klinik Fisioterapia',
+    image: 'https://gutklinik.netlify.app/og-image.jpg',
+    telephone: '+52 55 7451 0690',
     priceRange: '$$',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '7'
+      ratingValue: '4.9',
+      reviewCount: '31'
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Calz Acoxpa 566-int 2, Coapa, Prado Coapa',
-      addressLocality: 'Tlalpan',
+      streetAddress: 'Calz. del Hueso 160, Coapa, Ex-Hacienda Coapa',
+      addressLocality: 'Coyoacán',
       addressRegion: 'Ciudad de México',
-      postalCode: '14357',
+      postalCode: '04980',
       addressCountry: 'MX'
     },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '10:00',
-        closes: '19:00'
+        opens: '06:00',
+        closes: '20:00'
       },
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Saturday'],
-        opens: '10:00',
+        opens: '06:00',
         closes: '14:00'
       }
     ],
-    url: 'https://dentallanz.netlify.app'
+    url: 'https://gutklinik.netlify.app'
   };
 
   return (
