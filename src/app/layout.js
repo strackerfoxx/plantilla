@@ -13,25 +13,26 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 export const metadata = {
   metadataBase: new URL('https://dentallanz.netlify.app'),
   title: {
-    default: 'Dental Lanz | Odontología Integral en CDMX',
-    template: '%s | Dental Lanz'
+    default: 'Barbería y salón Alex | Corte, estética y cuidado personal en CDMX',
+    template: '%s | Barbería y salón Alex'
   },
   description:
-    'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales. Agenda tu cita hoy. Calificación 5.0 en Google.',
+    'Barbería y salón Alex en Av. Insurgentes Sur 3807, Tlalpan, CDMX. Corte de barbería, cuidado personal y estética con atención rápida. Agenda tu cita hoy y visita nuestro salón en La Fama.',
   keywords: [
-    'Dental Lanz',
-    'clínica dental CDMX',
-    'dentista Prado Coapa',
-    'ortodoncia CDMX',
-    'blanqueamiento dental',
-    'odontología integral'
+    'Barbería y salón Alex',
+    'barbería en Tlalpan',
+    'salón de belleza La Fama',
+    'corte de cabello CDMX',
+    'centro de estética Tlalpan',
+    'barbería en Insurgentes Sur',
+    'agenda cita barbería CDMX'
   ],
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Dental Lanz | Odontología Integral en CDMX',
-    description: 'Clínica dental en Prado Coapa, CDMX. Especialistas en ortodoncia, blanqueamiento y tratamientos dentales integrales.',
+    title: 'Barbería y salón Alex | Corte, estética y cuidado personal en CDMX',
+    description: 'Barbería y salón Alex en Tlalpan, CDMX. Atención profesional, ambiente moderno y servicio de estética para hombres y mujeres.',
     url: 'https://dentallanz.netlify.app',
-    siteName: 'Dental Lanz',
+    siteName: 'Barbería y salón Alex',
     locale: 'es_MX',
     type: 'website'
   }
@@ -40,36 +41,31 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const businessJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Dentist',
-    name: 'Dental Lanz',
+    '@type': 'BeautySalon',
+    name: 'Barbería y salón Alex',
+    description: 'Centro de estética y barbería en La Fama, Tlalpan, Ciudad de México.',
     image: 'https://dentallanz.netlify.app/og-image.jpg',
-    telephone: '+52 55 5801 9251',
+    telephone: '+52 56 3000 2292',
     priceRange: '$$',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '5.0',
-      reviewCount: '7'
+      ratingValue: '4.0',
+      reviewCount: '4'
     },
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Calz Acoxpa 566-int 2, Coapa, Prado Coapa',
-      addressLocality: 'Tlalpan',
-      addressRegion: 'Ciudad de México',
-      postalCode: '14357',
+      streetAddress: 'Av. Insurgentes Sur 3807, La Fama, Tlalpan',
+      addressLocality: 'Ciudad de México',
+      addressRegion: 'CDMX',
+      postalCode: '14269',
       addressCountry: 'MX'
     },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
         opens: '10:00',
-        closes: '19:00'
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Saturday'],
-        opens: '10:00',
-        closes: '14:00'
+        closes: '20:00'
       }
     ],
     url: 'https://dentallanz.netlify.app'

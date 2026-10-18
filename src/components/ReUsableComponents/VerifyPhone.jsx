@@ -50,7 +50,7 @@ export default function VerifyPhone({ phone, mode = "create" }) {
 
         toast.success("Número verificado con éxito. Redirigiendo...");
         setTimeout(() => {
-          router.push("/");
+          router.push("/agendar");
         }, 1000);
       } catch (error) {
         setValidating(false);

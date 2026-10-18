@@ -2,21 +2,21 @@ import { Star, Quote } from "lucide-react";
 
 const reviews = [
   {
-    name: "Tere Tlahuiz",
-    date: "Hace un año",
-    text: "Tomé mi tratamiento de ortodoncia hace algunos años, además de otros procedimientos, con el Doctor Lanz y quedé encantada con los resultados!!! Me agradó desde el instante en que brinda toda la información detallada...",
+    name: "Jonathan Pham",
+    date: "Hace un mes",
+    text: "Bueno lugar para su corte - muy amable y rápido.",
     rating: 5,
   },
   {
-    name: "Elizabeth Vázquez",
-    date: "Hace un año",
-    text: "Desde el primer momento, el Dr. Lanz me brindó una atención excepcional. Su amabilidad y profesionalismo me hicieron sentir cómoda durante todo el tratamiento. Explicó cada paso del procedimiento de forma clara...",
+    name: "felix alberto uc hernandez",
+    date: "Hace un mes",
+    text: "",
     rating: 5,
   },
   {
-    name: "Daniela Tlahuiz",
-    date: "Hace un año",
-    text: "El Dr explica de manera profesional cada tratamiento; de igual manera te ofrece lo más indicado para cada caso individualizando que desde mi punto de vista eso es algo primordial. En general te hace la consulta amena.",
+    name: "Samantha Bautista Ordoñez",
+    date: "Hace 3 meses",
+    text: "",
     rating: 5,
   },
 ];
@@ -30,7 +30,7 @@ export default function Reviews() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-base text-primary-600 font-semibold tracking-wide uppercase">Opiniones de Pacientes</h2>
+            <h2 className="text-base text-primary-600 font-semibold tracking-wide uppercase">Opiniones de Clientes</h2>
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-secondary-900 sm:text-4xl">
               Lo que dicen de nosotros
             </p>
@@ -40,14 +40,14 @@ export default function Reviews() {
           </div>
           <div className="flex flex-col items-start md:items-end bg-white p-4 rounded-xl shadow-sm border border-slate-100">
             <div className="flex items-center gap-2">
-              <span className="text-4xl font-bold text-secondary-900">5.0</span>
+              <span className="text-4xl font-bold text-secondary-900">4.0</span>
               <div className="flex text-yellow-400">
-                {[...Array(5)].map((_, i) => (
+                {[...Array(4)].map((_, i) => (
                   <Star key={i} className="w-6 h-6 fill-current" />
                 ))}
               </div>
             </div>
-            <p className="text-sm font-medium text-slate-500 mt-1">Basado en 7 opiniones de Google</p>
+            <p className="text-sm font-medium text-slate-500 mt-1">Basado en 4 opiniones de Google</p>
           </div>
         </div>
 
@@ -81,7 +81,7 @@ export default function Reviews() {
         
         <div className="mt-12 text-center">
           <a 
-            href="https://maps.google.com/?q=Dental+Lanz+Calz+Acoxpa+566-int+2" 
+            href="https://maps.app.goo.gl/c7A6Wd89UGDaSzAZ8" 
             className="inline-flex items-center text-primary-600 font-medium hover:text-primary-700 hover:underline"
           >
             Ver todas las opiniones en Google Maps →

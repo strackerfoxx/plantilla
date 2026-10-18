@@ -3,7 +3,7 @@ import { LoginForm } from '@/components/ReUsableComponents/login-form';
 
 export const metadata = {
   title: 'Iniciar sesión',
-  description: 'Inicia sesión en Dental Lanz usando solo tu número de teléfono.'
+  description: 'Inicia sesión en Barbería y salón Alex con tu teléfono para gestionar tus citas y servicios favoritos.'
 };
 
 export default function IniciarSesionPage() {

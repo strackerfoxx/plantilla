@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { Skeleton } from '@/components/ui/skeleton';
 import { getServicesDurationLabel } from '@/lib/formatDuration';
@@ -23,7 +23,7 @@ import { es } from 'date-fns/locale';
 import { useBusiness } from '@/hooks/useBusiness';
 import { useServices } from '@/hooks/useServices';
 import { useClient } from '@/hooks/useClient';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { toast, Toaster } from 'sonner';
 import { DateTime } from 'luxon';
 import api from '@/lib/api';
@@ -35,6 +35,7 @@ export default function AgendarClient({ id }) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
+  const servicesListRef = useRef(null);
 
   const [availableUsers, setAvailableUsers] = useState({});
   const [selectedStatus, setSelectedStatus] = useState('SCHEDULED');
@@ -45,6 +46,25 @@ export default function AgendarClient({ id }) {
   const { business, loading: loadingBusiness } = useBusiness();
   const { services, getServices, loading: loadingServices } = useServices();
   const { token, client } = useClient();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    // Auto-select a service when navigated with ?serviceId=...
+    try {
+      const serviceIdParam = searchParams?.get?.('serviceId');
+      if (serviceIdParam) {
+        const idFromParam = Number(serviceIdParam);
+        if (!Number.isNaN(idFromParam)) {
+          setSelectedServices(prev => {
+            if (prev.some(s => s.serviceId === idFromParam)) return prev;
+            return [...prev, { serviceId: idFromParam }];
+          });
+        }
+      }
+    } catch (e) {
+      // ignore when searchParams unavailable
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     // Fetch existing appointment details using the ID and populate state
@@ -207,6 +227,13 @@ export default function AgendarClient({ id }) {
   const selectedServiceDetails = services.filter(service =>
     selectedServices.some(selectedService => selectedService.serviceId === service.id)
   );
+
+  useEffect(() => {
+    if (servicesListRef.current) {
+      servicesListRef.current.scrollTop = 0;
+    }
+  }, [services]);
+
   const totalDurationLabel = getServicesDurationLabel(selectedServiceDetails);
   const totalPrice = selectedServiceDetails.reduce((acc, curr) => acc + curr.price, 0);
   const canSubmit = selectedServices.length > 0 && selectedDate && selectedTime && (!isCanceledSelected || Boolean(id));
@@ -307,7 +334,7 @@ export default function AgendarClient({ id }) {
             Agendar Cita
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Completa el formulario y asegura tu espacio con nosotros en Dental Lanz.
+            Completa el formulario y asegura tu cita en Barbería y salón Alex para verte impecable en Tlalpan.
           </p>
         </div>
 
@@ -325,7 +352,7 @@ export default function AgendarClient({ id }) {
             <div className="mb-12">
               <h2 className="text-2xl font-bold  text-foreground mb-6">Selecciona el Servicio</h2>
               <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Tratamientos Disponibles *</p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-auto max-h-[300px] overflow-y-auto pr-2 mb-6">
+              <div ref={servicesListRef} className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-4 h-auto max-h-[300px] overflow-y-auto pr-2 mb-6">
                 {loadingServices ? (
                   Array.from({ length: 4 }).map((_, i) => (
                     <div key={i} className="text-left p-5 rounded-2xl border border-border">
@@ -493,22 +520,18 @@ export default function AgendarClient({ id }) {
                 ) : (
                   <>
                     <p>
-                      calz acoxpa 566-int 2, coapa, prado coapa,<br/>
-                      tlalpan, 14357 ciudad de méxico, cdmx.
+                      Av. Insurgentes Sur 3807, La Fama, Tlalpan,<br/>
+                      14269 Ciudad de México, CDMX.
                     </p>
-                    <p>5558019251</p>
-                    <p>contacto@dentallanz.com</p>
+                    <p>56 3000 2292</p>
+                    <p>atencion@barberiaalex.com</p>
 
                     <div className="pt-4">
                        <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Horario de atención</p>
                        <div className="space-y-3">
                          <div className="flex justify-between">
-                           <span>Lunes - Viernes</span>
-                           <span className="font-bold">10:00 - 19:00</span>
-                         </div>
-                         <div className="flex justify-between">
-                           <span>Sábado</span>
-                           <span className="font-bold">10:00 - 15:00</span>
+                           <span>Lunes - Sábado</span>
+                           <span className="font-bold">10:00 - 20:00</span>
                          </div>
                          <div className="flex justify-between">
                            <span>Domingo</span>
@@ -559,6 +582,10 @@ export default function AgendarClient({ id }) {
                   <span className="text-lg">Total</span>
                   <span className="text-2xl font-bold">${totalPrice.toFixed(2)}</span>
                 </div>
+
+                <p className="text-sm text-white/80">
+                  se aceptan pagos en efectivo, transferencia y tarjeta
+                </p>
 
                 <button
                   type="button"
