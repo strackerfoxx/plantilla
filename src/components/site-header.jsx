@@ -23,10 +23,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur-xl">
       <div className="container flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio de Dental Lanz">
+        <Link href="/" className="flex items-center gap-3" aria-label="Ir al inicio de Barbershop Martina">
           <span>
-            <span className="block text-lg font-black tracking-tight">Dental Lanz</span>
-            <span className="hidden text-xs text-muted-foreground sm:block">Odontología en CDMX</span>
+            <span className="block text-lg font-black tracking-tight text-white">Barbershop Martina</span>
+            <span className="hidden text-xs text-muted-foreground sm:block">Barbería en CDMX</span>
           </span>
         </Link>
 
@@ -44,16 +44,16 @@ export function SiteHeader() {
           </nav>
         ) : (
           <div className="hidden md:flex items-center gap-2">
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
+            <Button asChild variant="ghost" className="hidden sm:inline-flex text-muted-foreground hover:text-primary hover:bg-primary/10">
               <Link href="/servicios">Servicios</Link>
             </Button>
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
+            <Button asChild variant="ghost" className="hidden sm:inline-flex text-muted-foreground hover:text-primary hover:bg-primary/10">
               <Link href="/agendar">Agendar</Link>
             </Button>
-            <Button asChild variant="ghost" className="hidden sm:inline-flex">
+            <Button asChild variant="ghost" className="hidden sm:inline-flex text-muted-foreground hover:text-primary hover:bg-primary/10">
               <Link href="/iniciar-sesion">Ingresar</Link>
             </Button>
-            <Button asChild>
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
               <Link href="/crear-cuenta">Crear cuenta</Link>
             </Button>
           </div>
@@ -61,7 +61,7 @@ export function SiteHeader() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden flex items-center justify-center p-2 text-muted-foreground hover:text-foreground focus:outline-none"
+          className="md:hidden flex items-center justify-center p-2 text-muted-foreground hover:text-white focus:outline-none"
           onClick={toggleMobileMenu}
           aria-label="Abrir menú"
         >
@@ -80,27 +80,27 @@ export function SiteHeader() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="text-lg font-semibold text-foreground hover:text-primary py-2"
+                    className="text-lg font-semibold text-white hover:text-primary py-2"
                   >
                     {item.label}
                   </Link>
                 ))}
-                <Button variant="ghost" onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="justify-start text-lg h-auto py-2">
+                <Button variant="ghost" onClick={() => { logout(); setIsMobileMenuOpen(false); }} className="justify-start text-lg h-auto py-2 text-white hover:text-primary">
                   Cerrar sesión
                 </Button>
               </>
             ) : (
               <div className="flex flex-col gap-3 mt-2">
-                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2 text-white hover:text-primary" onClick={() => setIsMobileMenuOpen(false)}>
                   <Link href="/servicios">Servicios</Link>
                 </Button>
-                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2 text-white hover:text-primary" onClick={() => setIsMobileMenuOpen(false)}>
                   <Link href="/agendar">Agendar</Link>
                 </Button>
-                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button asChild variant="ghost" className="justify-start text-lg h-auto py-2 text-white hover:text-primary" onClick={() => setIsMobileMenuOpen(false)}>
                   <Link href="/iniciar-sesion">Ingresar</Link>
                 </Button>
-                <Button asChild className="justify-start text-lg h-auto py-2" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button asChild className="justify-start text-lg h-auto py-2 bg-primary text-primary-foreground" onClick={() => setIsMobileMenuOpen(false)}>
                   <Link href="/crear-cuenta">Crear cuenta</Link>
                 </Button>
               </div>
