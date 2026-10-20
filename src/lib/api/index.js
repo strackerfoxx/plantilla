@@ -56,7 +56,8 @@ api.interceptors.response.use(
             !originalRequest._retry &&
             originalRequest.url &&
             !originalRequest.url.includes('/client/refresh') &&
-            !originalRequest.url.includes('/client/login')
+            !originalRequest.url.includes('/client/login') &&
+            !originalRequest.url.includes('/client/activation')
         ) {
             if (isRefreshing) {
                 // Si ya estamos refrescando, ponemos la petición en cola
