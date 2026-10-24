@@ -43,6 +43,9 @@ export default function Gallery() {
     { src: "/WhatsApp%20Video%202026-09-03%20at%2011.49.47%20AM%20(1).mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
     { src: "/WhatsApp%20Video%202026-09-03%20at%2011.49.47%20AM.mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
     { src: "/WhatsApp%20Video%202026-09-03%20at%2011.49.36%20AM.mp4", alt: 'Proceso y resultado de tratamientos', type: 'video' },
+
+    { src: "/Antes.png", alt: 'Proceso y resultado de tratamientos', type: 'image' },
+    { src: "/Despues.png", alt: 'Proceso y resultado de tratamientos', type: 'image' },
   ];
 
   const images = mediaItems;
