@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ReUsableComponents/ui/button";
 import { SectionHeading } from "@/components/section-heading";
 import ServiceCard from "@/components/ReUsableComponents/ServiceCard";
 import { useServices } from "@/hooks/useServices";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from "@/components/ReUsableComponents/ui/skeleton";
 
 export function ServiciosClient() {
   const { services, loading } = useServices();
