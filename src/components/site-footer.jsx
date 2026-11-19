@@ -2,31 +2,21 @@ import Link from 'next/link';
 
 export function SiteFooter() {
   return (
-    <footer className="border-t bg-[#1d293d] text-primary-foreground">
-      <div className="container grid gap-8 py-10 md:grid-cols-[1.5fr_1fr_1fr]">
-        <div>
-          <p className="text-xl font-black">Dental Lanz</p>
-          <p className="mt-3 max-w-md text-sm text-primary-foreground/75">
-            Tu salud bucal es nuestra prioridad. Brindamos atención odontológica de la más alta calidad con el mejor trato humano en la Ciudad de México.
-          </p>
+          <footer className="-mt-20 bg-[#1f4d36] pt-32 pb-8 text-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-4 text-sm">
+          {[
+            ["About & Services", ["Pet Grooming", "Products", "Our Story", "Blog"]],
+            ["Products", ["Kits", "Collars", "Leashes", "Accessories"]],
+            ["Company", ["About Us", "Careers", "Privacy Policy", "Terms"]],
+            ["Information", ["hello@pawbliss.com", "+1 (555) 123-4567", "New York, USA"]],
+          ].map(([h, l]) => (
+            <div key={h}>
+              <h4 className="mb-3 font-bold text-[#f5a800]">{h}</h4>
+              <ul className="space-y-2 text-white/70">{l.map((x) => <li key={x}>{x}</li>)}</ul>
+            </div>
+          ))}
         </div>
-        <div>
-          <p className="font-semibold">Contacto</p>
-          <ul className="mt-3 space-y-2 text-sm text-primary-foreground/75">
-            <li>55 5801 9251</li>
-            <li>Calz Acoxpa 566-int 2, Coapa, Prado Coapa</li>
-            <li>Lun - Vie: 10:00 - 19:00</li>
-          </ul>
-        </div>
-        <div>
-          <p className="font-semibold">Accesos</p>
-          <ul className="mt-3 space-y-2 text-sm text-primary-foreground/75">
-            <li><Link href="/servicios" className="hover:text-white">Servicios</Link></li>
-            <li><Link href="/agendar" className="hover:text-white">Agendar cita</Link></li>
-            <li><Link href="/mis-citas" className="hover:text-white">Mis citas</Link></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+        <p className="mt-12 border-t border-white/10 pt-6 text-center text-xs text-white/50">© 2026 Paw Bliss. All rights reserved.</p>
+      </footer>
   );
 }
