@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
-import { Skeleton } from '@/components/ReUsableComponents/ui/skeleton';
+import { Skeleton } from '@/components/ui/skeleton';
 import { getServicesDurationLabel } from '@/lib/formatDuration';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Schedule from '@/components/ReUsableComponents/Schedule';
@@ -306,10 +306,10 @@ export default function AgendarClient({ id }) {
       });
 
       if (response.status < 200 || response.status >= 300) {
-        throw new Error("Error al agendar la cita.");
+        throw new Error("Error al reservar el servicio.");
       }
 
-      toast.success(`Cita agendada con exito para ${client?.name ?? "cliente"}.\n\nFecha: ${DateTime.fromJSDate(new Date(selectedDate)).toISODate()} a las ${selectedTime}`);
+      toast.success(`Reserva realizada con éxito para ${client?.name ?? "cliente"}.\n\nFecha: ${DateTime.fromJSDate(new Date(selectedDate)).toISODate()} a las ${selectedTime}`);
       setTimeout(() => {
         router.push("/mis-citas");
         // Reset form after successful submit
@@ -321,7 +321,7 @@ export default function AgendarClient({ id }) {
       
     } catch (error) {
       console.error(error);
-      toast.error("Ocurrió un error al intentar agendar tu cita. Por favor intenta de nuevo.");
+      toast.error("Ocurrió un error al reservar. Por favor, inténtalo de nuevo.");
     }
   }
 
@@ -331,10 +331,10 @@ export default function AgendarClient({ id }) {
       <div className="container max-w-5xl">
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-black  text-primary tracking-tight mb-3">
-            Agendar Cita
+            Agendar servicio
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Completa el formulario y asegura tu cita en Barbería y salón Alex para verte impecable en Tlalpan.
+            Completa estos pasos para reservar un servicio de cuidado para tu mascota.
           </p>
         </div>
 
@@ -351,7 +351,7 @@ export default function AgendarClient({ id }) {
             {/* Step 1: Selection Steps */}
             <div className="mb-12">
               <h2 className="text-2xl font-bold  text-foreground mb-6">Selecciona el Servicio</h2>
-              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Tratamientos Disponibles *</p>
+              <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Servicios disponibles *</p>
               <div ref={servicesListRef} className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 gap-4 h-auto max-h-[300px] overflow-y-auto pr-2 mb-6">
                 {loadingServices ? (
                   Array.from({ length: 4 }).map((_, i) => (
@@ -424,8 +424,8 @@ export default function AgendarClient({ id }) {
             {/* Step 4: Professional Selection */}
             {selectedServices.length > 0 && selectedTime && (
               <div className="mt-12">
-                <h2 className="text-2xl font-bold text-foreground mb-6">Selecciona el Profesional</h2>
-                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Profesional para cada Tratamiento *</p>
+                <h2 className="text-2xl font-bold text-foreground mb-6">Selecciona al especialista</h2>
+                <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Especialista para cada servicio *</p>
                 <div className="space-y-4">
                   {selectedServiceDetails.map(service => (
                     <div key={service.id} className="bg-muted/30 rounded-xl p-4 border border-border">
@@ -520,22 +520,21 @@ export default function AgendarClient({ id }) {
                 ) : (
                   <>
                     <p>
-                      Av. Insurgentes Sur 3807, La Fama, Tlalpan,<br/>
-                      14269 Ciudad de México, CDMX.
+                      {business?.address || "Consulta la ubicación con nuestro equipo."}
                     </p>
-                    <p>56 3000 2292</p>
-                    <p>atencion@barberiaalex.com</p>
+                    {business?.phone && <p>{business.phone}</p>}
+                    {business?.email && <p>{business.email}</p>}
 
                     <div className="pt-4">
-                       <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Horario de atención</p>
+                       <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">Horarios disponibles</p>
                        <div className="space-y-3">
                          <div className="flex justify-between">
-                           <span>Lunes - Sábado</span>
-                           <span className="font-bold">10:00 - 20:00</span>
+                           <span>Consulta el calendario</span>
+                           <span className="font-bold">Selecciona una fecha</span>
                          </div>
                          <div className="flex justify-between">
-                           <span>Domingo</span>
-                           <span className="font-bold text-primary">Cerrado</span>
+                           <span>Disponibilidad</span>
+                           <span className="font-bold text-primary">En tiempo real</span>
                          </div>
                        </div>
                     </div>
@@ -584,7 +583,7 @@ export default function AgendarClient({ id }) {
                 </div>
 
                 <p className="text-sm text-white/80">
-                  se aceptan pagos en efectivo, transferencia y tarjeta
+                  El método de pago se confirma con el establecimiento.
                 </p>
 
                 <button

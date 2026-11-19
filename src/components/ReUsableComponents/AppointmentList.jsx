@@ -1,33 +1,36 @@
 "use client";
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { SectionHeading } from '@/components/section-heading';
-import AppointmentComponent from './AppointmentComponent';
-import { CalendarIcon } from "lucide-react";
-import { useEffect } from 'react';
 
-import { useAppointments } from '@/hooks/useAppointments';
-import { Skeleton } from '@/components/ui/skeleton';
+import Link from "next/link";
+import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/section-heading";
+import AppointmentComponent from "./AppointmentComponent";
+import { CalendarIcon } from "lucide-react";
+import { useAppointments } from "@/hooks/useAppointments";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export default function AppointmentList() {
   const { appointments, refetchAppointments, loading } = useAppointments();
 
+
   useEffect(() => {
     refetchAppointments();
-  }, []);
-
-
+  }, [refetchAppointments]);
 
   return (
     <section className="section-padding">
       <div className="container max-w-4xl">
-        <SectionHeading eyebrow="Tu agenda" title="Citas agendadas" description={loading ? "Cargando tus citas..." : "Vista estática de ejemplo para que tus clientas consulten sus próximas reservas después de verificar su teléfono."} />
+        <SectionHeading
+          eyebrow="Tu agenda"
+          title="Tus reservas"
+          description={loading ? "Cargando tus reservas..." : "Consulta tus próximas citas y revisa los servicios que has reservado."}
+        />
 
         <div className="mt-10 space-y-5">
           {loading ? (
             Array.from({ length: 3 }).map((_, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 border shadow-sm">
-                <div className="flex justify-between items-start mb-4">
+              <div key={i} className="rounded-2xl border bg-white p-6 shadow-sm">
+                <div className="mb-4 flex items-start justify-between">
                   <Skeleton className="h-6 w-32" />
                   <Skeleton className="h-6 w-24 rounded-full" />
                 </div>
@@ -39,29 +42,29 @@ export default function AppointmentList() {
               </div>
             ))
           ) : appointments.length === 0 ? (
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 text-center">
-          <CalendarIcon className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-          <h3 className="text-lg font-medium text-slate-900">No tienes citas</h3>
-          <p className="text-slate-500 mt-2">Aún no has agendado ninguna cita con nosotros.</p>
-          <button
-          onClick={() => router.push('/agendar')}
-          className="mt-6 px-6 py-2 bg-primary-600 text-white rounded-full font-medium hover:bg-primary-700 transition-colors"
-        >
-          Agendar ahora
-        </button>
-      </div>
+            <div className="rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-sm">
+              <CalendarIcon className="mx-auto mb-4 h-12 w-12 text-slate-300" />
+              <h3 className="text-lg font-medium text-slate-900">Todavía no tienes reservas</h3>
+              <p className="mt-2 text-slate-500">Agenda un servicio de cuidado para tu mascota y aparecerá aquí.</p>
+              <Button asChild className="mt-6">
+                <Link href="/agendar">Agendar un servicio</Link>
+              </Button>
+            </div>
           ) : (
             <AppointmentComponent appointments={appointments} />
           )}
         </div>
-        {!loading && (
+
+        {!loading && appointments.length > 0 && (
           <div className="mt-10 rounded-[2rem] border bg-white p-6 text-center">
-            <p className="font-bold">¿Quieres otro servicio?</p>
-            <p className="mt-2 text-sm text-muted-foreground">Agenda una nueva visita para uñas, corte, peinado o microblading.</p>
-            <Button asChild className="mt-5"><Link href="/agendar">Nueva cita</Link></Button>
+            <p className="font-bold">¿Necesitas otra sesión?</p>
+            <p className="mt-2 text-sm text-muted-foreground">Elige otro servicio o encuentra un nuevo horario para tu mascota.</p>
+            <Button asChild className="mt-5">
+              <Link href="/agendar">Nueva reserva</Link>
+            </Button>
           </div>
         )}
       </div>
     </section>
-  )
+  );
 }

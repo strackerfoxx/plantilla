@@ -1,9 +1,9 @@
-import AuthGuard from '@/components/AuthGuard'
-import { AuthForm } from '@/components/ReUsableComponents/create-user-form';
+import AuthGuard from "@/components/AuthGuard";
+import { AuthForm } from "@/components/ReUsableComponents/create-user-form";
 
 export const metadata = {
-  title: 'Crear cuenta',
-  description: 'Crea tu cuenta en Barbería y salón Alex para reservar citas, ver servicios y agendar tu próximo corte o tratamiento.'
+  title: "Crear cuenta",
+  description: "Crea una cuenta para reservar servicios y administrar las citas de tu mascota.",
 };
 
 export default function CrearCuentaPage() {

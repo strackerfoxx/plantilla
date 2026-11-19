@@ -1,9 +1,9 @@
-import AuthGuard from '@/components/AuthGuard'
-import { LoginForm } from '@/components/ReUsableComponents/login-form';
+import AuthGuard from "@/components/AuthGuard";
+import { LoginForm } from "@/components/ReUsableComponents/login-form";
 
 export const metadata = {
-  title: 'Iniciar sesión',
-  description: 'Inicia sesión en Barbería y salón Alex con tu teléfono para gestionar tus citas y servicios favoritos.'
+  title: "Iniciar sesión",
+  description: "Inicia sesión para consultar y administrar tus reservas en Paw Bliss.",
 };
 
 export default function IniciarSesionPage() {

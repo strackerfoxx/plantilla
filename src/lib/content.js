@@ -1,61 +1,58 @@
 export const services = [
   {
-    name: 'Ortodoncia',
-    description: 'Tratamientos de ortodoncia para alinear y mejorar la estética de tus dientes con brackets tradicionales o invisibles.',
-    duration: '60 min',
-    price: 'Cotización'
+    name: "Baño y secado",
+    description: "Baño con productos adecuados para el pelaje y secado cuidadoso de tu mascota.",
+    duration: "60 min",
+    price: "Consultar",
   },
   {
-    name: 'Blanqueamiento Dental',
-    description: 'Recupera el tono blanco y brillante de tus dientes con tratamientos seguros y efectivos.',
-    duration: '45 min',
-    price: 'Desde $1,200'
+    name: "Corte de pelo",
+    description: "Corte higiénico o de mantenimiento adaptado a la raza, tipo de pelo y comodidad de tu mascota.",
+    duration: "60 min",
+    price: "Consultar",
   },
   {
-    name: 'Limpieza Dental Profiláctica',
-    description: 'Eliminación de sarro, placa bacteriana y manchas superficiales para prevenir caries y enfermedades periodontales.',
-    duration: '40 min',
-    price: 'Desde $600'
+    name: "Cepillado y desenredado",
+    description: "Rutina de cepillado para retirar pelo suelto y ayudar a mantener el pelaje en buen estado.",
+    duration: "30 min",
+    price: "Consultar",
   },
   {
-    name: 'Endodoncia',
-    description: 'Tratamiento de conductos para salvar piezas dentales dañadas o infectadas, eliminando el dolor.',
-    duration: '90 min',
-    price: 'Cotización'
+    name: "Corte de uñas",
+    description: "Corte cuidadoso de uñas para favorecer la comodidad al caminar.",
+    duration: "20 min",
+    price: "Consultar",
   },
   {
-    name: 'Implantes Dentales',
-    description: 'Reemplazo permanente de dientes perdidos con implantes de alta calidad que lucen y funcionan como dientes naturales.',
-    duration: '120 min',
-    price: 'Cotización'
+    name: "Limpieza de oídos",
+    description: "Limpieza externa delicada como parte de la rutina de higiene.",
+    duration: "20 min",
+    price: "Consultar",
   },
   {
-    name: 'Odontología Pediátrica',
-    description: 'Atención dental especializada para niños, enfocada en la prevención y tratamiento en un ambiente amigable.',
-    duration: '45 min',
-    price: 'Desde $700'
-  }
+    name: "Sesión de cuidado completo",
+    description: "Una sesión que combina los cuidados básicos de higiene y estética.",
+    duration: "90 min",
+    price: "Consultar",
+  },
 ];
 
 export const testimonials = [
   {
-    name: 'Laura M.',
-    text: 'Excelente servicio, el blanqueamiento quedó perfecto y la atención del personal es de primera.',
-    rating: 5
+    name: "Laura M.",
+    text: "La atención fue muy amable y mi perrito salió tranquilo y limpio. Volveremos.",
+    rating: 5,
   },
   {
-    name: 'Carlos R.',
-    text: 'Me quitaron el miedo al dentista. Muy profesionales y cuidadosos con el tratamiento de ortodoncia.',
-    rating: 5
+    name: "Carlos R.",
+    text: "Me ayudaron a elegir los productos adecuados para el pelaje de mi mascota.",
+    rating: 5,
   },
   {
-    name: 'Ana S.',
-    text: 'Llevé a mi hijo y lo trataron con muchísima paciencia. Totalmente recomendados para odontología pediátrica.',
-    rating: 5
-  }
+    name: "Ana S.",
+    text: "La experiencia fue sencilla y el trato con mi mascota fue excelente.",
+    rating: 5,
+  },
 ];
 
-export const appointments = [
-  { service: 'Limpieza Dental Profiláctica', date: 'Sábado 8 de junio', time: '12:30 p.m.', status: 'Confirmada' },
-  { service: 'Consulta de Ortodoncia', date: 'Miércoles 19 de junio', time: '5:00 p.m.', status: 'Pendiente de confirmar' }
-];
+export const appointments = [];
