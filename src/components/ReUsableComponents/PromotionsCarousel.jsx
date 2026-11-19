@@ -8,6 +8,11 @@ const images = [
   '/promo2.jpeg',
   '/promo3.jpeg',
   '/promo4.jpeg',
+  '/promo5.jpeg',
+  '/promo6.jpeg',
+  '/promo7.jpeg',
+  '/promo8.jpeg',
+  '/promo9.jpeg',
 ];
 
 export default function PromotionsCarousel() {

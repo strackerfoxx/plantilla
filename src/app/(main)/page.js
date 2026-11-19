@@ -30,7 +30,7 @@ export default function Page() {
           />
           <div className="absolute inset-0 bg-black/35" />
           <div className="absolute top-4 left-4 z-20 flex gap-2 sm:top-8 sm:right-6">
-            <a
+            {/* <a
               href="https://www.instagram.com/clinicadebellezaacoxpa419/"
               target="_blank"
               rel="noopener noreferrer"
@@ -38,7 +38,7 @@ export default function Page() {
               aria-label="Instagram"
             >
               <Instagram size={20} />
-            </a>
+            </a> */}
             <a
               href="https://www.instagram.com/acoxpa419/"
               target="_blank"
@@ -48,7 +48,7 @@ export default function Page() {
             >
               <Instagram size={20} />
             </a>
-            <a
+            {/* <a
               href="https://www.facebook.com/ClinicaBellezaAcoxpa419"
               target="_blank"
               rel="noopener noreferrer"
@@ -56,7 +56,7 @@ export default function Page() {
               aria-label="Facebook"
             >
               <Facebook size={20} />
-            </a>
+            </a> */}
             <a
               href="https://www.facebook.com/Acoxpa419/"
               target="_blank"
@@ -96,8 +96,8 @@ export default function Page() {
           </div>
           <div className="relative z-10 flex h-full items-center justify-center px-8 md:px-16 lg:px-24">
             <div className="flex max-w-2xl flex-col items-center justify-center text-center text-white">
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black uppercase tracking-tighter leading-none mb-6 font-gelasio">
-                Descubre<br/>Tu<br/>Energía
+              <h1 className="text-4xl md:text-6xl lg:text-7¡xl font-black uppercase tracking-tighter leading-none mb-6 font-gelasio">
+                Tu mejor versión comienza aquí
               </h1>
               <p className="max-w-md text-lg mb-10 leading-relaxed font-medium text-white/90">
                 Un espacio dedicado a tu bienestar y equilibrio. Conoce nuestros servicios personalizados y transforma tu día.
