@@ -1,10 +1,10 @@
-import AuthGuard from '@/components/AuthGuard'
-import AppointmentList from '@/components/ReUsableComponents/AppointmentList';
-import LoginPrompt from '@/components/ReUsableComponents/LoginPrompt';
+import AuthGuard from "@/components/AuthGuard";
+import AppointmentList from "@/components/ReUsableComponents/AppointmentList";
+import LoginPrompt from "@/components/ReUsableComponents/LoginPrompt";
 
 export const metadata = {
-  title: 'Mis citas',
-  description: 'Consulta tus citas agendadas en Barbería y salón Alex y gestiona tu próxima visita en Tlalpan, CDMX.'
+  title: "Mis reservas",
+  description: "Consulta y administra las reservas de cuidado de tu mascota.",
 };
 
 export default function MisCitasPage() {

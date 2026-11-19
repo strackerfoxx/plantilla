@@ -1,40 +1,33 @@
 import { Clock, DollarSign } from "lucide-react";
 import Link from "next/link";
 
-export default function ServiceCard({service}) {
+export default function ServiceCard({ service }) {
   return (
-    <div
-        key={service.id}
-        className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col hover:shadow-md transition-shadow"
+    <article className="flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-sm transition-shadow hover:shadow-md">
+      <div className="grow p-6">
+        <h3 className="mb-2 text-2xl font-bold text-foreground">{service.name}</h3>
+        <p className="mb-6 line-clamp-3 text-muted-foreground">{service.description}</p>
+
+        <div className="mb-6 flex flex-col gap-3">
+          <div className="flex items-center text-muted-foreground">
+            <Clock className="mr-2 h-5 w-5 text-primary" />
+            <span>{service.durationMin} minutos</span>
+          </div>
+          <div className="flex items-center text-muted-foreground">
+            <DollarSign className="mr-2 h-5 w-5 text-primary" />
+            <span className="font-semibold text-foreground">{service.price} MXN</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-auto px-6 pb-6">
+        <Link
+          href={`/agendar?serviceId=${service.id}`}
+          className="block w-full rounded-xl bg-primary px-4 py-3 text-center font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
         >
-        <div className="p-6 grow">
-            <h3 className="text-2xl font-bold text-secondary-900 mb-2">
-            {service.name}
-            </h3>
-            <p className="text-slate-600 mb-6 line-clamp-3">
-            {service.description}
-            </p>
-
-            <div className="flex flex-col gap-3 mb-6">
-            <div className="flex items-center text-slate-500">
-                <Clock className="w-5 h-5 mr-2 text-primary-500" />
-                <span>{service.durationMin} minutos</span>
-            </div>
-            <div className="flex items-center text-slate-500">
-                <DollarSign className="w-5 h-5 mr-2 text-emerald-500" />
-                <span className="font-semibold text-slate-700">${service.price} MXN</span>
-            </div>
-            </div>
-        </div>
-
-        <div className="px-6 pb-6 mt-auto">
-            <Link
-            href={`/agendar?serviceId=${service.id}`}
-            className="block w-full py-3 px-4 bg-primary text-primary-foreground font-semibold text-center rounded-xl hover:bg-primary-600 hover:text-white transition-colors"
-            >
-            Agendar Cita
-            </Link>
-        </div>
-    </div>
-  )
+          Agendar servicio
+        </Link>
+      </div>
+    </article>
+  );
 }
