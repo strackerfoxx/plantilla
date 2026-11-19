@@ -11,12 +11,12 @@ export function ServiciosClient() {
   const { services, loading } = useServices();
 
   return (
-    <section className="section-padding">
+    <section className="section-padding"> 
       <div className="container">
         <SectionHeading
           eyebrow="Menu de servicios"
-          title="Servicios para cada ocasion"
-          description="Precios orientativos. Para cambios de look, disenos especiales o microblading, te recomendamos agendar una valoracion."
+          title="Tratamientos diseñados para resaltar tu belleza"
+          description="Cada piel y cuerpo es único. Para diseñar el protocolo ideal según tus necesidades, te invitamos a agendar una valoración personalizada."
           centered
         />
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">

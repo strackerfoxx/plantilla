@@ -12,6 +12,8 @@ import Reviews from '@/components/ReUsableComponents/Reviews';
 import PromotionsCarousel from '@/components/ReUsableComponents/PromotionsCarousel';
 import TreatmentsSection from '@/components/ReUsableComponents/TreatmentsSection';
 
+import { formatDuration } from "@/lib/formatDuration";
+
 export default function Page() {
     const { services } = useServices();
   return (
@@ -100,7 +102,7 @@ export default function Page() {
                 Tu mejor versión comienza aquí
               </h1>
               <p className="max-w-md text-lg mb-10 leading-relaxed font-medium text-white/90">
-                Un espacio dedicado a tu bienestar y equilibrio. Conoce nuestros servicios personalizados y transforma tu día.
+                Un espacio dedicado a tu bienestar y equilibrio. Conoce nuestros tratamientos personalizados y transforma tu vida.
               </p>
               <Link
                 href="/agendar"
@@ -130,6 +132,15 @@ export default function Page() {
             <span>• EXPERIENCIA ÚNICA</span>
           </div>
         </div>
+
+        {/* Promociones */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">Promociones del Mes</h2>
+            <p className="text-neutral-600 max-w-2xl mx-auto font-medium">Aprovecha nuestras ofertas especiales y regálate un momento de relajación.</p>
+          </div>
+          <PromotionsCarousel />
+        </section>
 
         <TreatmentsSection />
 
@@ -181,7 +192,7 @@ export default function Page() {
                 <h3 className="tracking-tighter text-2xl font-black ">{service.name}</h3>
                   <p className="mt-3 min-h-24 text-md leading-7 text-muted-foreground">{service.description}</p>
                   <div className="mt-5 flex items-center justify-between text-sm font-bold text-white bg-neutral-700">
-                    <span className='text-lg'>{service.durationMin} mins</span>
+                    <span className='text-lg'>{formatDuration(service.durationMin)}</span>
                     {/* <span className='text-lg'>${service.price.toFixed(2)}</span> */}
                   </div>
                 </CardContent>
@@ -197,15 +208,6 @@ export default function Page() {
             </Link>
           </div>
 
-        </section>
-
-        {/* Promociones */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-4">Promociones del Mes</h2>
-            <p className="text-neutral-600 max-w-2xl mx-auto font-medium">Aprovecha nuestras ofertas especiales y regálate un momento de relajación.</p>
-          </div>
-          <PromotionsCarousel />
         </section>
 
         {/* Split Info Section (Dark) */}
