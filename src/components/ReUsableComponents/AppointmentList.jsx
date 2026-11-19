@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "@/components/section-heading";
 import AppointmentComponent from "./AppointmentComponent";
@@ -10,9 +10,12 @@ import { useAppointments } from "@/hooks/useAppointments";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function AppointmentList() {
-  const { appointments, loading } = useAppointments();
-  const router = useRouter();
+  const { appointments, refetchAppointments, loading } = useAppointments();
 
+
+  useEffect(() => {
+    refetchAppointments();
+  }, [refetchAppointments]);
 
   return (
     <section className="section-padding">

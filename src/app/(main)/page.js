@@ -132,7 +132,7 @@ export default function Page() {
       {/* WHY */}
       <section className="mx-auto grid max-w-6xl gap-8 px-6 py-20 md:grid-cols-2 items-center">
         <div className="rounded-3xl bg-white p-8 shadow">
-          <h2 className="text-3xl font-black uppercase">Por qué <span className="text-[#f5a800]">elegirnos?</span></h2>
+          <h2 className="text-3xl font-black uppercase">¿Por qué <span className="text-[#f5a800]">elegirnos?</span></h2>
           {["Kits para el cuidado", "Rutinas sencillas", "Calidad y comodidad", "Cuidado pensado en mascotas", "Consejos útiles"].map((t) => (
             <div key={t} className="mt-5 border-b border-gray-100 pb-3">
               <h4 className="font-bold text-sm">{t}</h4>
