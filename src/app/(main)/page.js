@@ -87,6 +87,18 @@ export default function Page() {
               <Twitter size={20} />
             </a>
             <a
+              href="https://www.tiktok.com/@clinicabelleza_acoxpa419?lang=es"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-white/40 bg-white/15 p-2 text-white backdrop-blur-sm transition hover:bg-white/25"
+              aria-label="TikTok"
+            >
+              <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                fill="currentColor" viewBox="0 0 24 24" >
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 3 3 0 0 1 .88.13V9.4a7 7 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a5 5 0 0 1-1-.1z"/>
+              </svg>
+            </a>
+            <a
               href="https://wa.me/525524948191?text=¡Hola!%20Encontré%20su%20página%20web%20y%20quisiera%20saber%20más%20sobre%20sus%20servicios.%20¿Podrían%20ayudarme?"
               target="_blank"
               rel="noopener noreferrer"
